@@ -1,0 +1,52 @@
+#!/bin/bash -e
+
+usage () {
+	echo "Usage: $0 [-m <message>] [-b <branch>] <dir>[:<path>] ..."
+	exit 2
+}
+
+make-tree () {
+	local GIT_INDEX_FILE=`mktemp -t git-make-tree-XXXXXX.idx`
+	TMPS="$TMPS $GIT_INDEX_FILE"
+	git read-tree --empty
+	GIT_WORK_TREE=$1 git add -A
+	git write-tree
+}
+
+replace-index () {
+	git rm -q --cached -r --ignore-unmatch -- "$1"
+	git read-tree --prefix="$1" "$2"
+}
+
+branch=HEAD
+while getopts 'b:m:F:f' opt ; do case $opt in
+	(b) branch=$OPTARG ;;
+	(m) msg=$OPTARG ;;
+	(F) msgfile=$OPTARG ;;
+	(f) force=1 ;;
+	(?) usage ;;
+esac ; done
+shift $[OPTIND-1]
+if [[ $# -lt 1 ]] ; then
+	usage
+fi
+
+export GIT_INDEX_FILE=`mktemp -t git-update-XXXXXX.idx`
+TMPS=$GIT_INDEX_FILE
+trap "rm -f $TMPS" EXIT
+
+git read-tree $branch
+for p ; do
+	replace-index "${p#*:}" `make-tree "${p%%:*}"`
+done
+if [[ -z $force && -n $branch ]] && git diff-index --quiet --cached $branch -- ; then
+	echo "Nothing to commit."
+	exit 0
+fi
+branch=$(git rev-parse --verify --symbolic-full-name $branch)
+commit=$(git commit-tree -p $branch ${msg:+-m "$msg"} ${msgfile:+-F "$msgfile"} `git write-tree`)
+if [[ -n $branch ]] ; then
+	git update-ref $branch $commit
+else
+	echo $commit
+fi

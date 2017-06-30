@@ -11770,6 +11770,12 @@ ul.typeahead-list > li > a {
 .ansi-bold { font-weight: bold; }
 
     </style>
+<style type="text/css">
+    div.prompt {
+  display: none;
+}
+
+    </style>
 
 
 <style type="text/css">
@@ -16142,8 +16148,8 @@ Compressing objects: 100% (5/5), done.
 21dc18ff6bd7a2df72f8bb384c99f2478e9c53e3
 Writing objects: 100% (8/8), done.
 Total 8 (delta 0), reused 0 (delta 0)
--r--r--r-- 1 dylan dylan 1296 Jun 30 14:58 pack-21dc18ff6bd7a2df72f8bb384c99f2478e9c53e3.idx
--r--r--r-- 1 dylan dylan  661 Jun 30 14:58 pack-21dc18ff6bd7a2df72f8bb384c99f2478e9c53e3.pack
+-r--r--r-- 1 dylan dylan 1296 Jun 30 16:25 pack-21dc18ff6bd7a2df72f8bb384c99f2478e9c53e3.idx
+-r--r--r-- 1 dylan dylan  661 Jun 30 16:25 pack-21dc18ff6bd7a2df72f8bb384c99f2478e9c53e3.pack
 </pre>
 </div>
 </div>
@@ -16172,7 +16178,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div align='center'>
-<h1>Part 2: Workflows?</h1>
+<h1>Part 2: Local Workflows</h1>
 <h2>Commands you'll use every day</h2>
 </div>
 </div>
@@ -16952,20 +16958,33 @@ M	README.md
 <ul>
 <li><code>git reset --soft REV</code>: point the current branch to REV, but nothing else (same files on disk, index)<ul>
 <li><code>git reset --soft HEAD^</code>: undo my last <code>git commit</code> but keep my current changes, let my try again</li>
-<li>Alternatively, <code>git commit --amend</code>: replace the current commit with the index, keeping the commit message</li>
+<li><font color='green'>Alternatively,</font> <code>git commit --amend</code>: replace the current commit with the index, keeping the commit message</li>
 </ul>
 </li>
 <li><code>git reset [--mixed] REV</code>: also set index to match REV<ul>
 <li>If you want to keep your changes but put re-add them on a different commit</li>
 </ul>
 </li>
-<li><code>git reset --hard REV</code>: throw away everything (index+disk) and point current branch to REV</li>
+<li><code>git reset --hard REV</code>: throw away everything (index+disk) and point current branch to REV<ul>
+<li><font color='green'>With HEAD,</font> <code>git reset --hard</code>: throw away all my work since last commit</li>
+</ul>
+</li>
 </ul>
 <p><font color='red'>Counts as "<b>rewriting history</b>": don't do this on branches shared with others</font></p>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are other ways to rewrite history as well, specifically <code>git rebase</code>...</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17234,10 +17253,172 @@ Merge made by the &#39;recursive&#39; strategy.
 </div>
 </div>
 
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dealing-with-merge-conflicts">Dealing with merge conflicts<a class="anchor-link" href="#Dealing-with-merge-conflicts">&#182;</a></h3><p>If the two branches cannot be combined cleanly (<em>conflicting</em> changes)...</p>
+<ul>
+<li><code>git mergetool</code>: interactively resolve conflicts based on both sets of changes</li>
+</ul>
+
+</div>
+</div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Convenient-commit-construction">Convenient commit construction<a class="anchor-link" href="#Convenient-commit-construction">&#182;</a></h2><h3 id="Add-a-&quot;reversed&quot;-commit:-revert">Add a "reversed" commit: <em>revert</em><a class="anchor-link" href="#Add-a-&quot;reversed&quot;-commit:-revert">&#182;</a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git revert --no-edit e4212ad
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-revert (1)       - Revert some existing commits
+[master 38bf58c] Revert &#34;Mark down &#39;README&#39;; no more other.txt&#34;
+ 2 files changed, 1 insertion(+)
+ rename README.md =&gt; README (100%)
+ create mode 100644 stuff/other.txt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Graft-a-&quot;forward&quot;-commit:-cherry-pick">Graft a "forward" commit: <em>cherry-pick</em><a class="anchor-link" href="#Graft-a-&quot;forward&quot;-commit:-cherry-pick">&#182;</a></h3>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If I wanted to un-revert that change, I could just <code>git revert</code> it again. Alternatively, I could re-apply the original commit, which is more common when wanting to take a few commits from someone else's branch, without merging the whole branch.</p>
+
+</div>
+</div>
+</div>
+</aside>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git cherry-pick e4212ad
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-cherry-pick (1)  - Apply the changes introduced by some existing commits
+[master 3c7ffae] Mark down &#39;README&#39;; no more other.txt
+ 2 files changed, 1 deletion(-)
+ rename README =&gt; README.md (100%)
+ delete mode 100644 stuff/other.txt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git log -2
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-yellow-fg">commit 3c7ffae7987409b895bd5893fac57e9e1782c74f</span>
+Author: Dylan Simon &lt;dylan@dylex.net&gt;
+Date:   Fri Jun 30 13:00:00 2017
+
+    Mark down &#39;README&#39;; no more other.txt
+
+<span class="ansi-yellow-fg">commit 38bf58c19e1e741404d8edd357b87f55c771eaeb</span>
+Author: Dylan Simon &lt;dylan@dylex.net&gt;
+Date:   Fri Jun 30 14:00:00 2017
+
+    Revert &#34;Mark down &#39;README&#39;; no more other.txt&#34;
+    
+    This reverts commit e4212ad336cbaf2c4a5b454af07a484b1b09b83b.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align='center'>
+<h1>Part 3: Remote Collaboration</h1>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>man gitglossary

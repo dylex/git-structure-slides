@@ -14943,7 +14943,7 @@ Git 1.8.3.1                       03/23/2016                     GIT-CONFIG(1)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="git-as-an-object-(file)-store">git as an object (file) store<a class="anchor-link" href="#git-as-an-object-(file)-store">&#182;</a></h2><p>Create a new object based on some data (e.g., file contents)</p>
+<h2 id="git-as-an-object-(file)-store:-blobs">git as an object (file) store: <em>blobs</em><a class="anchor-link" href="#git-as-an-object-(file)-store:-blobs">&#182;</a></h2><p>Create a new object based on some data (e.g., file contents)</p>
 
 </div>
 </div>
@@ -15167,7 +15167,7 @@ Hello World!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Collecting-objects:-trees-(directories)">Collecting objects: trees (directories)<a class="anchor-link" href="#Collecting-objects:-trees-(directories)">&#182;</a></h2>
+<h2 id="Collecting-objects:-trees-(directories)">Collecting objects: <em>trees</em> (directories)<a class="anchor-link" href="#Collecting-objects:-trees-(directories)">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15462,7 +15462,7 @@ index 980a0d5..f25e220 100644
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Versioning:-commit-(revision)">Versioning: commit (revision)<a class="anchor-link" href="#Versioning:-commit-(revision)">&#182;</a></h2><p>A <em>commit</em> is a tree and some metadata</p>
+<h2 id="Versioning:-commit-(revision)">Versioning: <em>commit</em> (revision)<a class="anchor-link" href="#Versioning:-commit-(revision)">&#182;</a></h2><p>A <em>commit</em> is a tree and some metadata</p>
 
 </div>
 </div>
@@ -15472,7 +15472,7 @@ index 980a0d5..f25e220 100644
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit1</span><span class="o">=</span><span class="k">$(</span> git commit-tree -m <span class="s2">&quot;Added some text files to my tree&quot;</span> <span class="nv">$tree2</span> <span class="k">)</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit1</span><span class="o">=</span><span class="k">$(</span> git commit-tree -m <span class="s2">&quot;Add some text files to my tree&quot;</span> <span class="nv">$tree2</span> <span class="k">)</span>
 <span class="nb">echo</span> <span class="nv">$commit1</span>
 </pre></div>
 
@@ -15491,7 +15491,7 @@ index 980a0d5..f25e220 100644
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-commit-tree (1)  - Create a new commit object
-2e3e05b09b77bef997d7c789eb92c670e3b3ec88
+2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1
 </pre>
 </div>
 </div>
@@ -15526,7 +15526,7 @@ index 980a0d5..f25e220 100644
 author Dylan Simon &lt;dylan@dylex.net&gt; 1497996000 -0400
 committer Dylan Simon &lt;dylan@dylex.net&gt; 1497996000 -0400
 
-Added some text files to my tree
+Add some text files to my tree
 </pre>
 </div>
 </div>
@@ -15596,7 +15596,7 @@ Added some text files to my tree
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit2</span><span class="o">=</span><span class="k">$(</span> git commit-tree -p <span class="nv">$commit1</span> -m <span class="s2">&quot;Improved README with new stuff&quot;</span> <span class="nv">$tree2a</span> <span class="k">)</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit2</span><span class="o">=</span><span class="k">$(</span> git commit-tree -p <span class="nv">$commit1</span> -m <span class="s2">&quot;Improve README with new stuff&quot;</span> <span class="nv">$tree2a</span> <span class="k">)</span>
 <span class="nb">echo</span> <span class="nv">$commit2</span>
 </pre></div>
 
@@ -15615,7 +15615,7 @@ Added some text files to my tree
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-commit-tree (1)  - Create a new commit object
-7c3b7428f484576aae429c427dd12f608a8276e4
+0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832
 </pre>
 </div>
 </div>
@@ -15647,11 +15647,11 @@ Added some text files to my tree
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>tree 674e727fabfeb840b5c4e36f2c33610dfb50458e
-parent 2e3e05b09b77bef997d7c789eb92c670e3b3ec88
+parent 2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1
 author Dylan Simon &lt;dylan@dylex.net&gt; 1498158000 -0400
 committer Dylan Simon &lt;dylan@dylex.net&gt; 1498158000 -0400
 
-Improved README with new stuff
+Improve README with new stuff
 </pre>
 </div>
 </div>
@@ -15676,7 +15676,7 @@ Improved README with new stuff
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Commit objects form a DAG (directed, acyclic graph)</p>
-<div align='right'>*Why?*</div>
+<div align='right'><em>Why?</em></div>
 </div>
 </div>
 </div></div></section></section><section><section>
@@ -15757,17 +15757,17 @@ Hello World!
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-log (1)          - Show commit logs
-* <span class="ansi-yellow-fg">commit 7c3b7428f484576aae429c427dd12f608a8276e4</span>
+* <span class="ansi-yellow-fg">commit 0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832</span>
 <span class="ansi-red-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
 <span class="ansi-red-fg">|</span> Date:   Thu Jun 22 15:00:00 2017
 <span class="ansi-red-fg">|</span> 
-<span class="ansi-red-fg">|</span>     Improved README with new stuff
+<span class="ansi-red-fg">|</span>     Improve README with new stuff
 <span class="ansi-red-fg">|</span>  
-* <span class="ansi-yellow-fg">commit 2e3e05b09b77bef997d7c789eb92c670e3b3ec88</span>
+* <span class="ansi-yellow-fg">commit 2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1</span>
   Author: Dylan Simon &lt;dylan@dylex.net&gt;
   Date:   Tue Jun 20 18:00:00 2017
   
-      Added some text files to my tree
+      Add some text files to my tree
 </pre>
 </div>
 </div>
@@ -15849,7 +15849,7 @@ Hello World!
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="What-about-renames?">What about renames?<a class="anchor-link" href="#What-about-renames?">&#182;</a></h3><p>Git doesn't know anything about renames... but it can guess</p>
 <ul>
-<li><code>git diff -M&lt;p&gt;</code>: detect renames as files at least <code>p</code>0% similar</li>
+<li><code>git diff -M&lt;p&gt;</code>: detect renames as files at least <em>p</em>0% similar</li>
 <li><code>git diff -C&lt;p&gt;</code>: detect copies as well</li>
 </ul>
 
@@ -15860,7 +15860,7 @@ Hello World!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Commit-refs-(branches-and-tags)">Commit <em>refs</em> (branches and tags)<a class="anchor-link" href="#Commit-refs-(branches-and-tags)">&#182;</a></h2>
+<h2 id="Commit-refs-(branches...)">Commit <em>refs</em> (branches...)<a class="anchor-link" href="#Commit-refs-(branches...)">&#182;</a></h2>
 </div>
 </div>
 </div><aside class="notes">
@@ -15900,7 +15900,7 @@ git show-ref
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-update-ref (1)   - Update the object name stored in a ref safely
 git-show-ref (1)     - List references in a local repository
-2e3e05b09b77bef997d7c789eb92c670e3b3ec88 refs/heads/master
+2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1 refs/heads/master
 </pre>
 </div>
 </div>
@@ -15932,7 +15932,7 @@ cat .git/refs/heads/master
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>7c3b7428f484576aae429c427dd12f608a8276e4
+<pre>0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832
 </pre>
 </div>
 </div>
@@ -15946,7 +15946,7 @@ cat .git/refs/heads/master
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By convention (and because all the higher-level git commands expect it), branch names start with <code>refs/heads/</code>, but can be any valid file name after that, like <code>dylan/refactor</code>.</p>
+<p>By convention (and because all the higher-level git commands expect it), branch names start with <code>refs/heads/</code>, but can be any valid file name after that, like <code>dylan/refactor</code> or <code>release/2.x</code>.</p>
 
 </div>
 </div>
@@ -15974,11 +15974,11 @@ cat .git/refs/heads/master
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-yellow-fg">commit 7c3b7428f484576aae429c427dd12f608a8276e4</span>
+<pre><span class="ansi-yellow-fg">commit 0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832</span>
 Author: Dylan Simon &lt;dylan@dylex.net&gt;
 Date:   Thu Jun 22 15:00:00 2017
 
-    Improved README with new stuff
+    Improve README with new stuff
 
 <span class="ansi-bold">diff --git a/README b/README</span>
 <span class="ansi-bold">index 980a0d5..f25e220 100644</span>
@@ -15999,13 +15999,122 @@ Date:   Thu Jun 22 15:00:00 2017
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="...-And-tags,-revisions">... And tags, <em>revisions</em><a class="anchor-link" href="#...-And-tags,-revisions">&#182;</a></h3>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>References can also represent tags, under <code>refs/tags/</code> by convention.  Unlike branch references, you usually don't move tags after they're created.</p>
+
+</div>
+</div>
+</div>
+</aside>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git tag -m <span class="s2">&quot;Presented at SciCon 2017-06-27&quot;</span> scicon17 master
+git show-ref
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-tag (1)          - Create, list, delete or verify a tag object signed with GPG
+0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832 refs/heads/master
+aa6742b68e7ea09070071d514e2030683f4ffd57 refs/tags/scicon17
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tags are also a type of object, the last kind we'll see, containing just a name, annotation (message), and commit hash.  Notice than naming references is rather flexible, as you can leave off <code>refs/</code> and another part (<code>tags/</code>, <code>heads/</code>, or <code>remotes/</code>).</p>
+
+</div>
+</div>
+</div>
+</aside><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git cat-file -p tags/scicon17
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>object 0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832
+type commit
+tag scicon17
+tagger Dylan Simon &lt;dylan@dylex.net&gt; 1498575600 -0400
+
+Presented at SciCon 2017-06-27
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Revision</em>: any way to refer to a commit object (branch, tag, hash, <code>^</code>, ...)</p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Isn't-this-wasteful?">Isn't this wasteful?<a class="anchor-link" href="#Isn't-this-wasteful?">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="nv">$commit2</span> <span class="p">|</span> git pack-objects --revs pack
@@ -16030,11 +16139,11 @@ ls -l pack-*
 Counting objects: 8, done.
 Delta compression using up to 24 threads.
 Compressing objects: 100% (5/5), done.
-b7935c25be9722a8f9a11512b5e08be15506ac7e
+21dc18ff6bd7a2df72f8bb384c99f2478e9c53e3
 Writing objects: 100% (8/8), done.
 Total 8 (delta 0), reused 0 (delta 0)
--r--r--r-- 1 dylan dylan 1296 Jun 22 18:21 pack-b7935c25be9722a8f9a11512b5e08be15506ac7e.idx
--r--r--r-- 1 dylan dylan  666 Jun 22 18:21 pack-b7935c25be9722a8f9a11512b5e08be15506ac7e.pack
+-r--r--r-- 1 dylan dylan 1296 Jun 30 14:58 pack-21dc18ff6bd7a2df72f8bb384c99f2478e9c53e3.idx
+-r--r--r-- 1 dylan dylan  661 Jun 30 14:58 pack-21dc18ff6bd7a2df72f8bb384c99f2478e9c53e3.pack
 </pre>
 </div>
 </div>
@@ -16063,7 +16172,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div align='center'>
-<h1>Part 2: Workflows</h1>
+<h1>Part 2: Workflows?</h1>
 <h2>Commands you'll use every day</h2>
 </div>
 </div>
@@ -16073,17 +16182,29 @@ Total 8 (delta 0), reused 0 (delta 0)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="index:-&quot;cache&quot;-between-filesystem-and-trees"><em>index</em>: "cache" between filesystem and trees<a class="anchor-link" href="#index:-&quot;cache&quot;-between-filesystem-and-trees">&#182;</a></h2><p>Going between your local <em>working tree</em> (disk) and git</p>
+<h2 id="Between-filesystem-and-trees:-index-(&quot;cache&quot;)">Between filesystem and trees: <em>index</em> ("cache")<a class="anchor-link" href="#Between-filesystem-and-trees:-index-(&quot;cache&quot;)">&#182;</a></h2><p>Moving files between your local <em>working tree</em> (disk) and git</p>
+
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The index, stored in <code>.git/index</code> as a sort of self-contained object-store, is a staging location between the files on disk and the main git object store.  Sometimes referred to as "cache" in the more traditional sense of the word as a place to keep things, rather than the computer memory sense.</p>
 
 </div>
 </div>
 </div>
+</aside>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git read-tree <span class="nv">$tree2</span>
+file .git/index
 git ls-files
 </pre></div>
 
@@ -16102,6 +16223,7 @@ git ls-files
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-read-tree (1)    - Reads tree information into the index
+.git/index: Git index, version 2, 3 entries
 git-ls-files (1)     - Show information about files in the index and the working tree
 README
 stuff/hello.txt
@@ -16116,7 +16238,7 @@ stuff/other.txt
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git checkout-index -a
@@ -16164,14 +16286,14 @@ ls -R
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="From-files-to-index">From files to index<a class="anchor-link" href="#From-files-to-index">&#182;</a></h3><p><em>Staging</em> changes to the index, from local changes made on disk</p>
+<h3 id="From-files-to-index:-staging">From files to index: <em>staging</em><a class="anchor-link" href="#From-files-to-index:-staging">&#182;</a></h3><p><em>Staging</em> changes to the index, from local changes made on disk</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;New and improved.&#39;</span> &gt; README
@@ -16209,7 +16331,7 @@ git diff
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git add README
@@ -16240,7 +16362,7 @@ git diff
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git write-tree
@@ -16274,7 +16396,7 @@ git diff
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git rm -f stuff/other.txt
@@ -16309,7 +16431,7 @@ stuff/hello.txt
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git mv README README.md
@@ -16344,10 +16466,10 @@ README.md  stuff
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="quick-reference">quick reference<a class="anchor-link" href="#quick-reference">&#182;</a></h4><ul>
-<li><code>git add -u [FILE|DIR] ...</code>: update <em>existing</em> index files from disk</li>
-<li><code>git add     FILE|DIR  ...</code>: update index files from disk (creating new index entries)</li>
-<li><code>git add -A [FILE|DIR] ...</code>: update index to exactly match disk (including <em>removing</em> index entries)</li>
+<h4 id="quick-reference:-updating-the-index">quick reference: updating the index<a class="anchor-link" href="#quick-reference:-updating-the-index">&#182;</a></h4><ul>
+<li><code>git add -u [FILE|DIR] ...</code>: update <em>existing</em> index files from disk (update+remove index entries)</li>
+<li><code>git add     FILE|DIR  ...</code>: update index files from disk (update+add index entries)</li>
+<li><code>git add -A [FILE|DIR] ...</code>: update index to exactly match disk (update+add+remove index entries)</li>
 <li><code>git add -p            ...</code>: <em>interactively</em> ask what to "stage" to index</li>
 <li><code>git mv SRC DST</code>: rename file/dir on disk and in index</li>
 <li><code>git rm         FILE</code>: remove file from disk and index (if no local changes)</li>
@@ -16370,7 +16492,7 @@ README.md  stuff
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;maybe not...&#39;</span> &gt;&gt; README.md
@@ -16408,7 +16530,7 @@ git diff
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git checkout -- README.md
@@ -16443,18 +16565,679 @@ git-diff-files (1)   - Compares files in the working tree and the index
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="quick-reference">quick reference<a class="anchor-link" href="#quick-reference">&#182;</a></h4><ul>
+<h4 id="quick-reference:-discarding-changes">quick reference: discarding changes<a class="anchor-link" href="#quick-reference:-discarding-changes">&#182;</a></h4><ul>
 <li><code>git checkout -- FILE|DIR ...</code>: overwrite files on disk from index</li>
 <li><code>git checkout -p</code>: interactively ask what to "discard" from disk</li>
 </ul>
-<p><code>git checkout</code> does other things before the <code>--</code> we'll see later</p>
+<p><code>git checkout</code> does other things before the <code>--</code></p>
 
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Your-current-branch:-HEAD">Your current branch: <em>HEAD</em><a class="anchor-link" href="#Your-current-branch:-HEAD">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git symbolic-ref HEAD
+cat .git/HEAD
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-symbolic-ref (1) - Read, modify and delete symbolic refs
+refs/heads/master
+ref: refs/heads/master
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A symbolic ref is a reference to another ref, kind of like a symbolic link or "pointer pointer".  <code>HEAD</code> is a pointer to the current branch (name).</p>
+
+</div>
+</div>
+</div>
+</aside><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git checkout -b dylan/work <span class="c1"># shows brief status of local </span>
+git branch
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>D	README
+A	README.md
+D	stuff/other.txt
+Switched to a new branch &#39;dylan/work&#39;
+git-branch (1)       - List, create, or delete branches
+* <span class="ansi-green-fg">dylan/work</span>
+  master
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="quick-reference:-branches">quick reference: branches<a class="anchor-link" href="#quick-reference:-branches">&#182;</a></h4><ul>
+<li><code>git checkout REVISION</code>: switch to a branch (or "detached" revision)</li>
+<li><code>git checkout -b NEWBRANCH [REV]</code>: create and switch to a new branch pointing to REVISION or <code>HEAD</code> (<code>git branch</code> just creates)</li>
+<li><code>git checkout -m</code>: switch to a branch and bring along un-committed changes on disk</li>
+<li><code>git checkout REV -- PATH ...</code>: overwrite files on disk from revision (but don't switch branches)</li>
+<li><code>git branch -va</code>: list all branches and latest commit</li>
+<li><code>git branch -m OLDBRANCH NEWBRANCH</code>: rename branch</li>
+<li><code>git branch -d OLDBRANCH</code>: delete branch</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="From-index-to-HEAD:-committing">From index to HEAD: committing<a class="anchor-link" href="#From-index-to-HEAD:-committing">&#182;</a></h2><p>Adding commits to your current branch from the index</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git commit -m <span class="s2">&quot;Mark down &#39;README&#39;; no more other.txt&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-commit (1)       - Record changes to the repository
+[dylan/work e4212ad] Mark down &#39;README&#39;; no more other.txt
+ 2 files changed, 1 deletion(-)
+ rename README =&gt; README.md (100%)
+ delete mode 100644 stuff/other.txt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git branch -va
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>* <span class="ansi-green-fg">dylan/work</span> e4212ad Mark down &#39;README&#39;; no more other.txt
+  master     0b5bcf3 Improve README with new stuff
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git log --stat -2
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-yellow-fg">commit e4212ad336cbaf2c4a5b454af07a484b1b09b83b</span>
+Author: Dylan Simon &lt;dylan@dylex.net&gt;
+Date:   Fri Jun 30 13:00:00 2017
+
+    Mark down &#39;README&#39;; no more other.txt
+
+ README          | 1 <span class="ansi-red-fg">-</span>
+ README.md       | 1 <span class="ansi-green-fg">+</span>
+ stuff/other.txt | 1 <span class="ansi-red-fg">-</span>
+ 3 files changed, 1 insertion(+), 2 deletions(-)
+
+<span class="ansi-yellow-fg">commit 0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832</span>
+Author: Dylan Simon &lt;dylan@dylex.net&gt;
+Date:   Thu Jun 22 15:00:00 2017
+
+    Improve README with new stuff
+
+ README | 2 <span class="ansi-green-fg">+</span><span class="ansi-red-fg">-</span>
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="quick-reference:-commit">quick reference: commit<a class="anchor-link" href="#quick-reference:-commit">&#182;</a></h4><ul>
+<li><code>git commit -a</code>: <code>git add -u</code> before commit (also <code>-p</code>)</li>
+<li><code>git commit -m MSG1 -m MSG2 ...</code>: multi-paragraph commit message</li>
+<li><code>git commit -v</code>: invoke editor and show full diff to write commit messsage</li>
+<li><code>git commit -- PATH...</code>: commit all changes to files on disk (bypass index)</li>
+</ul>
+<h4 id="commit-message-guidelines">commit message guidelines<a class="anchor-link" href="#commit-message-guidelines">&#182;</a></h4><ul>
+<li>Use present tense in brief summary: "Fix crash with large N", "Cleanup temp files after run"</li>
+<li>Include more details about motivation, results after summary</li>
+<li>Address your future self</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Keeping-track:-status">Keeping track: status<a class="anchor-link" href="#Keeping-track:-status">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;New stuff&quot;</span> &gt; stuff/more.txt
+git add stuff/more.txt
+<span class="nb">echo</span> <span class="s2">&quot;More to read&quot;</span> &gt;&gt; README.md
+git status
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-status (1)       - Show the working tree status
+# On branch dylan/work
+# Changes to be committed:
+#   (use &#34;git reset HEAD &lt;file&gt;...&#34; to unstage)
+#
+#	<span class="ansi-green-fg">new file:   stuff/more.txt</span>
+#
+# Changes not staged for commit:
+#   (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+#   (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+#
+#	<span class="ansi-red-fg">modified:   README.md</span>
+#
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>git status</code> is one of the most useful commands you can just run all the time, but it's rather self-explainatory, so I won't say much more about it.</p>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="(Un-)doing-all-the-things:-reset">(Un-)doing all the things: reset<a class="anchor-link" href="#(Un-)doing-all-the-things:-reset">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Un-staging:-undoing-add,-rm">Un-staging: undoing add, rm<a class="anchor-link" href="#Un-staging:-undoing-add,-rm">&#182;</a></h3><ul>
+<li><code>git reset [REV] -- PATH ...</code>: sets the index file entries match those from revision (HEAD)</li>
+<li><code>git reset -p</code>: ask interactively which changes to reset</li>
+</ul>
+<p>Dash-dash pattern: separates revisions from paths, can be omitted if unambiguous</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git reset -- stuff/more.txt
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Unstaged changes after reset:
+M	README.md
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Un-comitting:-changing-which-commit-your-branch-points-to">Un-comitting: changing which commit your branch points to<a class="anchor-link" href="#Un-comitting:-changing-which-commit-your-branch-points-to">&#182;</a></h3><p>Changing <code>refs/heads/branch</code> itself, not like checkout which just changes <code>HEAD</code>.</p>
+<ul>
+<li><code>git reset --soft REV</code>: point the current branch to REV, but nothing else (same files on disk, index)<ul>
+<li><code>git reset --soft HEAD^</code>: undo my last <code>git commit</code> but keep my current changes, let my try again</li>
+<li>Alternatively, <code>git commit --amend</code>: replace the current commit with the index, keeping the commit message</li>
+</ul>
+</li>
+<li><code>git reset [--mixed] REV</code>: also set index to match REV<ul>
+<li>If you want to keep your changes but put re-add them on a different commit</li>
+</ul>
+</li>
+<li><code>git reset --hard REV</code>: throw away everything (index+disk) and point current branch to REV</li>
+</ul>
+<p><font color='red'>Counts as "<b>rewriting history</b>": don't do this on branches shared with others</font></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Combining-changes-on-commits/branches:-merging">Combining changes on commits/branches: merging<a class="anchor-link" href="#Combining-changes-on-commits/branches:-merging">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git status
+git branch -va
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre># On branch dylan/work
+# Changes not staged for commit:
+#   (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+#   (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+#
+#	<span class="ansi-red-fg">modified:   README.md</span>
+#
+# Untracked files:
+#   (use &#34;git add &lt;file&gt;...&#34; to include in what will be committed)
+#
+#	<span class="ansi-red-fg">stuff/more.txt</span>
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+* <span class="ansi-green-fg">dylan/work</span> e4212ad Mark down &#39;README&#39;; no more other.txt
+  master     0b5bcf3 Improve README with new stuff
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git checkout -m master
+git status
+git diff
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>M	README
+Switched to branch &#39;master&#39;
+# On branch master
+# Changes not staged for commit:
+#   (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+#   (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+#
+#	<span class="ansi-red-fg">modified:   README</span>
+#
+# Untracked files:
+#   (use &#34;git add &lt;file&gt;...&#34; to include in what will be committed)
+#
+#	<span class="ansi-red-fg">stuff/more.txt</span>
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+<span class="ansi-bold">diff --git a/README b/README</span>
+<span class="ansi-bold">index f25e220..7074c76 100644</span>
+<span class="ansi-bold">--- a/README</span>
+<span class="ansi-bold">+++ b/README</span>
+<span class="ansi-cyan-fg">@@ -1 +1,2 @@</span>
+ New and improved.
+<span class="ansi-green-fg">+</span><span class="ansi-green-fg">More to read</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git add .
+git commit -m <span class="s2">&quot;Add more and more&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[master dc7e13a] Add more and more
+ 2 files changed, 2 insertions(+)
+ create mode 100644 stuff/more.txt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git show-branch
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-show-branch (1)  - Show branches and their commits
+<span class="ansi-red-fg">!</span> [dylan/work] Mark down &#39;README&#39;; no more other.txt
+ <span class="ansi-green-fg">*</span> [master] Add more and more
+--
+<span class="ansi-red-fg"> </span><span class="ansi-green-fg">*</span> [master] Add more and more
+<span class="ansi-red-fg">+</span><span class="ansi-green-fg"> </span> [dylan/work] Mark down &#39;README&#39;; no more other.txt
+<span class="ansi-red-fg">+</span><span class="ansi-green-fg">*</span> [master^] Improve README with new stuff
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git merge --no-edit dylan/work
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-merge (1)        - Join two or more development histories together
+Removing stuff/other.txt
+Merge made by the &#39;recursive&#39; strategy.
+ README =&gt; README.md | 0
+ stuff/other.txt     | 1 <span class="ansi-red-fg">-</span>
+ 2 files changed, 1 deletion(-)
+ rename README =&gt; README.md (100%)
+ delete mode 100644 stuff/other.txt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git log --graph -4
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>*   <span class="ansi-yellow-fg">commit 25327c096d17c527bf1bc30dc3915e2c03f2e7e0</span>
+<span class="ansi-red-fg">|</span><span class="ansi-green-fg">\</span>  Merge: dc7e13a e4212ad
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Date:   Fri Jun 30 14:00:00 2017
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> 
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span>     Merge branch &#39;dylan/work&#39;
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span>   
+<span class="ansi-red-fg">|</span> * <span class="ansi-yellow-fg">commit e4212ad336cbaf2c4a5b454af07a484b1b09b83b</span>
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Date:   Fri Jun 30 13:00:00 2017
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> 
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span>     Mark down &#39;README&#39;; no more other.txt
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span>   
+* <span class="ansi-green-fg">|</span> <span class="ansi-yellow-fg">commit dc7e13a6ad09aca550d5179dcce8f82bc44255a9</span>
+<span class="ansi-green-fg">|</span><span class="ansi-green-fg">/</span>  Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-green-fg">|</span>   Date:   Fri Jun 30 14:00:00 2017
+<span class="ansi-green-fg">|</span>   
+<span class="ansi-green-fg">|</span>       Add more and more
+<span class="ansi-green-fg">|</span>  
+* <span class="ansi-yellow-fg">commit 0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832</span>
+<span class="ansi-green-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-green-fg">|</span> Date:   Thu Jun 22 15:00:00 2017
+<span class="ansi-green-fg">|</span> 
+<span class="ansi-green-fg">|</span>     Improve README with new stuff
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>man gitglossary

@@ -9,6 +9,7 @@ You can use [RISE](https://github.com/damianavila/RISE) to try an interactive ve
 
 ```
 pip install
+python -m bash_kernel.install
 jupyter-nbextension install rise --py --sys-prefix
 jupyter-nbextension enable rise --py --sys-prefix
 ```

@@ -11710,10 +11710,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11724,11 +11722,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11768,12 +11764,6 @@ ul.typeahead-list > li > a {
 .ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
-
-    </style>
-<style type="text/css">
-    div.prompt {
-  display: none;
-}
 
     </style>
 
@@ -16326,7 +16316,7 @@ Hello World!
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">file2</span><span class="o">=</span><span class="k">$(</span> <span class="nb">echo</span> <span class="s1">&#39;Something completely different.&#39;</span> <span class="se">\</span>
          <span class="p">|</span> git hash-object -t blob -w --stdin <span class="k">)</span>
-<span class="nb">echo</span> <span class="nv">$file2</span>
+<span class="nb">echo</span> <span class="nv">$f</span>ile2
 </pre></div>
 
 </div>
@@ -16357,7 +16347,7 @@ Hello World!
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git cat-file -p <span class="nv">$file2</span>
+<div class=" highlight hl-bash"><pre><span></span>git cat-file -p <span class="nv">$f</span>ile2
 </pre></div>
 
 </div>
@@ -16436,8 +16426,8 @@ Hello World!
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$file1</span><span class="s2">\\thello.txt&quot;</span> <span class="se">\</span>
-<span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$file2</span><span class="s2">\\tother.txt&quot;</span> <span class="se">\</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$f</span><span class="s2">ile1\\thello.txt&quot;</span> <span class="se">\</span>
+<span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$f</span><span class="s2">ile2\\tother.txt&quot;</span> <span class="se">\</span>
 <span class="o">)</span> <span class="p">|</span> git mktree
 </pre></div>
 
@@ -16480,8 +16470,8 @@ Hello World!
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">tree1</span><span class="o">=</span>011ed906a8c5b0c0c14c0cad0a69d3969251b71f
-git cat-file -t <span class="nv">$tree1</span>
-git cat-file -p <span class="nv">$tree1</span>
+git cat-file -t $tree1
+git cat-file -p $tree1
 </pre></div>
 
 </div>
@@ -16514,8 +16504,8 @@ git cat-file -p <span class="nv">$tree1</span>
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$file1</span><span class="s2">\\tREADME&quot;</span> <span class="se">\</span>
-<span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;040000 tree </span><span class="nv">$tree1</span><span class="s2">\\tstuff&quot;</span> <span class="se">\</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$f</span><span class="s2">ile1\\tREADME&quot;</span> <span class="se">\</span>
+<span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;040000 tree </span>$<span class="s2">tree1\\tstuff&quot;</span> <span class="se">\</span>
 <span class="o">)</span> <span class="p">|</span> git mktree
 </pre></div>
 
@@ -16559,7 +16549,7 @@ git cat-file -p <span class="nv">$tree1</span>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">tree2</span><span class="o">=</span>c3595f6745f977f2450eeeb5bd94ccd2e4fba498
-git cat-file -p <span class="nv">$tree2</span>
+git cat-file -p $tree2
 </pre></div>
 
 </div>
@@ -16591,7 +16581,7 @@ git cat-file -p <span class="nv">$tree2</span>
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git ls-tree -tr <span class="nv">$tree2</span>
+<div class=" highlight hl-bash"><pre><span></span>git ls-tree -tr $tree2
 </pre></div>
 
 </div>
@@ -16637,11 +16627,11 @@ git cat-file -p <span class="nv">$tree2</span>
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">file3</span><span class="o">=</span><span class="k">$(</span> <span class="nb">echo</span> <span class="s1">&#39;New and improved.&#39;</span> <span class="se">\</span>
          <span class="p">|</span> git hash-object -t blob -w --stdin <span class="k">)</span>
-<span class="nv">tree2a</span><span class="o">=</span><span class="k">$(</span> <span class="o">(</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$file3</span><span class="s2">\\tREADME&quot;</span> <span class="se">\</span>
-          <span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;040000 tree </span><span class="nv">$tree1</span><span class="s2">\\tstuff&quot;</span> <span class="se">\</span>
+<span class="nv">tree2a</span><span class="o">=</span><span class="k">$(</span> <span class="o">(</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$f</span><span class="s2">ile3\\tREADME&quot;</span> <span class="se">\</span>
+          <span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;040000 tree </span>$<span class="s2">tree1\\tstuff&quot;</span> <span class="se">\</span>
           <span class="k">)</span> <span class="p">|</span> git mktree <span class="o">)</span>
-<span class="nb">echo</span> <span class="nv">$tree2a</span>
-git ls-tree -tr <span class="nv">$tree2a</span>
+<span class="nb">echo</span> $tree2a
+git ls-tree -tr $tree2a
 </pre></div>
 
 </div>
@@ -16685,7 +16675,7 @@ git ls-tree -tr <span class="nv">$tree2a</span>
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git diff-tree -p <span class="nv">$tree2</span> <span class="nv">$tree2a</span>
+<div class=" highlight hl-bash"><pre><span></span>git diff-tree -p $tree2 $tree2a
 </pre></div>
 
 </div>
@@ -16744,8 +16734,8 @@ git ls-tree -tr <span class="nv">$tree2a</span>
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit1</span><span class="o">=</span><span class="k">$(</span> git commit-tree -m <span class="s2">&quot;Add some text files to my tree&quot;</span> <span class="nv">$tree2</span> <span class="k">)</span>
-<span class="nb">echo</span> <span class="nv">$commit1</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit1</span><span class="o">=</span><span class="k">$(</span> git commit-tree -m <span class="s2">&quot;Add some text files to my tree&quot;</span> $tree2 <span class="k">)</span>
+<span class="nb">echo</span> <span class="nv">$c</span>ommit1
 </pre></div>
 
 </div>
@@ -16777,7 +16767,7 @@ git ls-tree -tr <span class="nv">$tree2a</span>
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git cat-file -p <span class="nv">$commit1</span>
+<div class=" highlight hl-bash"><pre><span></span>git cat-file -p <span class="nv">$c</span>ommit1
 </pre></div>
 
 </div>
@@ -16869,8 +16859,8 @@ Add some text files to my tree
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit2</span><span class="o">=</span><span class="k">$(</span> git commit-tree -p <span class="nv">$commit1</span> -m <span class="s2">&quot;Improve README with new stuff&quot;</span> <span class="nv">$tree2a</span> <span class="k">)</span>
-<span class="nb">echo</span> <span class="nv">$commit2</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit2</span><span class="o">=</span><span class="k">$(</span> git commit-tree -p <span class="nv">$c</span>ommit1 -m <span class="s2">&quot;Improve README with new stuff&quot;</span> $tree2a <span class="k">)</span>
+<span class="nb">echo</span> <span class="nv">$c</span>ommit2
 </pre></div>
 
 </div>
@@ -16901,7 +16891,7 @@ Add some text files to my tree
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git cat-file -p <span class="nv">$commit2</span>
+<div class=" highlight hl-bash"><pre><span></span>git cat-file -p <span class="nv">$c</span>ommit2
 </pre></div>
 
 </div>
@@ -16979,7 +16969,7 @@ Improve README with new stuff
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git show <span class="s2">&quot;</span><span class="nv">$commit2</span><span class="s2">^{/text files}:stuff/hello.txt&quot;</span>
+<div class=" highlight hl-bash"><pre><span></span>git show <span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">ommit2^{/text files}:stuff/hello.txt&quot;</span>
 </pre></div>
 
 </div>
@@ -17011,7 +17001,7 @@ Hello World!
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git log --graph <span class="nv">$commit2</span>
+<div class=" highlight hl-bash"><pre><span></span>git log --graph <span class="nv">$c</span>ommit2
 </pre></div>
 
 </div>
@@ -17068,7 +17058,7 @@ Hello World!
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git diff <span class="nv">$commit1</span> <span class="nv">$commit2</span>
+<div class=" highlight hl-bash"><pre><span></span>git diff <span class="nv">$c</span>ommit1 <span class="nv">$c</span>ommit2
 </pre></div>
 
 </div>
@@ -17153,7 +17143,7 @@ Hello World!
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git update-ref refs/heads/master <span class="nv">$commit1</span>
+<div class=" highlight hl-bash"><pre><span></span>git update-ref refs/heads/master <span class="nv">$c</span>ommit1
 git show-ref
 </pre></div>
 
@@ -17187,7 +17177,7 @@ git-show-ref (1)     - List references in a local repository
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git update-ref refs/heads/master <span class="nv">$commit2</span>
+<div class=" highlight hl-bash"><pre><span></span>git update-ref refs/heads/master <span class="nv">$c</span>ommit2
 cat .git/refs/heads/master
 </pre></div>
 
@@ -17390,7 +17380,7 @@ Presented at SciCon 2017-06-27
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="nv">$commit2</span> <span class="p">|</span> git pack-objects --revs pack
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="nv">$c</span>ommit2 <span class="p">|</span> git pack-objects --revs pack
 ls -l pack-*
 </pre></div>
 
@@ -17410,13 +17400,13 @@ ls -l pack-*
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-pack-objects (1) - Create a packed archive of objects
 Counting objects: 8, done.
-Delta compression using up to 24 threads.
+Delta compression using up to 2 threads.
 Compressing objects: 100% (5/5), done.
 9c5a911abad74b62a7fefb630c71f6b30859a9dc
 Writing objects: 100% (8/8), done.
 Total 8 (delta 0), reused 0 (delta 0)
--r--r--r-- 1 dylan dylan 1296 Oct  5 17:21 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
--r--r--r-- 1 dylan dylan  661 Oct  5 17:21 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
+-r--r--r-- 1 dylan users 1296 Oct 11 10:36 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
+-r--r--r-- 1 dylan users  661 Oct 11 10:36 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
 </pre>
 </div>
 </div>
@@ -17498,7 +17488,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git read-tree <span class="nv">$tree2</span>
+<div class=" highlight hl-bash"><pre><span></span>git read-tree $tree2
 file .git/index
 git ls-files
 </pre></div>
@@ -17672,7 +17662,7 @@ git diff
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git write-tree
-<span class="nb">echo</span> <span class="nv">$tree2a</span>
+<span class="nb">echo</span> $tree2a
 </pre></div>
 
 </div>
@@ -18733,6 +18723,249 @@ Date:   Fri Jun 30 14:00:00 2017
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Wrapping-things-up:-cleaning-and-stashing">Wrapping things up: <em>clean</em>ing and <em>stash</em>ing<a class="anchor-link" href="#Wrapping-things-up:-cleaning-and-stashing">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>touch output.txt
+git status
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>On branch master
+Untracked files:
+  (use &#34;git add &lt;file&gt;...&#34; to include in what will be committed)
+
+	<span class="ansi-red-fg">output.txt</span>
+
+nothing added to commit but untracked files present (use &#34;git add&#34; to track)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git clean -f
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-clean (1)        - Remove untracked files from the working tree
+Removing output.txt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;further reading&quot;</span> &gt;&gt; README.md
+git status
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>On branch master
+Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+
+	<span class="ansi-red-fg">modified:   README.md</span>
+
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you have some local chages, but you want to do something else for a minute (e.g., pull new changes, try something else, etc.), rather than copying your changes to a temp file, or creating a whole new branch (which is also perfectly reasonable, but a few extra steps), there is a stack of light-weight commits you can push and pop from.</p>
+
+</div>
+</div>
+</div>
+</aside><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git stash <span class="c1">#push</span>
+git stash list
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-stash (1)        - Stash the changes in a dirty working directory away
+Saved working directory and index state WIP on master: 3c7ffae Mark down &#39;README&#39;; no more other.txt
+stash@{0}: WIP on master: 3c7ffae Mark down &#39;README&#39;; no more other.txt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git stash pop
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>On branch master
+Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+
+	<span class="ansi-red-fg">modified:   README.md</span>
+
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+Dropped refs/stash@{0} (ef7d2622fe9ec10b68d32148e0e53d33a4bef3d1)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Browsing-history">Browsing history<a class="anchor-link" href="#Browsing-history">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git blame -- README.md
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git-blame (1)        - Show what revision and author last modified each line of a file
+0b5bcf36 README    (Dylan Simon       2017-06-22 15:00:00 -0400 1) New and improved.
+dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
+00000000 README.md (Not Committed Yet 2017-10-11 10:36:27 -0400 3) further reading
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <div align='center'>
 <h1>Part 3: Remote Collaboration</h1>
 <h2>Playing well with others</h2>
@@ -18762,7 +18995,7 @@ Date:   Fri Jun 30 14:00:00 2017
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git remote add ghdylex git://github.com/dylex/git-structure-tutorial
@@ -18807,7 +19040,7 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 </aside></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git fetch ghdylex <span class="c1"># or: git remote update</span>
@@ -18828,10 +19061,10 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-fetch (1)        - Download objects and refs from another repository
-remote: Counting objects: 76, done.
-remote: Compressing objects: 100% (34/34), done.
-remote: Total 76 (delta 30), reused 76 (delta 30), pack-reused 0
-Unpacking objects: 100% (76/76), done.
+remote: Counting objects: 88, done.
+remote: Compressing objects: 100% (42/42), done.
+remote: Total 88 (delta 37), reused 84 (delta 33), pack-reused 0
+Unpacking objects: 100% (88/88), done.
 From git://github.com/dylex/git-structure-tutorial
  * [new branch]      example    -&gt; ghdylex/example
  * [new branch]      gh-pages   -&gt; ghdylex/gh-pages
@@ -18855,7 +19088,7 @@ From git://github.com/dylex/git-structure-tutorial
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git branch -va
@@ -18878,8 +19111,8 @@ From git://github.com/dylex/git-structure-tutorial
 <pre>  dylan/work               e4212ad Mark down &#39;README&#39;; no more other.txt
 * <span class="ansi-green-fg">master                  </span> 3c7ffae Mark down &#39;README&#39;; no more other.txt
   <span class="ansi-red-fg">remotes/ghdylex/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> 0f9c378 Update generated slides from 501247f
-  <span class="ansi-red-fg">remotes/ghdylex/master  </span> 501247f A bit more on pull/push/clone
+  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> 9a23c40 Update generated slides from 652f286
+  <span class="ansi-red-fg">remotes/ghdylex/master  </span> ce77275 Fill out clean and stash sections
 </pre>
 </div>
 </div>
@@ -18890,7 +19123,7 @@ From git://github.com/dylex/git-structure-tutorial
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git merge ghdylex/example
@@ -18924,7 +19157,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git pull ghdylex example
@@ -18977,7 +19210,7 @@ Already up-to-date.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>! git push ghdylex master
@@ -19046,7 +19279,7 @@ fatal: remote error:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git clone git://github.com/dylex/git-structure-tutorial
@@ -19068,11 +19301,11 @@ fatal: remote error:
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-clone (1)        - Clone a repository into a new directory
 Cloning into &#39;git-structure-tutorial&#39;...
-remote: Counting objects: 96, done.
-remote: Compressing objects: 100% (5/5), done.
-remote: Total 96 (delta 0), reused 3 (delta 0), pack-reused 90
-Receiving objects: 100% (96/96), 496.34 KiB | 11.28 MiB/s, done.
-Resolving deltas: 100% (29/29), done.
+remote: Counting objects: 108, done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 108 (delta 7), reused 15 (delta 5), pack-reused 90
+Receiving objects: 100% (108/108), 522.26 KiB | 5.68 MiB/s, done.
+Resolving deltas: 100% (36/36), done.
 </pre>
 </div>
 </div>
@@ -19083,7 +19316,7 @@ Resolving deltas: 100% (29/29), done.
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> git-structure-tutorial
@@ -19104,11 +19337,11 @@ git branch -va
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>* <span class="ansi-green-fg">master                 </span> 501247f A bit more on pull/push/clone
+<pre>* <span class="ansi-green-fg">master                 </span> ce77275 Fill out clean and stash sections
   <span class="ansi-red-fg">remotes/origin/HEAD    </span> -&gt; origin/master
   <span class="ansi-red-fg">remotes/origin/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/origin/gh-pages</span> 0f9c378 Update generated slides from 501247f
-  <span class="ansi-red-fg">remotes/origin/master  </span> 501247f A bit more on pull/push/clone
+  <span class="ansi-red-fg">remotes/origin/gh-pages</span> 9a23c40 Update generated slides from 652f286
+  <span class="ansi-red-fg">remotes/origin/master  </span> ce77275 Fill out clean and stash sections
 </pre>
 </div>
 </div>
@@ -19147,7 +19380,7 @@ git branch -va
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git <span class="nb">help</span> glossary

@@ -11766,6 +11766,12 @@ ul.typeahead-list > li > a {
 .ansi-bold { font-weight: bold; }
 
     </style>
+<style type="text/css">
+    div.prompt {
+  display: none;
+}
+
+    </style>
 
 
 <style type="text/css">
@@ -17037,7 +17043,7 @@ Hello World!
 </div>
 </div>
 
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17052,7 +17058,7 @@ Hello World!
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
@@ -17405,8 +17411,8 @@ Compressing objects: 100% (5/5), done.
 9c5a911abad74b62a7fefb630c71f6b30859a9dc
 Writing objects: 100% (8/8), done.
 Total 8 (delta 0), reused 0 (delta 0)
--r--r--r-- 1 dylan users 1296 Oct 11 10:36 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
--r--r--r-- 1 dylan users  661 Oct 11 10:36 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
+-r--r--r-- 1 dylan users 1296 Oct 11 11:30 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
+-r--r--r-- 1 dylan users  661 Oct 11 11:30 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
 </pre>
 </div>
 </div>
@@ -17414,7 +17420,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17429,7 +17435,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17568,7 +17574,8 @@ ls -R
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div><aside class="notes">
+
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17577,7 +17584,8 @@ ls -R
 
 </div>
 </div>
-</div></div></section><section>
+</div>
+</aside></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17933,7 +17941,7 @@ ref: refs/heads/master
 </div>
 </div>
 </div>
-</aside></section><section>
+</aside><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[50]:</div>
@@ -17971,24 +17979,24 @@ git-branch (1)       - List, create, or delete branches
 </div>
 </div>
 
-</div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="quick-reference:-branches">quick reference: branches<a class="anchor-link" href="#quick-reference:-branches">&#182;</a></h4><ul>
-<li><code>git checkout REVISION</code>: switch to a branch (or "detached" revision)</li>
-<li><code>git checkout -b NEWBRANCH [REV]</code>: create and switch to a new branch pointing to REVISION or <code>HEAD</code> (<code>git branch</code> just creates)</li>
-<li><code>git checkout -m</code>: switch to a branch and bring along un-committed changes on disk</li>
+<li><code>git checkout REV</code>: switch to a branch or "detached" revision</li>
+<li><code>git checkout -b NEWBRANCH [REV]</code>: create and switch to new branch at REV (or <code>HEAD</code>; <code>git branch</code> creates)</li>
+<li><code>git checkout -m</code>: switch to branch and bring along un-committed changes on disk</li>
 <li><code>git checkout REV -- PATH ...</code>: overwrite files on disk from revision (but don't switch branches)</li>
 <li><code>git branch -va</code>: list all branches and latest commit</li>
-<li><code>git branch -m OLDBRANCH NEWBRANCH</code>: rename branch</li>
-<li><code>git branch -d OLDBRANCH</code>: delete branch</li>
+<li><code>git branch -m OLDBRANCH NEWBRANCH</code>: rename</li>
+<li><code>git branch -d OLDBRANCH</code>: delete</li>
 </ul>
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -18120,9 +18128,17 @@ Date:   Thu Jun 22 15:00:00 2017
 <h4 id="quick-reference:-commit">quick reference: commit<a class="anchor-link" href="#quick-reference:-commit">&#182;</a></h4><ul>
 <li><code>git commit -a</code>: <code>git add -u</code> before commit (also <code>-p</code>)</li>
 <li><code>git commit -m MSG1 -m MSG2 ...</code>: multi-paragraph commit message</li>
-<li><code>git commit -v</code>: invoke editor and show full diff to write commit messsage</li>
+<li><code>git commit -v</code>: invoke editor and show full diff to write commit message</li>
 <li><code>git commit -- PATH...</code>: commit all changes to files on disk (bypass index)</li>
 </ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="commit-message-guidelines">commit message guidelines<a class="anchor-link" href="#commit-message-guidelines">&#182;</a></h4><ul>
 <li>Use present tense in brief summary: "Fix crash with large N", "Cleanup temp files after run"</li>
 <li>Include more details about motivation, results after summary</li>
@@ -18356,7 +18372,6 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git checkout -m master
 git status
-git diff
 </pre></div>
 
 </div>
@@ -18388,7 +18403,37 @@ Untracked files:
 	<span class="ansi-red-fg">stuff/more.txt</span>
 
 no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
-<span class="ansi-bold">diff --git a/README b/README</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git diff
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-bold">diff --git a/README b/README</span>
 <span class="ansi-bold">index f25e220..7074c76 100644</span>
 <span class="ansi-bold">--- a/README</span>
 <span class="ansi-bold">+++ b/README</span>
@@ -18405,7 +18450,7 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git add .
@@ -18439,7 +18484,7 @@ git commit -m <span class="s2">&quot;Add more and more&quot;</span>
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git show-branch
@@ -18476,7 +18521,7 @@ git commit -m <span class="s2">&quot;Add more and more&quot;</span>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git merge dylan/work
@@ -18514,7 +18559,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git log --graph -4
@@ -18588,7 +18633,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git revert e4212ad
@@ -18642,7 +18687,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </aside>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git cherry-pick e4212ad
@@ -18678,7 +18723,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git log -2
@@ -18729,7 +18774,7 @@ Date:   Fri Jun 30 14:00:00 2017
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>touch output.txt
@@ -18767,7 +18812,7 @@ nothing added to commit but untracked files present (use &#34;git add&#34; to tr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git clean -f
@@ -18799,7 +18844,7 @@ Removing output.txt
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;further reading&quot;</span> &gt;&gt; README.md
@@ -18849,7 +18894,7 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 </aside><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git stash <span class="c1">#push</span>
@@ -18883,7 +18928,7 @@ stash@{0}: WIP on master: 3c7ffae Mark down &#39;README&#39;; no more other.txt
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git stash pop
@@ -18930,7 +18975,7 @@ Dropped refs/stash@{0} (ef7d2622fe9ec10b68d32148e0e53d33a4bef3d1)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git blame -- README.md
@@ -18953,7 +18998,7 @@ Dropped refs/stash@{0} (ef7d2622fe9ec10b68d32148e0e53d33a4bef3d1)
 <pre>git-blame (1)        - Show what revision and author last modified each line of a file
 0b5bcf36 README    (Dylan Simon       2017-06-22 15:00:00 -0400 1) New and improved.
 dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
-00000000 README.md (Not Committed Yet 2017-10-11 10:36:27 -0400 3) further reading
+00000000 README.md (Not Committed Yet 2017-10-11 11:30:28 -0400 3) further reading
 </pre>
 </div>
 </div>
@@ -18995,7 +19040,7 @@ dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git remote add ghdylex git://github.com/dylex/git-structure-tutorial
@@ -19040,7 +19085,7 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 </aside></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git fetch ghdylex <span class="c1"># or: git remote update</span>
@@ -19061,10 +19106,10 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-fetch (1)        - Download objects and refs from another repository
-remote: Counting objects: 88, done.
-remote: Compressing objects: 100% (42/42), done.
-remote: Total 88 (delta 37), reused 84 (delta 33), pack-reused 0
-Unpacking objects: 100% (88/88), done.
+remote: Counting objects: 91, done.
+remote: Compressing objects: 100% (43/43), done.
+remote: Total 91 (delta 38), reused 87 (delta 34), pack-reused 0
+Unpacking objects: 100% (91/91), done.
 From git://github.com/dylex/git-structure-tutorial
  * [new branch]      example    -&gt; ghdylex/example
  * [new branch]      gh-pages   -&gt; ghdylex/gh-pages
@@ -19085,10 +19130,10 @@ From git://github.com/dylex/git-structure-tutorial
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git branch -va
@@ -19111,7 +19156,7 @@ From git://github.com/dylex/git-structure-tutorial
 <pre>  dylan/work               e4212ad Mark down &#39;README&#39;; no more other.txt
 * <span class="ansi-green-fg">master                  </span> 3c7ffae Mark down &#39;README&#39;; no more other.txt
   <span class="ansi-red-fg">remotes/ghdylex/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> 9a23c40 Update generated slides from 652f286
+  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> edc4c0a Update generated slides from ce77275
   <span class="ansi-red-fg">remotes/ghdylex/master  </span> ce77275 Fill out clean and stash sections
 </pre>
 </div>
@@ -19120,10 +19165,10 @@ From git://github.com/dylex/git-structure-tutorial
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git merge ghdylex/example
@@ -19157,7 +19202,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git pull ghdylex example
@@ -19210,7 +19255,7 @@ Already up-to-date.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>! git push ghdylex master
@@ -19241,12 +19286,12 @@ fatal: remote error:
 </div>
 </div>
 
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h4 id="quick-reference:-remote-send/receive">quick reference: remote send/receive<a class="anchor-link" href="#quick-reference:-remote-send/receive">&#182;</a></h4><ul>
 <li><code>git fetch -p</code>: also delete <code>refs/remotes/*</code> missing on remote</li>
 <li><code>git push REMOTE [SRCREF:]BRANCH</code>: update the remote <code>refs/heads/BRANCH</code> to <code>SRCREF</code></li>
 <li><code>git push -u ...</code>: set the default for <em>pull</em> and <em>push</em> on current branch (see config)</li>
@@ -19268,7 +19313,7 @@ fatal: remote error:
 </div>
 </div>
 </div>
-</aside></div></section></section><section><section>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -19279,7 +19324,7 @@ fatal: remote error:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git clone git://github.com/dylex/git-structure-tutorial
@@ -19301,11 +19346,11 @@ fatal: remote error:
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git-clone (1)        - Clone a repository into a new directory
 Cloning into &#39;git-structure-tutorial&#39;...
-remote: Counting objects: 108, done.
-remote: Compressing objects: 100% (11/11), done.
-remote: Total 108 (delta 7), reused 15 (delta 5), pack-reused 90
-Receiving objects: 100% (108/108), 522.26 KiB | 5.68 MiB/s, done.
-Resolving deltas: 100% (36/36), done.
+remote: Counting objects: 111, done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 111 (delta 8), reused 18 (delta 6), pack-reused 90
+Receiving objects: 100% (111/111), 524.27 KiB | 6.90 MiB/s, done.
+Resolving deltas: 100% (37/37), done.
 </pre>
 </div>
 </div>
@@ -19316,7 +19361,7 @@ Resolving deltas: 100% (36/36), done.
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> git-structure-tutorial
@@ -19340,7 +19385,7 @@ git branch -va
 <pre>* <span class="ansi-green-fg">master                 </span> ce77275 Fill out clean and stash sections
   <span class="ansi-red-fg">remotes/origin/HEAD    </span> -&gt; origin/master
   <span class="ansi-red-fg">remotes/origin/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/origin/gh-pages</span> 9a23c40 Update generated slides from 652f286
+  <span class="ansi-red-fg">remotes/origin/gh-pages</span> edc4c0a Update generated slides from ce77275
   <span class="ansi-red-fg">remotes/origin/master  </span> ce77275 Fill out clean and stash sections
 </pre>
 </div>
@@ -19364,7 +19409,7 @@ git branch -va
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -19377,10 +19422,10 @@ git branch -va
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git <span class="nb">help</span> glossary

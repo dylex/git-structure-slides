@@ -17413,8 +17413,8 @@ Compressing objects: 100% (5/5), done.
 9c5a911abad74b62a7fefb630c71f6b30859a9dc
 Writing objects: 100% (8/8), done.
 Total 8 (delta 0), reused 0 (delta 0)
--r--r--r-- 1 dylan users 1296 Oct 12 11:45 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
--r--r--r-- 1 dylan users  661 Oct 12 11:45 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
+-r--r--r-- 1 dylan users 1296 Oct 12 14:06 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
+-r--r--r-- 1 dylan users  661 Oct 12 14:06 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
 </pre>
 </div>
 </div>
@@ -17466,7 +17466,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 <div class="text_cell_render border-box-sizing rendered_html">
 <div align='center'>
 <h1>Part 2: Local Workflows</h1>
-<h2>Commands you'll use every day</h2>
+<h2>Convenient commit construction</h2>
 </div>
 </div>
 </div>
@@ -17485,7 +17485,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The index, stored in <code>.git/index</code> as a mini object-store, is a staging location between the files on disk and the main git object store.  Sometimes referred to as "cache" (in the more traditional sense of the word: a place to keep things, rather than the computer memory sense).</p>
+<p>The index, stored in <code>.git/index</code> as a mini object-store for a single tree (or a few), is a staging location between the files on disk and the main git object store.  Sometimes referred to as "cache" (in the more traditional sense of the word: a place to keep things, rather than the computer memory sense).</p>
 
 </div>
 </div>
@@ -17944,6 +17944,7 @@ ref: refs/heads/master
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git checkout -b dylan/work <span class="c1"># also shows brief status of local </span>
+git symbolic-ref HEAD
 git branch
 </pre></div>
 
@@ -17965,6 +17966,7 @@ git branch
 A	README.md
 D	stuff/other.txt
 Switched to a new branch &#39;dylan/work&#39;
+refs/heads/dylan/work
 <span style="background-color: rgb(215,255,255)">git-branch (1)       - List, create, or delete branches
 </span>* <span class="ansi-green-fg">dylan/work</span>
   master
@@ -18120,8 +18122,8 @@ Date:   Thu Jun 22 15:00:00 2017
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="quick-reference:-commit">quick reference: commit<a class="anchor-link" href="#quick-reference:-commit">&#182;</a></h4><dl>
-    <dt>`git commit -a`</dt><dd>`git add -u` before commit (also `-p`)</dd>
-    <dt>`git commit -m MSG1 -m MSG2 ...`</dt><dd>multi-paragraph commit message</dd>
+    <dt>`git commit -a`</dt><dd>do `git add -u` and then commit (also `-p`)</dd>
+    <dt>`git commit -m MSG1 [-m MSG2 ...]`</dt><dd>(multi-paragraph) commit message</dd>
     <dt>`git commit -v`</dt><dd>invoke editor and show full diff to write commit message</dd>
     <dt>`git commit -- PATH...`</dt><dd>commit all changes to files on disk (bypass index)</dd></dl>
 </div>
@@ -18156,7 +18158,7 @@ Date:   Thu Jun 22 15:00:00 2017
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;New stuff&quot;</span> &gt; stuff/more.txt
 git add stuff/more.txt
 <span class="nb">echo</span> <span class="s2">&quot;More to read&quot;</span> &gt;&gt; README.md
-git status
+git status <span class="c1"># HEAD vs. index and index vs. disk</span>
 </pre></div>
 
 </div>
@@ -18212,17 +18214,17 @@ Changes not staged for commit:
 <h2 id="(Un-)doing-all-the-things:-reset">(Un-)doing all the things: reset<a class="anchor-link" href="#(Un-)doing-all-the-things:-reset">&#182;</a></h2>
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Un-staging:-undoing-add,-rm">Un-staging: undoing add, rm<a class="anchor-link" href="#Un-staging:-undoing-add,-rm">&#182;</a></h3><dl><dt>`git reset [REV] -- PATH ...`</dt><dd>sets the index file entries match those from revision (HEAD)</dd>
+<h3 id="Un-staging:-undoing-add,-rm-(repo-to-index)">Un-staging: undoing add, rm (repo to index)<a class="anchor-link" href="#Un-staging:-undoing-add,-rm-(repo-to-index)">&#182;</a></h3><dl><dt>`git reset [REV] -- PATH ...`</dt><dd>sets the index file entries match those from revision (HEAD)</dd>
     <dt>`git reset -p`</dt><dd>ask interactively which changes to reset</dd></dl><p>Dash-dash pattern: separates revisions from paths, can be omitted if unambiguous</p>
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[57]:</div>
@@ -18259,11 +18261,11 @@ M	README.md
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Un-comitting:-changing-which-commit-your-branch-points-to">Un-comitting: changing which commit your branch points to<a class="anchor-link" href="#Un-comitting:-changing-which-commit-your-branch-points-to">&#182;</a></h3><p>Changing <code>refs/heads/branch</code> itself (unlike <code>checkout</code> which just changes <code>HEAD</code>)</p>
+<h3 id="Un-comitting:-changing-which-commit-your-branch-points-to">Un-comitting: changing which commit your branch points to<a class="anchor-link" href="#Un-comitting:-changing-which-commit-your-branch-points-to">&#182;</a></h3><p>Changing HEAD branch itself (unlike <code>checkout</code> which just changes <code>HEAD</code>)</p>
 <dl><dt>`git reset --soft REV`</dt><dd>point the current branch to REV, but nothing else (same files on disk, index)</dd>
     <dt>`git reset --soft HEAD^`</dt><dd>undo my last `git commit` but keep my current changes, let my try again</dd>
-    <dt>`git commit --amend` <font color='green'>(alternative)</font></dt><dd>replace the current commit with the index, keeping the commit message</dd>
-    <dt>`git reset [--mixed] REV`</dt><dd>point current branch to REV, and also set index to match</dd>
+    <dt>`git commit --amend` <font color='green'>(shortcut)</font></dt><dd>replace the current commit with the index, keeping the commit message</dd>
+    <dt>`git reset [--mixed] REV`</dt><dd>point current branch to REV, and also set index to match (but not disk)</dd>
     <dd>(If you want to keep your changes but re-add them on a different commit)</dd>
     <dt>`git reset --hard REV`</dt><dd>throw away everything (index+disk) and point current branch to REV</dd>
     <dt>`git reset --hard [HEAD]`</dt><dd>
@@ -18596,6 +18598,7 @@ Merge made by the &#39;recursive&#39; strategy.
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Dealing-with-merge-conflicts">Dealing with merge conflicts<a class="anchor-link" href="#Dealing-with-merge-conflicts">&#182;</a></h3><p>If the two branches cannot be combined cleanly (<em>conflicting</em> changes)...</p>
 <ul>
+<li>Manually edit files with conflict markers and <code>git add</code> result</li>
 <li><code>git mergetool</code>: interactively resolve conflicts based on both sets of changes</li>
 </ul>
 
@@ -18957,7 +18960,8 @@ Dropped refs/stash@{0} (ef7d2622fe9ec10b68d32148e0e53d33a4bef3d1)
 <div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git blame -- README.md
+<div class=" highlight hl-bash"><pre><span></span>cat README.md
+git blame -- README.md
 </pre></div>
 
 </div>
@@ -18974,10 +18978,13 @@ Dropped refs/stash@{0} (ef7d2622fe9ec10b68d32148e0e53d33a4bef3d1)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-blame (1)        - Show what revision and author last modified each line of a file
+<pre>New and improved.
+More to read
+further reading
+<span style="background-color: rgb(215,255,255)">git-blame (1)        - Show what revision and author last modified each line of a file
 </span>0b5bcf36 README    (Dylan Simon       2017-06-22 15:00:00 -0400 1) New and improved.
 dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
-00000000 README.md (Not Committed Yet 2017-10-12 11:45:23 -0400 3) further reading
+00000000 README.md (Not Committed Yet 2017-10-12 14:06:34 -0400 3) further reading
 </pre>
 </div>
 </div>
@@ -19085,11 +19092,11 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span style="background-color: rgb(215,255,255)">git-fetch (1)        - Download objects and refs from another repository
-</span>remote: Counting objects: 110, done.
-remote: Compressing objects: 100% (52/52), done.
-remote: Total 110 (delta 47), reused 105 (delta 42), pack-reused 0
-Receiving objects: 100% (110/110), 372.92 KiB | 7.77 MiB/s, done.
-Resolving deltas: 100% (47/47), done.
+</span>remote: Counting objects: 117, done.
+remote: Compressing objects: 100% (56/56), done.
+remote: Total 117 (delta 50), reused 111 (delta 44), pack-reused 0
+Receiving objects: 100% (117/117), 380.30 KiB | 5.85 MiB/s, done.
+Resolving deltas: 100% (50/50), done.
 From git://github.com/dylex/git-structure-tutorial
  * [new branch]      example    -&gt; ghdylex/example
  * [new branch]      gh-pages   -&gt; ghdylex/gh-pages
@@ -19136,8 +19143,8 @@ From git://github.com/dylex/git-structure-tutorial
 <pre>  dylan/work               e4212ad Mark down &#39;README&#39;; no more other.txt
 * <span class="ansi-green-fg">master                  </span> 3c7ffae Mark down &#39;README&#39;; no more other.txt
   <span class="ansi-red-fg">remotes/ghdylex/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> b9e03cc Update generated slides from a000842
-  <span class="ansi-red-fg">remotes/ghdylex/master  </span> b12322a Start reformatting command references
+  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> 0305a93 Update generated slides from 07e3f62
+  <span class="ansi-red-fg">remotes/ghdylex/master  </span> 07e3f62 Some edits, formatting
 </pre>
 </div>
 </div>
@@ -19271,7 +19278,7 @@ Already up-to-date.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="quick-reference:-remote-send/receive">quick reference: remote send/receive<a class="anchor-link" href="#quick-reference:-remote-send/receive">&#182;</a></h4><dl><dt>`git fetch -p`</dt><dd>also delete `refs/remotes/*` missing on remote</dd>
+<h4 id="quick-reference:-remote-send/receive">quick reference: remote send/receive<a class="anchor-link" href="#quick-reference:-remote-send/receive">&#182;</a></h4><dl><dt>`git fetch -p`, `--prune`</dt><dd>also delete `refs/remotes/*` missing on remote</dd>
 <dt>`git push REMOTE [SRCREF:]BRANCH`</dt><dd>update the remote `refs/heads/BRANCH` to `SRCREF`</dd>
 <dt>`git push -u ...`</dt><dd>set the default for *pull* and *push* on current branch (see config)</dd>
 <dt>`git checkout|branch -t BRANCH`</dt><dd>set default *pull* tracking source (default for *checkout* when no local branch)</dd>
@@ -19323,11 +19330,11 @@ Already up-to-date.
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span style="background-color: rgb(215,255,255)">git-clone (1)        - Clone a repository into a new directory
 </span>Cloning into &#39;git-structure-tutorial&#39;...
-remote: Counting objects: 130, done.
-remote: Compressing objects: 100% (21/21), done.
-remote: Total 130 (delta 17), reused 36 (delta 14), pack-reused 90
-Receiving objects: 100% (130/130), 528.99 KiB | 6.53 MiB/s, done.
-Resolving deltas: 100% (46/46), done.
+remote: Counting objects: 137, done.
+remote: Compressing objects: 100% (25/25), done.
+remote: Total 137 (delta 20), reused 42 (delta 16), pack-reused 90
+Receiving objects: 100% (137/137), 536.36 KiB | 5.65 MiB/s, done.
+Resolving deltas: 100% (49/49), done.
 </pre>
 </div>
 </div>
@@ -19358,11 +19365,11 @@ Resolving deltas: 100% (46/46), done.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>* <span class="ansi-green-fg">master                 </span> b12322a Start reformatting command references
+<pre>* <span class="ansi-green-fg">master                 </span> 07e3f62 Some edits, formatting
   <span class="ansi-red-fg">remotes/origin/HEAD    </span> -&gt; origin/master
   <span class="ansi-red-fg">remotes/origin/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/origin/gh-pages</span> b9e03cc Update generated slides from a000842
-  <span class="ansi-red-fg">remotes/origin/master  </span> b12322a Start reformatting command references
+  <span class="ansi-red-fg">remotes/origin/gh-pages</span> 0305a93 Update generated slides from 07e3f62
+  <span class="ansi-red-fg">remotes/origin/master  </span> 07e3f62 Some edits, formatting
 </pre>
 </div>
 </div>

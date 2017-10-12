@@ -1,6 +1,12 @@
 div.prompt {
   display: none;
 }
-div.inner_cell {
+.reveal div.inner_cell {
   font-size: 80%;
+}
+div.output_subarea {
+  max-width: 100%;
+}
+pre {
+  word-break: normal;
 }

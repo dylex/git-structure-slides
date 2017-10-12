@@ -11770,6 +11770,15 @@ ul.typeahead-list > li > a {
     div.prompt {
   display: none;
 }
+.reveal div.inner_cell {
+  font-size: 80%;
+}
+div.output_subarea {
+  max-width: 100%;
+}
+pre {
+  word-break: normal;
+}
 
     </style>
 
@@ -11958,8 +11967,8 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-init (1)         - Create an empty Git repository or reinitialize an existing one
-Initialized empty Git repository in /home/dylan/myrepo/.git/
+<pre><span style="background-color: rgb(215,255,255)">git-init (1)         - Create an empty Git repository or reinitialize an existing one
+</span>Initialized empty Git repository in /home/dylan/myrepo/.git/
 </pre>
 </div>
 </div>
@@ -12001,7 +12010,7 @@ Initialized empty Git repository in /home/dylan/myrepo/.git/
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>HEAD  config  description  hooks  info  objects  refs
+<pre>HEAD  config  description  <span class="ansi-blue-intense-fg ansi-bold">hooks</span>  <span class="ansi-blue-intense-fg ansi-bold">info</span>  <span class="ansi-blue-intense-fg ansi-bold">objects</span>  <span class="ansi-blue-intense-fg ansi-bold">refs</span>
 </pre>
 </div>
 </div>
@@ -12089,8 +12098,8 @@ Initialized empty Git repository in /home/dylan/myrepo/.git/
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-config (1)       - Get and set repository or global options
-core.repositoryformatversion=0
+<pre><span style="background-color: rgb(215,255,255)">git-config (1)       - Get and set repository or global options
+</span>core.repositoryformatversion=0
 core.filemode=true
 core.bare=false
 core.logallrefupdates=true
@@ -12118,9 +12127,9 @@ core.logallrefupdates=true
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git <span class="nb">help</span>
-git config -h
+<div class=" highlight hl-bash"><pre><span></span>git config -h
 git <span class="nb">help</span> config
+git <span class="nb">help</span>
 </pre></div>
 
 </div>
@@ -12137,50 +12146,7 @@ git <span class="nb">help</span> config
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-help (1)         - Display help information about Git
-usage: git [--version] [--help] [-C &lt;path&gt;] [-c name=value]
-           [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
-           [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]
-           &lt;command&gt; [&lt;args&gt;]
-
-These are common Git commands used in various situations:
-
-start a working area (see also: git help tutorial)
-   clone      Clone a repository into a new directory
-   init       Create an empty Git repository or reinitialize an existing one
-
-work on the current change (see also: git help everyday)
-   add        Add file contents to the index
-   mv         Move or rename a file, a directory, or a symlink
-   reset      Reset current HEAD to the specified state
-   rm         Remove files from the working tree and from the index
-
-examine the history and state (see also: git help revisions)
-   bisect     Use binary search to find the commit that introduced a bug
-   grep       Print lines matching a pattern
-   log        Show commit logs
-   show       Show various types of objects
-   status     Show the working tree status
-
-grow, mark and tweak your common history
-   branch     List, create, or delete branches
-   checkout   Switch branches or restore working tree files
-   commit     Record changes to the repository
-   diff       Show changes between commits, commit and working tree, etc
-   merge      Join two or more development histories together
-   rebase     Reapply commits on top of another base tip
-   tag        Create, list, delete or verify a tag object signed with GPG
-
-collaborate (see also: git help workflows)
-   fetch      Download objects and refs from another repository
-   pull       Fetch from and integrate with another repository or a local branch
-   push       Update remote refs along with associated objects
-
-&#39;git help -a&#39; and &#39;git help -g&#39; list available subcommands and some
-concept guides. See &#39;git help &lt;command&gt;&#39; or &#39;git help &lt;concept&gt;&#39;
-to read about a specific subcommand or concept.
-usage: git config [&lt;options&gt;]
+<pre>usage: git config [&lt;options&gt;]
 
 Config file location
     --global              use global config file
@@ -12217,7 +12183,8 @@ Other
     --includes            respect include directives on lookup
     --show-origin         show origin of config (file, standard input, blob, command line)
 
-GIT-CONFIG(1)                     Git Manual                     GIT-CONFIG(1)
+<span style="background-color: rgb(215,255,255)">git-help (1)         - Display help information about Git
+</span>GIT-CONFIG(1)                     Git Manual                     GIT-CONFIG(1)
 
 NNAAMMEE
        git-config - Get and set repository or global options
@@ -16176,6 +16143,48 @@ GGIITT
        Part of the ggiitt(1) suite
 
 Git 2.13.6                        09/24/2017                     GIT-CONFIG(1)
+usage: git [--version] [--help] [-C &lt;path&gt;] [-c name=value]
+           [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]
+           &lt;command&gt; [&lt;args&gt;]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+&#39;git help -a&#39; and &#39;git help -g&#39; list available subcommands and some
+concept guides. See &#39;git help &lt;command&gt;&#39; or &#39;git help &lt;concept&gt;&#39;
+to read about a specific subcommand or concept.
 </pre>
 </div>
 </div>
@@ -16228,8 +16237,8 @@ rm f
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-hash-object (1)  - Compute object ID and optionally creates a blob from a file
-980a0d5f19a64b4b30a87d4206aade58726b60e3
+<pre><span style="background-color: rgb(215,255,255)">git-hash-object (1)  - Compute object ID and optionally creates a blob from a file
+</span>980a0d5f19a64b4b30a87d4206aade58726b60e3
 </pre>
 </div>
 </div>
@@ -16286,7 +16295,7 @@ rm f
 <div class=" highlight hl-bash"><pre><span></span>git cat-file -t 980a0d5f19a64b4b30a87d4206aade58726b60e3 <span class="c1"># object type</span>
 git cat-file -s 980a <span class="c1"># any unique prefix of hash         # object size</span>
 git cat-file -p 980a0d5                                  <span class="c1"># contents</span>
-<span class="nv">file1</span><span class="o">=</span>980a0d5f19a64b4b30a87d4206aade58726b60e3 <span class="c1"># save for later</span>
+          <span class="nv">file1</span><span class="o">=</span>980a0d5f19a64b4b30a87d4206aade58726b60e3 <span class="c1"># save for later</span>
 </pre></div>
 
 </div>
@@ -16303,8 +16312,8 @@ git cat-file -p 980a0d5                                  <span class="c1"># cont
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-cat-file (1)     - Provide content or type and size information for repository objects
-blob
+<pre><span style="background-color: rgb(215,255,255)">git-cat-file (1)     - Provide content or type and size information for repository objects
+</span>blob
 13
 Hello World!
 </pre>
@@ -16432,8 +16441,8 @@ Hello World!
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$f</span><span class="s2">ile1\\thello.txt&quot;</span> <span class="se">\</span>
-<span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$f</span><span class="s2">ile2\\tother.txt&quot;</span> <span class="se">\</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="m">100644</span> blob <span class="nv">$f</span>ile1<span class="se">\\</span>t<span class="s2">&quot;hello.txt&quot;</span> <span class="se">\</span>
+<span class="p">;</span> <span class="nb">echo</span> -e <span class="m">100644</span> blob <span class="nv">$f</span>ile2<span class="se">\\</span>t<span class="s2">&quot;other.txt&quot;</span> <span class="se">\</span>
 <span class="o">)</span> <span class="p">|</span> git mktree
 </pre></div>
 
@@ -16451,8 +16460,8 @@ Hello World!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-mktree (1)       - Build a tree-object from ls-tree formatted text
-011ed906a8c5b0c0c14c0cad0a69d3969251b71f
+<pre><span style="background-color: rgb(215,255,255)">git-mktree (1)       - Build a tree-object from ls-tree formatted text
+</span>011ed906a8c5b0c0c14c0cad0a69d3969251b71f
 </pre>
 </div>
 </div>
@@ -16475,9 +16484,9 @@ Hello World!
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">tree1</span><span class="o">=</span>011ed906a8c5b0c0c14c0cad0a69d3969251b71f
-git cat-file -t $tree1
-git cat-file -p $tree1
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">tree0</span><span class="o">=</span>011ed906a8c5b0c0c14c0cad0a69d3969251b71f
+git cat-file -t $tree0
+git cat-file -p $tree0
 </pre></div>
 
 </div>
@@ -16510,8 +16519,8 @@ git cat-file -p $tree1
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$f</span><span class="s2">ile1\\tREADME&quot;</span> <span class="se">\</span>
-<span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;040000 tree </span>$<span class="s2">tree1\\tstuff&quot;</span> <span class="se">\</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="m">100644</span> blob <span class="nv">$f</span>ile1<span class="se">\\</span>t<span class="s2">&quot;README&quot;</span> <span class="se">\</span>
+<span class="p">;</span> <span class="nb">echo</span> -e <span class="m">040000</span> tree $tree0<span class="se">\\</span>t<span class="s2">&quot;stuff&quot;</span> <span class="se">\</span>
 <span class="o">)</span> <span class="p">|</span> git mktree
 </pre></div>
 
@@ -16554,8 +16563,8 @@ git cat-file -p $tree1
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">tree2</span><span class="o">=</span>c3595f6745f977f2450eeeb5bd94ccd2e4fba498
-git cat-file -p $tree2
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">tree1</span><span class="o">=</span>c3595f6745f977f2450eeeb5bd94ccd2e4fba498
+git cat-file -p $tree1
 </pre></div>
 
 </div>
@@ -16587,7 +16596,7 @@ git cat-file -p $tree2
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git ls-tree -tr $tree2
+<div class=" highlight hl-bash"><pre><span></span>git ls-tree -tr $tree1
 </pre></div>
 
 </div>
@@ -16604,8 +16613,8 @@ git cat-file -p $tree2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-ls-tree (1)      - List the contents of a tree object
-100644 blob 980a0d5f19a64b4b30a87d4206aade58726b60e3	README
+<pre><span style="background-color: rgb(215,255,255)">git-ls-tree (1)      - List the contents of a tree object
+</span>100644 blob 980a0d5f19a64b4b30a87d4206aade58726b60e3	README
 040000 tree 011ed906a8c5b0c0c14c0cad0a69d3969251b71f	stuff
 100644 blob 980a0d5f19a64b4b30a87d4206aade58726b60e3	stuff/hello.txt
 100644 blob 1a0985327d433bdfc3ea3c2b0a0443b3545064ac	stuff/other.txt
@@ -16633,11 +16642,11 @@ git cat-file -p $tree2
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">file3</span><span class="o">=</span><span class="k">$(</span> <span class="nb">echo</span> <span class="s1">&#39;New and improved.&#39;</span> <span class="se">\</span>
          <span class="p">|</span> git hash-object -t blob -w --stdin <span class="k">)</span>
-<span class="nv">tree2a</span><span class="o">=</span><span class="k">$(</span> <span class="o">(</span> <span class="nb">echo</span> -e <span class="s2">&quot;100644 blob </span><span class="nv">$f</span><span class="s2">ile3\\tREADME&quot;</span> <span class="se">\</span>
-          <span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;040000 tree </span>$<span class="s2">tree1\\tstuff&quot;</span> <span class="se">\</span>
+<span class="nv">tree2</span><span class="o">=</span><span class="k">$(</span> <span class="o">(</span> <span class="nb">echo</span> -e <span class="m">100644</span> blob <span class="nv">$f</span>ile3<span class="se">\\</span>t<span class="s2">&quot;README&quot;</span> <span class="se">\</span>
+          <span class="p">;</span> <span class="nb">echo</span> -e <span class="m">040000</span> tree $tree0<span class="se">\\</span>t<span class="s2">&quot;stuff&quot;</span> <span class="se">\</span>
           <span class="k">)</span> <span class="p">|</span> git mktree <span class="o">)</span>
-<span class="nb">echo</span> $tree2a
-git ls-tree -tr $tree2a
+<span class="nb">echo</span> $tree2
+git ls-tree -tr $tree2
 </pre></div>
 
 </div>
@@ -16681,7 +16690,7 @@ git ls-tree -tr $tree2a
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git diff-tree -p $tree2 $tree2a
+<div class=" highlight hl-bash"><pre><span></span>git diff-tree -p $tree1 $tree2
 </pre></div>
 
 </div>
@@ -16698,8 +16707,8 @@ git ls-tree -tr $tree2a
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-diff-tree (1)    - Compares the content and mode of blobs found via two tree objects
-<span class="ansi-bold">diff --git a/README b/README</span>
+<pre><span style="background-color: rgb(215,255,255)">git-diff-tree (1)    - Compares the content and mode of blobs found via two tree objects
+</span><span class="ansi-bold">diff --git a/README b/README</span>
 <span class="ansi-bold">index 980a0d5..f25e220 100644</span>
 <span class="ansi-bold">--- a/README</span>
 <span class="ansi-bold">+++ b/README</span>
@@ -16740,7 +16749,7 @@ git ls-tree -tr $tree2a
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit1</span><span class="o">=</span><span class="k">$(</span> git commit-tree -m <span class="s2">&quot;Add some text files to my tree&quot;</span> $tree2 <span class="k">)</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit1</span><span class="o">=</span><span class="k">$(</span> git commit-tree -m <span class="s2">&quot;Add some text files to my tree&quot;</span> $tree1 <span class="k">)</span>
 <span class="nb">echo</span> <span class="nv">$c</span>ommit1
 </pre></div>
 
@@ -16758,8 +16767,8 @@ git ls-tree -tr $tree2a
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-commit-tree (1)  - Create a new commit object
-2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1
+<pre><span style="background-color: rgb(215,255,255)">git-commit-tree (1)  - Create a new commit object
+</span>2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1
 </pre>
 </div>
 </div>
@@ -16865,7 +16874,7 @@ Add some text files to my tree
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit2</span><span class="o">=</span><span class="k">$(</span> git commit-tree -p <span class="nv">$c</span>ommit1 -m <span class="s2">&quot;Improve README with new stuff&quot;</span> $tree2a <span class="k">)</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">commit2</span><span class="o">=</span><span class="k">$(</span> git commit-tree -p <span class="nv">$c</span>ommit1 -m <span class="s2">&quot;Improve README with new stuff&quot;</span> $tree2 <span class="k">)</span>
 <span class="nb">echo</span> <span class="nv">$c</span>ommit2
 </pre></div>
 
@@ -16934,7 +16943,7 @@ Improve README with new stuff
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By walking back through the chain of parents to the root, you can see the previous states (history) of the repository</p>
 <p>Commits do <font color='red'>not</font> represent "diffs": they represent a snapshot state of the files</p>
-<div align='right'><font color='green'>But git can easily construct these diffs</font></div><p>Commits can have multiple parents, in the case of <em>merges</em> (but usually only 2).</p>
+<div align='right'><font color='green'>But git can easily construct these diffs</font></div><p>Commits can have multiple parents, in the case of <em>merges</em> (but usually only 2)</p>
 
 </div>
 </div>
@@ -16944,7 +16953,8 @@ Improve README with new stuff
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Commit objects form a DAG (directed, acyclic graph)</p>
-<div align='right'><em>Why acyclic?</em></div>
+<div align='right'><em>Why acyclic?</em></div><p>Graph arrows point <em>backwards</em> in time</p>
+
 </div>
 </div>
 </div></div></section></section><section><section>
@@ -16962,9 +16972,9 @@ Improve README with new stuff
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Reference-objects-indirectly">Reference objects indirectly<a class="anchor-link" href="#Reference-objects-indirectly">&#182;</a></h4><ul>
 <li><code>COMMIT^</code>: commit's (first) parent</li>
-<li><code>COMMIT~N</code>: same as <code>COMMIT^^^^</code> with <em>N</em> <code>^</code> (<em>N</em>th ancestor)</li>
-<li><code>COMMIT^{/TEXT}</code>: most recent ancestor with <code>TEXT</code> in its commit message</li>
-<li><code>COMMIT:PATH</code>: the tree or blob object for <code>PATH</code> within <code>COMMIT</code></li>
+<li><code>COMMIT~N</code>: <em>N</em>th ancestor</li>
+<li><code>COMMIT^{/TEXT}</code>: most recent ancestor with <code>TEXT</code> in commit message</li>
+<li><code>COMMIT:PATH</code>: tree or blob object for <code>PATH</code> within <code>COMMIT</code></li>
 </ul>
 
 </div>
@@ -16992,8 +17002,8 @@ Improve README with new stuff
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-show (1)         - Show various types of objects
-Hello World!
+<pre><span style="background-color: rgb(215,255,255)">git-show (1)         - Show various types of objects
+</span>Hello World!
 </pre>
 </div>
 </div>
@@ -17024,8 +17034,8 @@ Hello World!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-log (1)          - Show commit logs
-* <span class="ansi-yellow-fg">commit 0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832</span>
+<pre><span style="background-color: rgb(215,255,255)">git-log (1)          - Show commit logs
+</span>* <span class="ansi-yellow-fg">commit 0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832</span>
 <span class="ansi-red-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
 <span class="ansi-red-fg">|</span> Date:   Thu Jun 22 15:00:00 2017
 <span class="ansi-red-fg">|</span> 
@@ -17048,13 +17058,11 @@ Hello World!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>git log [START..]END</code>: start with END and display each parent (stopping before START)</li>
-<li><code>git log -- PATH ...</code>: only commits with changes under <code>PATH</code></li>
-<li><code>git log -p</code>: include diffs for each commit (can add other <code>diff</code> options, too)</li>
-<li><code>git log --graph</code>: include the commit graph</li>
-<li>Many more to filter/search/reformat commit display</li>
-</ul>
+<dl><dt>`git log [START..]END`</dt><dd>start with END and display all parents (stopping before START; strictly, ancestors of END but not START)</dd>
+    <dt>`git log REV1...REV2`</dt><dd>all ancestors of REV1 xor REV2
+    <dt>`git log -- PATH ...`</dt><dd>only commits with changes under `PATH`</dd>
+    <dt>`git log -p`</dt><dd>include diffs for each commit (can add other `diff` options, too)</dd>
+    <dt>`git log --graph`</dt><dd>include the commit graph</dd></dl><p>Many more to filter/search/reformat commit display</p>
 
 </div>
 </div>
@@ -17081,8 +17089,8 @@ Hello World!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-diff (1)         - Show changes between commits, commit and working tree, etc
-<span class="ansi-bold">diff --git a/README b/README</span>
+<pre><span style="background-color: rgb(215,255,255)">git-diff (1)         - Show changes between commits, commit and working tree, etc
+</span><span class="ansi-bold">diff --git a/README b/README</span>
 <span class="ansi-bold">index 980a0d5..f25e220 100644</span>
 <span class="ansi-bold">--- a/README</span>
 <span class="ansi-bold">+++ b/README</span>
@@ -17101,12 +17109,9 @@ Hello World!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>git diff COMMIT1 COMMIT2 [-- PATH ...]</code>: show changes between two commits, restricted to changes under <code>PATH</code></li>
-<li><code>git diff --stat</code>: summarize changes, one line per file</li>
-<li><code>git diff --word-diff</code>: show edits to individual words instead of lines</li>
-<li>Many other standard <code>diff</code> options (<code>-a</code>, <code>-b</code>, <code>-U5</code>, ...)</li>
-</ul>
+<dl><dt>`git diff COMMIT1 COMMIT2 [-- PATH ...]`</dt><dd>show changes between two commits, restricted to changes under `PATH`</dd>
+    <dt>`git diff --stat`</dt><dd>summarize changes, one line per file</dd>
+    <dt>`git diff --word-diff`</dt><dd>show edits to individual words instead of lines</dd></dl><p>Many other standard <code>diff</code> options (<code>-a</code>, <code>-b</code>, <code>-U5</code>, ...)</p>
 
 </div>
 </div>
@@ -17116,11 +17121,8 @@ Hello World!
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="What-about-renames?">What about renames?<a class="anchor-link" href="#What-about-renames?">&#182;</a></h3><p>Git doesn't know anything about renames... but it can guess</p>
-<ul>
-<li><code>git diff -M[p]</code>: detect renames as files at least <em>p</em>0% similar</li>
-<li><code>git diff -C[p]</code>: detect copies as well</li>
-</ul>
-
+<dl><dt>`git diff -M[p]`</dt><dd>detect renames (as files at least *p*0% similar)</dd>
+<dt>`git diff -C[p]`</dt><dd>detect copies as well</dd></dl>
 </div>
 </div>
 </div></section></section><section><section>
@@ -17167,9 +17169,9 @@ git show-ref
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-update-ref (1)   - Update the object name stored in a ref safely
-git-show-ref (1)     - List references in a local repository
-2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1 refs/heads/master
+<pre><span style="background-color: rgb(215,255,255)">git-update-ref (1)   - Update the object name stored in a ref safely
+</span><span style="background-color: rgb(215,255,255)">git-show-ref (1)     - List references in a local repository
+</span>2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1 refs/heads/master
 </pre>
 </div>
 </div>
@@ -17306,8 +17308,8 @@ git show-ref
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-tag (1)          - Create, list, delete or verify a tag object signed with GPG
-0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832 refs/heads/master
+<pre><span style="background-color: rgb(215,255,255)">git-tag (1)          - Create, list, delete or verify a tag object signed with GPG
+</span>0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832 refs/heads/master
 aa6742b68e7ea09070071d514e2030683f4ffd57 refs/tags/scicon17
 </pre>
 </div>
@@ -17404,15 +17406,15 @@ ls -l pack-*
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-pack-objects (1) - Create a packed archive of objects
-Counting objects: 8, done.
+<pre><span style="background-color: rgb(215,255,255)">git-pack-objects (1) - Create a packed archive of objects
+</span>Counting objects: 8, done.
 Delta compression using up to 2 threads.
 Compressing objects: 100% (5/5), done.
 9c5a911abad74b62a7fefb630c71f6b30859a9dc
 Writing objects: 100% (8/8), done.
 Total 8 (delta 0), reused 0 (delta 0)
--r--r--r-- 1 dylan users 1296 Oct 11 12:24 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
--r--r--r-- 1 dylan users  661 Oct 11 12:24 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
+-r--r--r-- 1 dylan users 1296 Oct 12 11:45 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
+-r--r--r-- 1 dylan users  661 Oct 12 11:45 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
 </pre>
 </div>
 </div>
@@ -17494,7 +17496,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git read-tree $tree2
+<div class=" highlight hl-bash"><pre><span></span>git read-tree $tree1
 file .git/index
 git ls-files
 </pre></div>
@@ -17513,10 +17515,10 @@ git ls-files
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-read-tree (1)    - Reads tree information into the index
-.git/index: Git index, version 2, 3 entries
-git-ls-files (1)     - Show information about files in the index and the working tree
-README
+<pre><span style="background-color: rgb(215,255,255)">git-read-tree (1)    - Reads tree information into the index
+</span>.git/index: Git index, version 2, 3 entries
+<span style="background-color: rgb(215,255,255)">git-ls-files (1)     - Show information about files in the index and the working tree
+</span>README
 stuff/hello.txt
 stuff/other.txt
 </pre>
@@ -17561,12 +17563,12 @@ ls -R
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-checkout-index (1) - Copy files from the index to the working tree
-.:
-<span style="color: rgb(255,95,95)">README</span>  stuff
+<pre><span style="background-color: rgb(215,255,255)">git-checkout-index (1) - Copy files from the index to the working tree
+</span>.:
+README  <span class="ansi-blue-intense-fg ansi-bold">stuff</span>
 
 ./stuff:
-<span style="color: rgb(215,0,95)">hello.txt</span>  <span style="color: rgb(215,0,95)">other.txt</span>
+<span class="ansi-green-fg">hello.txt</span>  <span class="ansi-green-fg">other.txt</span>
 </pre>
 </div>
 </div>
@@ -17655,8 +17657,8 @@ git diff
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-add (1)          - Add file contents to the index
-</pre>
+<pre><span style="background-color: rgb(215,255,255)">git-add (1)          - Add file contents to the index
+</span></pre>
 </div>
 </div>
 
@@ -17670,7 +17672,7 @@ git diff
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git write-tree
-<span class="nb">echo</span> $tree2a
+<span class="nb">echo</span> $tree2
 </pre></div>
 
 </div>
@@ -17687,8 +17689,8 @@ git diff
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-write-tree (1)   - Create a tree object from the current index
-674e727fabfeb840b5c4e36f2c33610dfb50458e
+<pre><span style="background-color: rgb(215,255,255)">git-write-tree (1)   - Create a tree object from the current index
+</span>674e727fabfeb840b5c4e36f2c33610dfb50458e
 674e727fabfeb840b5c4e36f2c33610dfb50458e
 </pre>
 </div>
@@ -17721,8 +17723,8 @@ git ls-files
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-rm (1)           - Remove files from the working tree and from the index
-rm &#39;stuff/other.txt&#39;
+<pre><span style="background-color: rgb(215,255,255)">git-rm (1)           - Remove files from the working tree and from the index
+</span>rm &#39;stuff/other.txt&#39;
 README
 stuff/hello.txt
 </pre>
@@ -17756,8 +17758,8 @@ ls
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-mv (1)           - Move or rename a file, a directory, or a symlink
-README.md  stuff
+<pre><span style="background-color: rgb(215,255,255)">git-mv (1)           - Move or rename a file, a directory, or a symlink
+</span>README.md  <span class="ansi-blue-intense-fg ansi-bold">stuff</span>
 </pre>
 </div>
 </div>
@@ -17770,18 +17772,14 @@ README.md  stuff
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="quick-reference:-updating-the-index">quick reference: updating the index<a class="anchor-link" href="#quick-reference:-updating-the-index">&#182;</a></h4><ul>
-<li><code>git add -u [FILE|DIR] ...</code>: update <em>existing</em> index files from disk (update+remove index entries)</li>
-<li><code>git add     FILE|DIR  ...</code>: update index files from disk (update+add index entries)</li>
-<li><code>git add -A [FILE|DIR] ...</code>: update index to exactly match disk (update+add+remove index entries)</li>
-<li><code>git add -p            ...</code>: <em>interactively</em> ask what to "stage" to index</li>
-<li><code>git mv SRC DST</code>: rename file/dir on disk and in index</li>
-<li><code>git rm         FILE</code>: remove file from disk and index (if no local changes)</li>
-<li><code>git rm -r       DIR</code>: remove dir from disk and index (if no local changes)</li>
-<li><code>git rm -f       ...</code>: remove from disk and index (even if they don't match!)</li>
-<li><code>git rm --cached ...</code>: remove from index only (but not disk)</li>
-</ul>
-
+<h4 id="quick-reference:-updating-the-index">quick reference: updating the index<a class="anchor-link" href="#quick-reference:-updating-the-index">&#182;</a></h4><dl><dt>`git add -u [FILE|DIR] ...`</dt><dd>update *existing* index files from disk (update+remove entries)</dd>
+<dt>`git add     FILE|DIR  ...`</dt><dd>update index files from disk (update+add entries)</dd>
+<dt>`git add -A [FILE|DIR] ...`</dt><dd>update index to  match disk (update+add+remove entries)</dd>
+<dt>`git add -p            ...`</dt><dd>*interactively* ask what to "stage" to index</dd>
+<dt>`git mv SRC DST`</dt><dd>rename file/dir on disk and in index</dd>
+<dt>`git rm [-r]     FILE|DIR`</dt><dd>remove file/dir from disk and index (if no local changes)</dd>
+<dt>`git rm -f       ...`</dt><dd>remove from disk and index (even if they don't match!)</dd>
+<dt>`git rm --cached ...`</dt><dd>remove from index only (but not disk)</dd></dl>
 </div>
 </div>
 </div></section><section>
@@ -17866,9 +17864,9 @@ git diff-files
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-checkout (1)     - Switch branches or restore working tree files
-git-diff-files (1)   - Compares files in the working tree and the index
-</pre>
+<pre><span style="background-color: rgb(215,255,255)">git-checkout (1)     - Switch branches or restore working tree files
+</span><span style="background-color: rgb(215,255,255)">git-diff-files (1)   - Compares files in the working tree and the index
+</span></pre>
 </div>
 </div>
 
@@ -17880,11 +17878,9 @@ git-diff-files (1)   - Compares files in the working tree and the index
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="quick-reference:-discarding-changes">quick reference: discarding changes<a class="anchor-link" href="#quick-reference:-discarding-changes">&#182;</a></h4><ul>
-<li><code>git checkout -- FILE|DIR ...</code>: overwrite files on disk from index</li>
-<li><code>git checkout -p</code>: interactively ask what to "discard" from disk</li>
-</ul>
-<p><code>checkout</code> does other things before the <code>--</code></p>
+<h4 id="quick-reference:-discarding-changes">quick reference: discarding changes<a class="anchor-link" href="#quick-reference:-discarding-changes">&#182;</a></h4><dl><dt>`git checkout -- FILE|DIR ...`</dt><dd>overwrite files on disk from index</dd>
+    <dt>`git checkout -p`</dt><dd>interactively ask what to "discard" from disk</dd>
+</dl><p><code>checkout</code> does other things before the <code>--</code></p>
 
 </div>
 </div>
@@ -17920,8 +17916,8 @@ cat .git/HEAD
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-symbolic-ref (1) - Read, modify and delete symbolic refs
-refs/heads/master
+<pre><span style="background-color: rgb(215,255,255)">git-symbolic-ref (1) - Read, modify and delete symbolic refs
+</span>refs/heads/master
 ref: refs/heads/master
 </pre>
 </div>
@@ -17969,8 +17965,8 @@ git branch
 A	README.md
 D	stuff/other.txt
 Switched to a new branch &#39;dylan/work&#39;
-git-branch (1)       - List, create, or delete branches
-* <span class="ansi-green-fg">dylan/work</span>
+<span style="background-color: rgb(215,255,255)">git-branch (1)       - List, create, or delete branches
+</span>* <span class="ansi-green-fg">dylan/work</span>
   master
 </pre>
 </div>
@@ -17984,16 +17980,14 @@ git-branch (1)       - List, create, or delete branches
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="quick-reference:-branches">quick reference: branches<a class="anchor-link" href="#quick-reference:-branches">&#182;</a></h4><ul>
-<li><code>git checkout REV</code>: switch to a branch or "detached" revision</li>
-<li><code>git checkout -b NEWBRANCH [REV]</code>: create and switch to new branch at REV (or <code>HEAD</code>; <code>git branch</code> creates)</li>
-<li><code>git checkout -m</code>: switch to branch and bring along un-committed changes on disk</li>
-<li><code>git checkout REV -- PATH ...</code>: overwrite files on disk from revision (but don't switch branches)</li>
-<li><code>git branch -va</code>: list all branches and latest commit</li>
-<li><code>git branch -m OLDBRANCH NEWBRANCH</code>: rename</li>
-<li><code>git branch -d OLDBRANCH</code>: delete</li>
-</ul>
-
+<h4 id="quick-reference:-branches">quick reference: branches<a class="anchor-link" href="#quick-reference:-branches">&#182;</a></h4><dl><dt>`git checkout REV`</dt><dd>switch to a branch or "detached" revision</dd>
+<dt>`git branch      NEWBRANCH [REV]`</dt>
+<dt>`git checkout -b NEWBRANCH [REV]`</dt><dd>create (and switch to) new branch at REV (`HEAD`)</dd>
+<dt>`git checkout -m`</dt><dd>switch to branch and bring along un-committed changes on disk</dd>
+<dt>`git checkout REV -- PATH ...`</dt><dd>overwrite files on disk from revision (but don't switch branches)</dd>
+<dt>`git branch -va`</dt><dd>list all branches and latest commit</dd>
+<dt>`git branch -m OLDBRANCH NEWBRANCH`</dt>
+<dt>`git branch -d OLDBRANCH`</dt><dd>rename or delete</dd></dl>
 </div>
 </div>
 </div></section><section>
@@ -18028,8 +18022,8 @@ git-branch (1)       - List, create, or delete branches
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-commit (1)       - Record changes to the repository
-[dylan/work e4212ad] Mark down &#39;README&#39;; no more other.txt
+<pre><span style="background-color: rgb(215,255,255)">git-commit (1)       - Record changes to the repository
+</span>[dylan/work e4212ad] Mark down &#39;README&#39;; no more other.txt
  2 files changed, 1 deletion(-)
  rename README =&gt; README.md (100%)
  delete mode 100644 stuff/other.txt
@@ -18125,16 +18119,14 @@ Date:   Thu Jun 22 15:00:00 2017
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="quick-reference:-commit">quick reference: commit<a class="anchor-link" href="#quick-reference:-commit">&#182;</a></h4><ul>
-<li><code>git commit -a</code>: <code>git add -u</code> before commit (also <code>-p</code>)</li>
-<li><code>git commit -m MSG1 -m MSG2 ...</code>: multi-paragraph commit message</li>
-<li><code>git commit -v</code>: invoke editor and show full diff to write commit message</li>
-<li><code>git commit -- PATH...</code>: commit all changes to files on disk (bypass index)</li>
-</ul>
-
+<h4 id="quick-reference:-commit">quick reference: commit<a class="anchor-link" href="#quick-reference:-commit">&#182;</a></h4><dl>
+    <dt>`git commit -a`</dt><dd>`git add -u` before commit (also `-p`)</dd>
+    <dt>`git commit -m MSG1 -m MSG2 ...`</dt><dd>multi-paragraph commit message</dd>
+    <dt>`git commit -v`</dt><dd>invoke editor and show full diff to write commit message</dd>
+    <dt>`git commit -- PATH...`</dt><dd>commit all changes to files on disk (bypass index)</dd></dl>
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -18147,7 +18139,7 @@ Date:   Thu Jun 22 15:00:00 2017
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -18181,8 +18173,8 @@ git status
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-status (1)       - Show the working tree status
-On branch dylan/work
+<pre><span style="background-color: rgb(215,255,255)">git-status (1)       - Show the working tree status
+</span>On branch dylan/work
 Changes to be committed:
   (use &#34;git reset HEAD &lt;file&gt;...&#34; to unstage)
 
@@ -18225,11 +18217,8 @@ Changes not staged for commit:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Un-staging:-undoing-add,-rm">Un-staging: undoing add, rm<a class="anchor-link" href="#Un-staging:-undoing-add,-rm">&#182;</a></h3><ul>
-<li><code>git reset [REV] -- PATH ...</code>: sets the index file entries match those from revision (HEAD)</li>
-<li><code>git reset -p</code>: ask interactively which changes to reset</li>
-</ul>
-<p>Dash-dash pattern: separates revisions from paths, can be omitted if unambiguous</p>
+<h3 id="Un-staging:-undoing-add,-rm">Un-staging: undoing add, rm<a class="anchor-link" href="#Un-staging:-undoing-add,-rm">&#182;</a></h3><dl><dt>`git reset [REV] -- PATH ...`</dt><dd>sets the index file entries match those from revision (HEAD)</dd>
+    <dt>`git reset -p`</dt><dd>ask interactively which changes to reset</dd></dl><p>Dash-dash pattern: separates revisions from paths, can be omitted if unambiguous</p>
 
 </div>
 </div>
@@ -18270,15 +18259,15 @@ M	README.md
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Un-comitting:-changing-which-commit-your-branch-points-to">Un-comitting: changing which commit your branch points to<a class="anchor-link" href="#Un-comitting:-changing-which-commit-your-branch-points-to">&#182;</a></h3><p>Changing <code>refs/heads/branch</code> itself, not like <code>checkout</code> which just changes <code>HEAD</code>.</p>
-<ul>
-<li><code>git reset --soft REV</code>: point the current branch to REV, but nothing else (same files on disk, index)<ul>
-<li><code>git reset --soft HEAD^</code>: undo my last <code>git commit</code> but keep my current changes, let my try again</li>
-<li><font color='green'>Alternatively,</font> <code>git commit --amend</code>: replace the current commit with the index, keeping the commit message</li>
-</ul>
-</li>
-</ul>
-
+<h3 id="Un-comitting:-changing-which-commit-your-branch-points-to">Un-comitting: changing which commit your branch points to<a class="anchor-link" href="#Un-comitting:-changing-which-commit-your-branch-points-to">&#182;</a></h3><p>Changing <code>refs/heads/branch</code> itself (unlike <code>checkout</code> which just changes <code>HEAD</code>)</p>
+<dl><dt>`git reset --soft REV`</dt><dd>point the current branch to REV, but nothing else (same files on disk, index)</dd>
+    <dt>`git reset --soft HEAD^`</dt><dd>undo my last `git commit` but keep my current changes, let my try again</dd>
+    <dt>`git commit --amend` <font color='green'>(alternative)</font></dt><dd>replace the current commit with the index, keeping the commit message</dd>
+    <dt>`git reset [--mixed] REV`</dt><dd>point current branch to REV, and also set index to match</dd>
+    <dd>(If you want to keep your changes but re-add them on a different commit)</dd>
+    <dt>`git reset --hard REV`</dt><dd>throw away everything (index+disk) and point current branch to REV</dd>
+    <dt>`git reset --hard [HEAD]`</dt><dd>
+    <font color='green'>With HEAD,</font> throw away all my work since last commit</dd></dl>
 </div>
 </div>
 </div></section><section>
@@ -18286,17 +18275,7 @@ M	README.md
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>git reset [--mixed] REV</code>: also set index to match REV<ul>
-<li>If you want to keep your changes but put re-add them on a different commit</li>
-</ul>
-</li>
-<li><code>git reset --hard REV</code>: throw away everything (index+disk) and point current branch to REV<ul>
-<li><font color='green'>With HEAD,</font> <code>git reset --hard</code>: throw away all my work since last commit</li>
-</ul>
-</li>
-</ul>
-<p><font color='red'>Counts as "<b>rewriting history</b>": don't do this on branches shared with others</font></p>
+<p><font color='red'>`reset` counts as "<b>rewriting history</b>": don't do this on branches shared with others</font></p>
 </div>
 </div>
 </div><aside class="notes">
@@ -18504,8 +18483,8 @@ git commit -m <span class="s2">&quot;Add more and more&quot;</span>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-show-branch (1)  - Show branches and their commits
-<span class="ansi-red-fg">!</span> [dylan/work] Mark down &#39;README&#39;; no more other.txt
+<pre><span style="background-color: rgb(215,255,255)">git-show-branch (1)  - Show branches and their commits
+</span><span class="ansi-red-fg">!</span> [dylan/work] Mark down &#39;README&#39;; no more other.txt
  <span class="ansi-green-fg">*</span> [master] Add more and more
 --
 <span class="ansi-red-fg"> </span><span class="ansi-green-fg">*</span> [master] Add more and more
@@ -18541,8 +18520,8 @@ git commit -m <span class="s2">&quot;Add more and more&quot;</span>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-merge (1)        - Join two or more development histories together
-Removing stuff/other.txt
+<pre><span style="background-color: rgb(215,255,255)">git-merge (1)        - Join two or more development histories together
+</span>Removing stuff/other.txt
 Merge made by the &#39;recursive&#39; strategy.
  README =&gt; README.md | 0
  stuff/other.txt     | 1 <span class="ansi-red-fg">-</span>
@@ -18653,8 +18632,8 @@ Merge made by the &#39;recursive&#39; strategy.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-revert (1)       - Revert some existing commits
-[master 38bf58c] Revert &#34;Mark down &#39;README&#39;; no more other.txt&#34;
+<pre><span style="background-color: rgb(215,255,255)">git-revert (1)       - Revert some existing commits
+</span>[master 38bf58c] Revert &#34;Mark down &#39;README&#39;; no more other.txt&#34;
  2 files changed, 1 insertion(+)
  rename README.md =&gt; README (100%)
  create mode 100644 stuff/other.txt
@@ -18707,8 +18686,8 @@ Merge made by the &#39;recursive&#39; strategy.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-cherry-pick (1)  - Apply the changes introduced by some existing commits
-[master 3c7ffae] Mark down &#39;README&#39;; no more other.txt
+<pre><span style="background-color: rgb(215,255,255)">git-cherry-pick (1)  - Apply the changes introduced by some existing commits
+</span>[master 3c7ffae] Mark down &#39;README&#39;; no more other.txt
  Date: Fri Jun 30 13:00:00 2017 -0400
  2 files changed, 1 deletion(-)
  rename README =&gt; README.md (100%)
@@ -18832,8 +18811,8 @@ nothing added to commit but untracked files present (use &#34;git add&#34; to tr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-clean (1)        - Remove untracked files from the working tree
-Removing output.txt
+<pre><span style="background-color: rgb(215,255,255)">git-clean (1)        - Remove untracked files from the working tree
+</span>Removing output.txt
 </pre>
 </div>
 </div>
@@ -18915,8 +18894,8 @@ git stash list
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-stash (1)        - Stash the changes in a dirty working directory away
-Saved working directory and index state WIP on master: 3c7ffae Mark down &#39;README&#39;; no more other.txt
+<pre><span style="background-color: rgb(215,255,255)">git-stash (1)        - Stash the changes in a dirty working directory away
+</span>Saved working directory and index state WIP on master: 3c7ffae Mark down &#39;README&#39;; no more other.txt
 stash@{0}: WIP on master: 3c7ffae Mark down &#39;README&#39;; no more other.txt
 </pre>
 </div>
@@ -18995,10 +18974,10 @@ Dropped refs/stash@{0} (ef7d2622fe9ec10b68d32148e0e53d33a4bef3d1)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-blame (1)        - Show what revision and author last modified each line of a file
-0b5bcf36 README    (Dylan Simon       2017-06-22 15:00:00 -0400 1) New and improved.
+<pre><span style="background-color: rgb(215,255,255)">git-blame (1)        - Show what revision and author last modified each line of a file
+</span>0b5bcf36 README    (Dylan Simon       2017-06-22 15:00:00 -0400 1) New and improved.
 dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
-00000000 README.md (Not Committed Yet 2017-10-11 12:24:35 -0400 3) further reading
+00000000 README.md (Not Committed Yet 2017-10-12 11:45:23 -0400 3) further reading
 </pre>
 </div>
 </div>
@@ -19061,8 +19040,8 @@ git remote -v
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-remote (1)       - Manage set of tracked repositories
-ghdylex	git://github.com/dylex/git-structure-tutorial (fetch)
+<pre><span style="background-color: rgb(215,255,255)">git-remote (1)       - Manage set of tracked repositories
+</span>ghdylex	git://github.com/dylex/git-structure-tutorial (fetch)
 ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 </pre>
 </div>
@@ -19105,11 +19084,12 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-fetch (1)        - Download objects and refs from another repository
-remote: Counting objects: 97, done.
-remote: Compressing objects: 100% (45/45), done.
-remote: Total 97 (delta 41), reused 93 (delta 37), pack-reused 0
-Unpacking objects: 100% (97/97), done.
+<pre><span style="background-color: rgb(215,255,255)">git-fetch (1)        - Download objects and refs from another repository
+</span>remote: Counting objects: 110, done.
+remote: Compressing objects: 100% (52/52), done.
+remote: Total 110 (delta 47), reused 105 (delta 42), pack-reused 0
+Receiving objects: 100% (110/110), 372.92 KiB | 7.77 MiB/s, done.
+Resolving deltas: 100% (47/47), done.
 From git://github.com/dylex/git-structure-tutorial
  * [new branch]      example    -&gt; ghdylex/example
  * [new branch]      gh-pages   -&gt; ghdylex/gh-pages
@@ -19156,8 +19136,8 @@ From git://github.com/dylex/git-structure-tutorial
 <pre>  dylan/work               e4212ad Mark down &#39;README&#39;; no more other.txt
 * <span class="ansi-green-fg">master                  </span> 3c7ffae Mark down &#39;README&#39;; no more other.txt
   <span class="ansi-red-fg">remotes/ghdylex/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> 6e7ac41 Update generated slides from af2819b
-  <span class="ansi-red-fg">remotes/ghdylex/master  </span> af2819b Minor reflows
+  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> b9e03cc Update generated slides from a000842
+  <span class="ansi-red-fg">remotes/ghdylex/master  </span> b12322a Start reformatting command references
 </pre>
 </div>
 </div>
@@ -19222,8 +19202,8 @@ Merge made by the &#39;recursive&#39; strategy.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-pull (1)         - Fetch from and integrate with another repository or a local branch
-From git://github.com/dylex/git-structure-tutorial
+<pre><span style="background-color: rgb(215,255,255)">git-pull (1)         - Fetch from and integrate with another repository or a local branch
+</span>From git://github.com/dylex/git-structure-tutorial
  * branch            example    -&gt; FETCH_HEAD
 Already up-to-date.
 </pre>
@@ -19275,8 +19255,8 @@ Already up-to-date.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-push (1)         - Update remote refs along with associated objects
-fatal: remote error: 
+<pre><span style="background-color: rgb(215,255,255)">git-push (1)         - Update remote refs along with associated objects
+</span>fatal: remote error: 
   You can&#39;t push to git://github.com/dylex/git-structure-tutorial.git
   Use https://github.com/dylex/git-structure-tutorial.git
 </pre>
@@ -19291,15 +19271,12 @@ fatal: remote error:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="quick-reference:-remote-send/receive">quick reference: remote send/receive<a class="anchor-link" href="#quick-reference:-remote-send/receive">&#182;</a></h4><ul>
-<li><code>git fetch -p</code>: also delete <code>refs/remotes/*</code> missing on remote</li>
-<li><code>git push REMOTE [SRCREF:]BRANCH</code>: update the remote <code>refs/heads/BRANCH</code> to <code>SRCREF</code></li>
-<li><code>git push -u ...</code>: set the default for <em>pull</em> and <em>push</em> on current branch (see config)</li>
-<li><code>git checkout|branch -t BRANCH</code>: set default <em>pull</em> tracking source (default for <em>checkout</em> when no local branch)</li>
-<li><code>git push --force ...</code>: like remote <em>reset</em>, can remove commits (<font color='red'>don't do this!</font> why not?)</li>
-<li><code>git push REMOTE :BRANCH</code>: delete remote branch</li>
-</ul>
-
+<h4 id="quick-reference:-remote-send/receive">quick reference: remote send/receive<a class="anchor-link" href="#quick-reference:-remote-send/receive">&#182;</a></h4><dl><dt>`git fetch -p`</dt><dd>also delete `refs/remotes/*` missing on remote</dd>
+<dt>`git push REMOTE [SRCREF:]BRANCH`</dt><dd>update the remote `refs/heads/BRANCH` to `SRCREF`</dd>
+<dt>`git push -u ...`</dt><dd>set the default for *pull* and *push* on current branch (see config)</dd>
+<dt>`git checkout|branch -t BRANCH`</dt><dd>set default *pull* tracking source (default for *checkout* when no local branch)</dd>
+<dt>`git push --force ...`</dt><dd>like remote *reset*, can remove commits (<font color='red'>don't do this!</font> why not?)</dd>
+<dt>`git push REMOTE :BRANCH`</dt><dd>delete remote branch</dd></dl>
 </div>
 </div>
 </div><aside class="notes">
@@ -19344,13 +19321,13 @@ fatal: remote error:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git-clone (1)        - Clone a repository into a new directory
-Cloning into &#39;git-structure-tutorial&#39;...
-remote: Counting objects: 117, done.
-remote: Compressing objects: 100% (14/14), done.
-remote: Total 117 (delta 11), reused 24 (delta 9), pack-reused 90
-Receiving objects: 100% (117/117), 527.51 KiB | 7.43 MiB/s, done.
-Resolving deltas: 100% (40/40), done.
+<pre><span style="background-color: rgb(215,255,255)">git-clone (1)        - Clone a repository into a new directory
+</span>Cloning into &#39;git-structure-tutorial&#39;...
+remote: Counting objects: 130, done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 130 (delta 17), reused 36 (delta 14), pack-reused 90
+Receiving objects: 100% (130/130), 528.99 KiB | 6.53 MiB/s, done.
+Resolving deltas: 100% (46/46), done.
 </pre>
 </div>
 </div>
@@ -19364,8 +19341,7 @@ Resolving deltas: 100% (40/40), done.
 <div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> git-structure-tutorial
-git branch -va
+<div class=" highlight hl-bash"><pre><span></span>git -C git-structure-tutorial branch -va
 </pre></div>
 
 </div>
@@ -19382,11 +19358,11 @@ git branch -va
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>* <span class="ansi-green-fg">master                 </span> af2819b Minor reflows
+<pre>* <span class="ansi-green-fg">master                 </span> b12322a Start reformatting command references
   <span class="ansi-red-fg">remotes/origin/HEAD    </span> -&gt; origin/master
   <span class="ansi-red-fg">remotes/origin/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/origin/gh-pages</span> 6e7ac41 Update generated slides from af2819b
-  <span class="ansi-red-fg">remotes/origin/master  </span> af2819b Minor reflows
+  <span class="ansi-red-fg">remotes/origin/gh-pages</span> b9e03cc Update generated slides from a000842
+  <span class="ansi-red-fg">remotes/origin/master  </span> b12322a Start reformatting command references
 </pre>
 </div>
 </div>
@@ -19418,6 +19394,30 @@ git branch -va
 <li><code>git pull</code></li>
 <li>edit edit, <code>git status</code>, edit edit</li>
 <li><code>git commit -- FILE...</code>, <code>git push</code></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Future-topics">Future topics<a class="anchor-link" href="#Future-topics">&#182;</a></h1><ul>
+<li>branching strategies<ul>
+<li>advanced rebasing</li>
+</ul>
+</li>
+<li>github<ul>
+<li>issues, pull requests, workflows</li>
+<li>gh-pages (user/repo <code>gh-pages</code> branch published as user.github.io/repo)</li>
+<li>permissions</li>
+<li>web hooks</li>
+</ul>
+</li>
+<li>code structure</li>
+<li>documentation</li>
+<li>continuous integration</li>
 </ul>
 
 </div>

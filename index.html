@@ -11927,7 +11927,18 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a workshop: follow along, try things yourself, ask questions.</p>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11938,7 +11949,18 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Git has lots of functionality, often based on other revision control systems, but at its core it's quite simple.  Even though you will rarely use these core commands, it's useful to understand how they work, and thus how all the more complicated interfaces are just constructed out of these simpler ones. Also, if you get confused about what's going on, this will give you enough to get by on first principles.</p>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -16216,7 +16238,18 @@ to read about a specific subcommand or concept.
 
 </div>
 </div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For now, let's just look at git as a database, or as a kind of key-value store, like S3 perhaps, except one that can never be changed after objects are created.</p>
+
+</div>
+</div>
+</div>
+</aside>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
@@ -16816,10 +16849,10 @@ git ls-tree -tr <span class="nv">$tree2</span>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span style="background-color: rgb(215,255,255)">git-archive      - Create an archive of files from a named tree
-</span>-rw-rw-r-- root/root        18 2017-10-16 14:23 README
-drwxrwxr-x root/root         0 2017-10-16 14:23 stuff/
--rw-rw-r-- root/root        13 2017-10-16 14:23 stuff/hello.txt
--rw-rw-r-- root/root        32 2017-10-16 14:23 stuff/other.txt
+</span>-rw-rw-r-- root/root        18 2017-10-16 15:44 README
+drwxrwxr-x root/root         0 2017-10-16 15:44 stuff/
+-rw-rw-r-- root/root        13 2017-10-16 15:44 stuff/hello.txt
+-rw-rw-r-- root/root        32 2017-10-16 15:44 stuff/other.txt
 </pre>
 </div>
 </div>
@@ -17581,8 +17614,8 @@ Compressing objects: 100% (5/5), done.
 9c5a911abad74b62a7fefb630c71f6b30859a9dc
 Writing objects: 100% (8/8), done.
 Total 8 (delta 0), reused 0 (delta 0)
--r--r--r-- 1 dylan dylan 1296 Oct 16 14:24 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
--r--r--r-- 1 dylan dylan  661 Oct 16 14:24 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
+-r--r--r-- 1 dylan dylan 1296 Oct 16 15:44 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
+-r--r--r-- 1 dylan dylan  661 Oct 16 15:44 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
 </pre>
 </div>
 </div>
@@ -17638,7 +17671,18 @@ Total 8 (delta 0), reused 0 (delta 0)
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>While you now know pretty much everything about how git actually works, these commands can be rather impractical, so the rest is just higher-level ways of interacting with git more efficiently.</p>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17867,7 +17911,18 @@ git diff
 </div>
 </div>
 
-</div></div></section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice this is the same tree as the one we created earlier, because it has the same contents.</p>
+
+</div>
+</div>
+</div>
+</aside></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
@@ -18294,7 +18349,7 @@ Date:   Thu Jun 22 15:00:00 2017
     <dt>`git commit -- PATH...`</dt><dd>commit all changes to files on disk (bypass index)</dd></dl>
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -18307,7 +18362,7 @@ Date:   Thu Jun 22 15:00:00 2017
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -19111,6 +19166,49 @@ Dropped refs/stash@{0} (2a4c13ea91689e4e2258ca24715088c9c52ef411)
 </div>
 </div>
 
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Rewriting-history:-rebase">Rewriting history: <em>rebase</em><a class="anchor-link" href="#Rewriting-history:-rebase">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>git rebase [COMMIT]</code>: attempt to linearize history (flatten merges) on top of COMMIT (upstream branch)</li>
+<li><code>git rebase -i [COMMIT]</code>: use a text editor to reorder or combine commits since COMMIT</li>
+<li>Any rebased commits have different hashes -- git won't realize they're the same</li>
+<li>Only rebase (or <code>reset</code>) unshared commits (or with agreement from everyone else)</li>
+</ul>
+
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Rebase is a powerful way of changing the shape or order of history (that is, the parents in the commit graph) while trying to preserve the same effects.  However, since it changes parents, it changes the resulting commit hashes, so the result will be incompatible with the un-rebased commits.</p>
+
+</div>
+</div>
+</div>
+</aside></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="attachment:merge-rebase.svg" alt="merge-rebase.svg">
+<code>git merge master</code>, then <code>git rebase master</code></p>
+
+</div>
+</div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -19149,7 +19247,7 @@ further reading
 <span style="background-color: rgb(215,255,255)">git-blame        - Show what revision and author last modified each line of a file
 </span>0b5bcf36 README    (Dylan Simon       2017-06-22 15:00:00 -0400 1) New and improved.
 dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
-00000000 README.md (Not Committed Yet 2017-10-16 14:24:08 -0400 3) further reading
+00000000 README.md (Not Committed Yet 2017-10-16 15:44:12 -0400 3) further reading
 </pre>
 </div>
 </div>
@@ -19370,11 +19468,11 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span style="background-color: rgb(215,255,255)">git-fetch        - Download objects and refs from another repository
-</span>remote: Counting objects: 132, done.
-remote: Compressing objects: 100% (63/63), done.
-remote: Total 132 (delta 58), reused 124 (delta 50), pack-reused 0
-Receiving objects: 100% (132/132), 825.88 KiB | 5.86 MiB/s, done.
-Resolving deltas: 100% (58/58), done.
+</span>remote: Counting objects: 144, done.
+remote: Compressing objects: 100% (69/69), done.
+remote: Total 144 (delta 65), reused 134 (delta 55), pack-reused 0
+Receiving objects: 100% (144/144), 1007.93 KiB | 16.00 MiB/s, done.
+Resolving deltas: 100% (65/65), done.
 From git://github.com/dylex/git-structure-tutorial
  * [new branch]      example    -&gt; ghdylex/example
  * [new branch]      gh-pages   -&gt; ghdylex/gh-pages
@@ -19421,8 +19519,8 @@ From git://github.com/dylex/git-structure-tutorial
 <pre>  dylan/refactor           e4212ad Mark down &#39;README&#39;; no more other.txt
 * <span class="ansi-green-fg">master                  </span> 7dfd4e5 Ignore all output files in top dir
   <span class="ansi-red-fg">remotes/ghdylex/example </span> f79c7b3 Add a period.
-  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> 2f5a17b Update generated slides from 2a6e7f1
-  <span class="ansi-red-fg">remotes/ghdylex/master  </span> aca2903 More notes; include some understanding git slides
+  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> a15a209 Update generated slides from df89fd3
+  <span class="ansi-red-fg">remotes/ghdylex/master  </span> 9246bb9 Resplit overflowing commit slide
 </pre>
 </div>
 </div>
@@ -19700,11 +19798,11 @@ Already up-to-date.
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span style="background-color: rgb(215,255,255)">git-clone        - Clone a repository into a new directory
 </span>Cloning into &#39;git-structure-tutorial&#39;...
-remote: Counting objects: 153, done.
-remote: Compressing objects: 100% (37/37), done.
-remote: Total 153 (delta 29), reused 60 (delta 23), pack-reused 85
-Receiving objects: 100% (153/153), 981.59 KiB | 5.81 MiB/s, done.
-Resolving deltas: 100% (57/57), done.
+remote: Counting objects: 165, done.
+remote: Compressing objects: 100% (43/43), done.
+remote: Total 165 (delta 36), reused 70 (delta 28), pack-reused 85
+Receiving objects: 100% (165/165), 1.14 MiB | 17.11 MiB/s, done.
+Resolving deltas: 100% (64/64), done.
 </pre>
 </div>
 </div>
@@ -19735,11 +19833,11 @@ Resolving deltas: 100% (57/57), done.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>* <span class="ansi-green-fg">master                 </span> aca2903 More notes; include some understanding git slides
+<pre>* <span class="ansi-green-fg">master                 </span> 9246bb9 Resplit overflowing commit slide
   <span class="ansi-red-fg">remotes/origin/HEAD    </span> -&gt; origin/master
   <span class="ansi-red-fg">remotes/origin/example </span> f79c7b3 Add a period.
-  <span class="ansi-red-fg">remotes/origin/gh-pages</span> 2f5a17b Update generated slides from 2a6e7f1
-  <span class="ansi-red-fg">remotes/origin/master  </span> aca2903 More notes; include some understanding git slides
+  <span class="ansi-red-fg">remotes/origin/gh-pages</span> a15a209 Update generated slides from df89fd3
+  <span class="ansi-red-fg">remotes/origin/master  </span> 9246bb9 Resplit overflowing commit slide
 </pre>
 </div>
 </div>
@@ -19802,7 +19900,16 @@ Resolving deltas: 100% (57/57), done.
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://web.mit.edu/nelhage/Public/git-slides-2009.pdf">Nelson Elhage &amp; Anders Kaseorg's <em>Understanding Git</em></a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[90]:</div>

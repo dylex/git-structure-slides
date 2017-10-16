@@ -11971,7 +11971,7 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-init (1)         - Create an empty Git repository or reinitialize an existing one
+<pre><span style="background-color: rgb(215,255,255)">git-init         - Create an empty Git repository or reinitialize an existing one
 </span>Initialized empty Git repository in /home/dylan/myrepo/.git/
 </pre>
 </div>
@@ -12102,7 +12102,7 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-config (1)       - Get and set repository or global options
+<pre><span style="background-color: rgb(215,255,255)">git-config       - Get and set repository or global options
 </span>core.repositoryformatversion=0
 core.filemode=true
 core.bare=false
@@ -12187,7 +12187,7 @@ Other
     --includes            respect include directives on lookup
     --show-origin         show origin of config (file, standard input, blob, command line)
 
-<span style="background-color: rgb(215,255,255)">git-help (1)         - Display help information about Git
+<span style="background-color: rgb(215,255,255)">git-help         - Display help information about Git
 </span>GIT-CONFIG(1)                     Git Manual                     GIT-CONFIG(1)
 
 NNAAMMEE
@@ -16241,7 +16241,7 @@ rm f
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-hash-object (1)  - Compute object ID and optionally creates a blob from a file
+<pre><span style="background-color: rgb(215,255,255)">git-hash-object  - Compute object ID and optionally creates a blob from a file
 </span>980a0d5f19a64b4b30a87d4206aade58726b60e3
 </pre>
 </div>
@@ -16316,7 +16316,7 @@ git cat-file -p 980a0d5                                  <span class="c1"># cont
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-cat-file (1)     - Provide content or type and size information for repository objects
+<pre><span style="background-color: rgb(215,255,255)">git-cat-file     - Provide content or type and size information for repository objects
 </span>blob
 13
 Hello World!
@@ -16464,7 +16464,7 @@ Hello World!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-mktree (1)       - Build a tree-object from ls-tree formatted text
+<pre><span style="background-color: rgb(215,255,255)">git-mktree       - Build a tree-object from ls-tree formatted text
 </span>011ed906a8c5b0c0c14c0cad0a69d3969251b71f
 </pre>
 </div>
@@ -16473,7 +16473,8 @@ Hello World!
 </div>
 </div>
 
-</div>
+</div><aside class="notes">
+
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -16483,6 +16484,7 @@ Hello World!
 </div>
 </div>
 </div>
+</aside>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
@@ -16517,14 +16519,25 @@ git cat-file -p <span class="nv">$tree0</span>
 </div>
 </div>
 
-</div></section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is again just a hash of the tree contents, so every unique directory gets a unique hash, and since these contents include the unique identifiers of the files as well, this extents to the file contents.</p>
+
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="m">100644</span> blob <span class="nv">$file1</span><span class="se">\\</span>t<span class="s2">&quot;README&quot;</span> <span class="se">\</span>
-<span class="p">;</span> <span class="nb">echo</span> -e <span class="m">040000</span> tree <span class="nv">$tree0</span><span class="se">\\</span>t<span class="s2">&quot;stuff&quot;</span> <span class="se">\</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="o">(</span> <span class="nb">echo</span> -e <span class="m">040000</span> tree <span class="nv">$tree0</span><span class="se">\\</span>t<span class="s2">&quot;stuff&quot;</span> <span class="se">\</span>
+<span class="p">;</span> <span class="nb">echo</span> -e <span class="m">100644</span> blob <span class="nv">$file1</span><span class="se">\\</span>t<span class="s2">&quot;README&quot;</span> <span class="se">\</span>
 <span class="o">)</span> <span class="p">|</span> git mktree
 </pre></div>
 
@@ -16594,7 +16607,18 @@ git cat-file -p <span class="nv">$tree1</span>
 </div>
 </div>
 
-</div><div class="fragment">
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice also that it sorted the directory by filename in order to normalize the contents.</p>
+
+</div>
+</div>
+</div>
+</aside><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
@@ -16617,7 +16641,7 @@ git cat-file -p <span class="nv">$tree1</span>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-ls-tree (1)      - List the contents of a tree object
+<pre><span style="background-color: rgb(215,255,255)">git-ls-tree      - List the contents of a tree object
 </span>100644 blob 980a0d5f19a64b4b30a87d4206aade58726b60e3	README
 040000 tree 011ed906a8c5b0c0c14c0cad0a69d3969251b71f	stuff
 100644 blob 980a0d5f19a64b4b30a87d4206aade58726b60e3	stuff/hello.txt
@@ -16629,7 +16653,18 @@ git cat-file -p <span class="nv">$tree1</span>
 </div>
 </div>
 
-</div></div></section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since the contents of this tree include the unique identifier for another tree, it becomes the unique identifier for this entire directory tree and all its contents.</p>
+
+</div>
+</div>
+</div>
+</aside></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -16679,7 +16714,18 @@ git ls-tree -tr <span class="nv">$tree2</span>
 </div>
 </div>
 
-</div></section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The contents changed, so we get a new hash, but only the hash of the README file changed, the rest is the same.</p>
+
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -16711,7 +16757,7 @@ git ls-tree -tr <span class="nv">$tree2</span>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-diff-tree (1)    - Compares the content and mode of blobs found via two tree objects
+<pre><span style="background-color: rgb(215,255,255)">git-diff-tree    - Compares the content and mode of blobs found via two tree objects
 </span><span class="ansi-bold">diff --git a/README b/README</span>
 <span class="ansi-bold">index 980a0d5..f25e220 100644</span>
 <span class="ansi-bold">--- a/README</span>
@@ -16733,7 +16779,61 @@ git ls-tree -tr <span class="nv">$tree2</span>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Comparing trees is very efficient if there are only a small number of changes (why?).</p>
-<p>We can now represent the full state of a directory (e.g., the repository), and could record this each time we make a change. What we need next is a way of keeping track of all these trees and their relationships to each other (e.g., over time).</p>
+<p>We can now represent the full state of a directory (e.g., the repository), and could think of the repository as a kind of multi-zip file, where we can store lots of stuff and each hash lets us get a new directory.  We could use this to record the tree hash each time we make a change. What we need next is a way of keeping track of all these trees and their relationships to each other (e.g., over time).</p>
+
+</div>
+</div>
+</div>
+</aside></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Extracting-trees">Extracting trees<a class="anchor-link" href="#Extracting-trees">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git archive <span class="nv">$tree2</span> <span class="p">|</span> tar tvf -
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span style="background-color: rgb(215,255,255)">git-archive      - Create an archive of files from a named tree
+</span>-rw-rw-r-- root/root        18 2017-10-16 14:23 README
+drwxrwxr-x root/root         0 2017-10-16 14:23 stuff/
+-rw-rw-r-- root/root        13 2017-10-16 14:23 stuff/hello.txt
+-rw-rw-r-- root/root        32 2017-10-16 14:23 stuff/other.txt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Just to prove that the data is all there, we can ask git to convert a tree to a tar or zip file.</p>
 
 </div>
 </div>
@@ -16750,7 +16850,7 @@ git ls-tree -tr <span class="nv">$tree2</span>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">commit1</span><span class="o">=</span><span class="k">$(</span> git commit-tree -m <span class="s2">&quot;Add some text files to my tree&quot;</span> <span class="nv">$tree1</span> <span class="k">)</span>
@@ -16771,7 +16871,7 @@ git ls-tree -tr <span class="nv">$tree2</span>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-commit-tree (1)  - Create a new commit object
+<pre><span style="background-color: rgb(215,255,255)">git-commit-tree  - Create a new commit object
 </span>2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1
 </pre>
 </div>
@@ -16783,7 +16883,7 @@ git ls-tree -tr <span class="nv">$tree2</span>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git cat-file -p <span class="nv">$commit1</span>
@@ -16833,7 +16933,7 @@ Add some text files to my tree
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git config --get <span class="s1">&#39;user.name&#39;</span> <span class="c1"># ~/.gitconfig</span>
@@ -16872,10 +16972,21 @@ Add some text files to my tree
 
 </div>
 </div>
-</div></div></section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A commit is just an object like trees or blobs, and its hash is the unique identifier for its contents: the tree and metadata.</p>
+
+</div>
+</div>
+</div>
+</aside></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">commit2</span><span class="o">=</span><span class="k">$(</span> git commit-tree -p <span class="nv">$commit1</span> -m <span class="s2">&quot;Improve README with new stuff&quot;</span> <span class="nv">$tree2</span> <span class="k">)</span>
@@ -16907,7 +17018,7 @@ Add some text files to my tree
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git cat-file -p <span class="nv">$commit2</span>
@@ -16961,7 +17072,16 @@ Improve README with new stuff
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="attachment:git-slides-2009-commit.svg" alt="git-slides-2009-commit.svg"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -16986,7 +17106,7 @@ Improve README with new stuff
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git show <span class="s2">&quot;</span><span class="nv">$commit2</span><span class="s2">^{/text files}:stuff/hello.txt&quot;</span>
@@ -17006,7 +17126,7 @@ Improve README with new stuff
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-show (1)         - Show various types of objects
+<pre><span style="background-color: rgb(215,255,255)">git-show         - Show various types of objects
 </span>Hello World!
 </pre>
 </div>
@@ -17018,7 +17138,7 @@ Improve README with new stuff
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git log --graph <span class="nv">$commit2</span>
@@ -17038,7 +17158,7 @@ Improve README with new stuff
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-log (1)          - Show commit logs
+<pre><span style="background-color: rgb(215,255,255)">git-log          - Show commit logs
 </span>* <span class="ansi-yellow-fg">commit 0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832</span>
 <span class="ansi-red-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
 <span class="ansi-red-fg">|</span> Date:   Thu Jun 22 15:00:00 2017
@@ -17071,9 +17191,19 @@ Improve README with new stuff
 </div>
 </div>
 </div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="attachment:git-slides-2009-commits2.png" alt="git-slides-2009-commits2.png">
+gitk (or github)</p>
+
+</div>
+</div>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git diff <span class="nv">$commit1</span> <span class="nv">$commit2</span>
@@ -17093,7 +17223,7 @@ Improve README with new stuff
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-diff (1)         - Show changes between commits, commit and working tree, etc
+<pre><span style="background-color: rgb(215,255,255)">git-diff         - Show changes between commits, commit and working tree, etc
 </span><span class="ansi-bold">diff --git a/README b/README</span>
 <span class="ansi-bold">index 980a0d5..f25e220 100644</span>
 <span class="ansi-bold">--- a/README</span>
@@ -17152,7 +17282,7 @@ Improve README with new stuff
 </aside>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git update-ref refs/heads/master <span class="nv">$commit1</span>
@@ -17173,8 +17303,8 @@ git show-ref
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-update-ref (1)   - Update the object name stored in a ref safely
-</span><span style="background-color: rgb(215,255,255)">git-show-ref (1)     - List references in a local repository
+<pre><span style="background-color: rgb(215,255,255)">git-update-ref   - Update the object name stored in a ref safely
+</span><span style="background-color: rgb(215,255,255)">git-show-ref     - List references in a local repository
 </span>2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1 refs/heads/master
 </pre>
 </div>
@@ -17186,7 +17316,7 @@ git show-ref
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git update-ref refs/heads/master <span class="nv">$commit2</span>
@@ -17221,7 +17351,7 @@ cat .git/refs/heads/master
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By convention (and because all the higher-level git commands expect it), branch names start with <code>refs/heads/</code>, but can be any valid file name after that, like <code>dylan/refactor</code> or <code>release/2.x</code>.</p>
+<p>By convention (and because all the higher-level git commands expect it), branch names start with <code>refs/heads/</code> (which can thus be omitted), but can be any valid file name after that, like <code>dylan/refactor</code> or <code>release/2.x</code>.</p>
 
 </div>
 </div>
@@ -17229,7 +17359,7 @@ cat .git/refs/heads/master
 </aside></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git show master
@@ -17270,6 +17400,39 @@ Date:   Thu Jun 22 15:00:00 2017
 </div>
 
 </div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git update-ref refs/heads/dylan/refactor master
+git show-ref
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832 refs/heads/dylan/refactor
+0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832 refs/heads/master
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17291,7 +17454,7 @@ Date:   Thu Jun 22 15:00:00 2017
 </aside>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git tag -m <span class="s2">&quot;Presented at SciCon 2017-06-27&quot;</span> scicon17 master
@@ -17312,8 +17475,9 @@ git show-ref
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-tag (1)          - Create, list, delete or verify a tag object signed with GPG
-</span>0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832 refs/heads/master
+<pre><span style="background-color: rgb(215,255,255)">git-tag          - Create, list, delete or verify a tag object signed with GPG
+</span>0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832 refs/heads/dylan/refactor
+0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832 refs/heads/master
 aa6742b68e7ea09070071d514e2030683f4ffd57 refs/tags/scicon17
 </pre>
 </div>
@@ -17336,7 +17500,7 @@ aa6742b68e7ea09070071d514e2030683f4ffd57 refs/tags/scicon17
 </aside><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git cat-file -p tags/scicon17
@@ -17389,7 +17553,7 @@ Presented at SciCon 2017-06-27
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="nv">$commit2</span> <span class="p">|</span> git pack-objects --revs pack
@@ -17410,15 +17574,15 @@ ls -l pack-*
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-pack-objects (1) - Create a packed archive of objects
+<pre><span style="background-color: rgb(215,255,255)">git-pack-objects - Create a packed archive of objects
 </span>Counting objects: 8, done.
 Delta compression using up to 24 threads.
 Compressing objects: 100% (5/5), done.
 9c5a911abad74b62a7fefb630c71f6b30859a9dc
 Writing objects: 100% (8/8), done.
 Total 8 (delta 0), reused 0 (delta 0)
--r--r--r-- 1 dylan dylan 1296 Oct 13 11:32 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
--r--r--r-- 1 dylan dylan  661 Oct 13 11:32 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
+-r--r--r-- 1 dylan dylan 1296 Oct 16 14:24 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
+-r--r--r-- 1 dylan dylan  661 Oct 16 14:24 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
 </pre>
 </div>
 </div>
@@ -17447,7 +17611,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Caveat">Caveat<a class="anchor-link" href="#Caveat">&#182;</a></h3><p>git is designed for text files</p>
-<p>Can handle any file in theory (github limit: 100MB), but poor compression/dedup/comparison for binary files</p>
+<p>Can handle any file in theory (github limit: 100MB), but poor for binary files</p>
 
 </div>
 </div>
@@ -17497,7 +17661,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 </aside>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git read-tree <span class="nv">$tree1</span>
@@ -17519,9 +17683,9 @@ git ls-files
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-read-tree (1)    - Reads tree information into the index
+<pre><span style="background-color: rgb(215,255,255)">git-read-tree    - Reads tree information into the index
 </span>.git/index: Git index, version 2, 3 entries
-<span style="background-color: rgb(215,255,255)">git-ls-files (1)     - Show information about files in the index and the working tree
+<span style="background-color: rgb(215,255,255)">git-ls-files     - Show information about files in the index and the working tree
 </span>README
 stuff/hello.txt
 stuff/other.txt
@@ -17546,7 +17710,7 @@ stuff/other.txt
 </aside><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git checkout-index -a
@@ -17567,7 +17731,7 @@ ls -R
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-checkout-index (1) - Copy files from the index to the working tree
+<pre><span style="background-color: rgb(215,255,255)">git-checkout-index - Copy files from the index to the working tree
 </span>.:
 README  <span class="ansi-blue-intense-fg ansi-bold">stuff</span>
 
@@ -17603,7 +17767,7 @@ README  <span class="ansi-blue-intense-fg ansi-bold">stuff</span>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;New and improved.&#39;</span> &gt; README
@@ -17641,7 +17805,7 @@ git diff
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git add README
@@ -17661,7 +17825,7 @@ git diff
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-add (1)          - Add file contents to the index
+<pre><span style="background-color: rgb(215,255,255)">git-add          - Add file contents to the index
 </span></pre>
 </div>
 </div>
@@ -17672,7 +17836,7 @@ git diff
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git write-tree
@@ -17693,7 +17857,7 @@ git diff
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-write-tree (1)   - Create a tree object from the current index
+<pre><span style="background-color: rgb(215,255,255)">git-write-tree   - Create a tree object from the current index
 </span>674e727fabfeb840b5c4e36f2c33610dfb50458e
 674e727fabfeb840b5c4e36f2c33610dfb50458e
 </pre>
@@ -17706,7 +17870,7 @@ git diff
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git rm stuff/other.txt
@@ -17727,7 +17891,7 @@ git ls-files
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-rm (1)           - Remove files from the working tree and from the index
+<pre><span style="background-color: rgb(215,255,255)">git-rm           - Remove files from the working tree and from the index
 </span>rm &#39;stuff/other.txt&#39;
 README
 stuff/hello.txt
@@ -17741,7 +17905,7 @@ stuff/hello.txt
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git mv README README.md
@@ -17762,7 +17926,7 @@ ls
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-mv (1)           - Move or rename a file, a directory, or a symlink
+<pre><span style="background-color: rgb(215,255,255)">git-mv           - Move or rename a file, a directory, or a symlink
 </span>README.md  <span class="ansi-blue-intense-fg ansi-bold">stuff</span>
 </pre>
 </div>
@@ -17781,7 +17945,7 @@ ls
 <dt>`git add -A [FILE|DIR] ...`</dt><dd>update index to  match disk (update+add+remove entries)</dd>
 <dt>`git add -p            ...`</dt><dd>*interactively* ask what to "stage" to index</dd>
 <dt>`git mv SRC DST`</dt><dd>rename file/dir on disk and in index</dd>
-<dt>`git rm [-r] [-f] FILE|DIR`</dt><dd>remove file (`-r`: dir) from disk and index (`--force`: even if local changes!)</dd>
+<dt><code>git rm <font color='blue'>[-r]</font> <font color='red'>[-f]</font> FILE|DIR</code><dd>remove file <font color='blue'>(dir)</font> from disk and index <font color='red'>(even if local changes!)</font></dd>
 <dt>`git rm --cached ...`</dt><dd>remove from index only (but not disk)</dd></dl>
 </div>
 </div>
@@ -17808,7 +17972,7 @@ ls
 </aside>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;maybe not...&#39;</span> &gt;&gt; README.md
@@ -17846,11 +18010,11 @@ git diff
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git checkout -- README.md
-git diff-files
+git diff
 </pre></div>
 
 </div>
@@ -17867,8 +18031,7 @@ git diff-files
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-checkout (1)     - Switch branches or restore working tree files
-</span><span style="background-color: rgb(215,255,255)">git-diff-files (1)   - Compares files in the working tree and the index
+<pre><span style="background-color: rgb(215,255,255)">git-checkout     - Switch branches or restore working tree files
 </span></pre>
 </div>
 </div>
@@ -17898,7 +18061,7 @@ git diff-files
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git symbolic-ref HEAD <span class="c1"># show HEAD ref</span>
@@ -17919,7 +18082,7 @@ cat .git/HEAD
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-symbolic-ref (1) - Read, modify and delete symbolic refs
+<pre><span style="background-color: rgb(215,255,255)">git-symbolic-ref - Read, modify and delete symbolic refs
 </span>refs/heads/master
 ref: refs/heads/master
 </pre>
@@ -17943,10 +18106,10 @@ ref: refs/heads/master
 </aside><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git checkout -b dylan/work <span class="c1"># also shows brief status of local </span>
+<div class=" highlight hl-bash"><pre><span></span>git checkout dylan/refactor <span class="c1"># also shows brief status of local </span>
 git symbolic-ref HEAD
 git branch
 </pre></div>
@@ -17968,10 +18131,10 @@ git branch
 <pre>D	README
 A	README.md
 D	stuff/other.txt
-Switched to a new branch &#39;dylan/work&#39;
-refs/heads/dylan/work
-<span style="background-color: rgb(215,255,255)">git-branch (1)       - List, create, or delete branches
-</span>* <span class="ansi-green-fg">dylan/work</span>
+Switched to branch &#39;dylan/refactor&#39;
+refs/heads/dylan/refactor
+<span style="background-color: rgb(215,255,255)">git-branch       - List, create, or delete branches
+</span>* <span class="ansi-green-fg">dylan/refactor</span>
   master
 </pre>
 </div>
@@ -17985,14 +18148,14 @@ refs/heads/dylan/work
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="quick-reference:-branches">quick reference: branches<a class="anchor-link" href="#quick-reference:-branches">&#182;</a></h4><dl><dt>`git checkout REV`</dt><dd>switch to a branch or "detached" revision</dd>
-<dt>`git branch      NEWBRANCH [REV]`</dt>
-<dt>`git checkout -b NEWBRANCH [REV]`</dt><dd>create (and switch to) new branch at REV (`HEAD`)</dd>
+<h4 id="quick-reference:-branches">quick reference: branches<a class="anchor-link" href="#quick-reference:-branches">&#182;</a></h4><dl><dt>`git checkout REV`</dt><dd>switch to a branch or "detached" revision (change HEAD)</dd>
+<dt><code>git <font color='blue'>branch</font>      NEWBRANCH [REV]</code></dt>
+<dt><code>git <font color='green'>checkout</font> <font color='blue'>-b</font> NEWBRANCH [REV]</code></dt><dd><font color='blue'>create</font> <font color='green'>(and switch to)</font> new branch at REV (`HEAD`)</dd>
 <dt>`git checkout -m`</dt><dd>switch to branch and bring along un-committed changes on disk</dd>
 <dt>`git checkout REV -- PATH ...`</dt><dd>overwrite files on disk from revision (but don't switch branches)</dd>
 <dt>`git branch -va`</dt><dd>list all branches and latest commit</dd>
 <dt>`git branch -m OLDBRANCH NEWBRANCH`</dt>
-<dt>`git branch -d OLDBRANCH`</dt><dd>rename or delete</dd></dl>
+<dt>`git branch -d OLDBRANCH`</dt><dd>rename or delete branch</dd></dl>
 </div>
 </div>
 </div></section><section>
@@ -18007,7 +18170,7 @@ refs/heads/dylan/work
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git commit -m <span class="s2">&quot;Mark down &#39;README&#39;; no more other.txt&quot;</span>
@@ -18027,8 +18190,8 @@ refs/heads/dylan/work
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-commit (1)       - Record changes to the repository
-</span>[dylan/work e4212ad] Mark down &#39;README&#39;; no more other.txt
+<pre><span style="background-color: rgb(215,255,255)">git-commit       - Record changes to the repository
+</span>[dylan/refactor e4212ad] Mark down &#39;README&#39;; no more other.txt
  2 files changed, 1 deletion(-)
  rename README =&gt; README.md (100%)
  delete mode 100644 stuff/other.txt
@@ -18042,7 +18205,7 @@ refs/heads/dylan/work
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git branch -va
@@ -18062,8 +18225,8 @@ refs/heads/dylan/work
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>* <span class="ansi-green-fg">dylan/work</span> e4212ad Mark down &#39;README&#39;; no more other.txt
-  master     0b5bcf3 Improve README with new stuff
+<pre>* <span class="ansi-green-fg">dylan/refactor</span> e4212ad Mark down &#39;README&#39;; no more other.txt
+  master         0b5bcf3 Improve README with new stuff
 </pre>
 </div>
 </div>
@@ -18074,7 +18237,7 @@ refs/heads/dylan/work
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git log --stat -2
@@ -18094,7 +18257,7 @@ refs/heads/dylan/work
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-yellow-fg">commit e4212ad336cbaf2c4a5b454af07a484b1b09b83b</span><span class="ansi-yellow-fg"> (</span><span class="ansi-cyan-intense-fg ansi-bold">HEAD -&gt; </span><span class="ansi-green-intense-fg ansi-bold">dylan/work</span><span class="ansi-yellow-fg">)</span>
+<pre><span class="ansi-yellow-fg">commit e4212ad336cbaf2c4a5b454af07a484b1b09b83b</span><span class="ansi-yellow-fg"> (</span><span class="ansi-cyan-intense-fg ansi-bold">HEAD -&gt; </span><span class="ansi-green-intense-fg ansi-bold">dylan/refactor</span><span class="ansi-yellow-fg">)</span>
 Author: Dylan Simon &lt;dylan@dylex.net&gt;
 Date:   Fri Jun 30 13:00:00 2017
 
@@ -18126,7 +18289,7 @@ Date:   Thu Jun 22 15:00:00 2017
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="quick-reference:-commit">quick reference: commit<a class="anchor-link" href="#quick-reference:-commit">&#182;</a></h4><dl>
     <dt>`git commit -a`</dt><dd>do `git add -u` and then commit (also `-p`)</dd>
-    <dt>`git commit -m MSG1 [-m MSG2 ...]`</dt><dd>(multi-paragraph) commit message</dd>
+    <dt><code>git commit -m MSG1 <font color='green'>[-m MSG2 ...]</font></code></dt><dd><font color='green'>(multi-paragraph)</font> commit message (instead of invoking editor)</dd>
     <dt>`git commit -v`</dt><dd>invoke editor and show full diff to write commit message</dd>
     <dt>`git commit -- PATH...`</dt><dd>commit all changes to files on disk (bypass index)</dd></dl>
 </div>
@@ -18155,7 +18318,7 @@ Date:   Thu Jun 22 15:00:00 2017
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;New stuff&quot;</span> &gt; stuff/more.txt
@@ -18178,8 +18341,8 @@ git status <span class="c1"># HEAD vs. index and index vs. disk</span>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-status (1)       - Show the working tree status
-</span>On branch dylan/work
+<pre><span style="background-color: rgb(215,255,255)">git-status       - Show the working tree status
+</span>On branch dylan/refactor
 Changes to be committed:
   (use &#34;git reset HEAD &lt;file&gt;...&#34; to unstage)
 
@@ -18230,7 +18393,7 @@ Changes not staged for commit:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git reset -- stuff/more.txt
@@ -18264,13 +18427,13 @@ M	README.md
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Un-comitting:-changing-which-commit-your-branch-points-to">Un-comitting: changing which commit your branch points to<a class="anchor-link" href="#Un-comitting:-changing-which-commit-your-branch-points-to">&#182;</a></h3><p>Changing HEAD branch itself (unlike <code>checkout</code> which just changes <code>HEAD</code>)</p>
+<h3 id="Un-comitting:-changing-which-commit-your-branch-points-to">Un-comitting: changing which commit your branch points to<a class="anchor-link" href="#Un-comitting:-changing-which-commit-your-branch-points-to">&#182;</a></h3><p>Changing where the current branch points</p>
 <dl><dt>`git reset --soft REV`</dt><dd>point the current branch to REV, but nothing else (same files on disk, index)</dd>
-    <dt>`git reset --soft HEAD^`</dt><dd>undo my last `git commit` but keep my current changes, let my try again</dd>
-    <dt>`git commit --amend` <font color='green'>(shortcut)</font></dt><dd>replace the current commit with the index, keeping the commit message</dd>
+    <dt>`git reset --soft HEAD^`</dt><dd>undo the last `git commit` but keep my current changes, let my try again</dd>
+    <dt>`git commit --amend`</dt><dd>replace the current commit with the index, keeping the commit message</dd>
     <dt>`git reset [--mixed] REV`</dt><dd>point current branch to REV, and also set index to match (but not disk)</dd>
     <dd>(If you want to keep your changes but re-add them on a different commit)</dd>
-    <dt>`git reset --hard [REV]` <font color='blue'>(HEAD)</dt></font><dd>throw away everything (index+disk) and point current branch to REV</dd><dd>(<font color='blue'>With HEAD,</font> throw away all my work since last commit)</dd></dl>
+    <dt>`git reset --hard [REV]` </dt><dd>throw away everything (index+disk) and point current branch to REV</dd><dd>(HEAD: throw away all my work since last commit)</dd></dl>
 </div>
 </div>
 </div></section><section>
@@ -18278,7 +18441,7 @@ M	README.md
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><font color='red'>`reset` counts as "<b>rewriting history</b>": don't do this on branches shared with others</font></p>
+<p>`reset` counts as <font color='red'>"<b>rewriting history</b>"</font> (like `rebase`): don't do this on branches shared with others</p>
 </div>
 </div>
 </div><aside class="notes">
@@ -18287,6 +18450,7 @@ M	README.md
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>This is different than <code>checkout</code> which just changes <code>HEAD</code> itself (no indirection).</p>
 <p>There are other ways to rewrite history as well, specifically <code>git rebase</code>...</p>
 
 </div>
@@ -18303,7 +18467,7 @@ M	README.md
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git status
@@ -18324,7 +18488,7 @@ git branch -va
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>On branch dylan/work
+<pre>On branch dylan/refactor
 Changes not staged for commit:
   (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
   (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
@@ -18337,8 +18501,8 @@ Untracked files:
 	<span class="ansi-red-fg">stuff/more.txt</span>
 
 no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
-* <span class="ansi-green-fg">dylan/work</span> e4212ad Mark down &#39;README&#39;; no more other.txt
-  master     0b5bcf3 Improve README with new stuff
+* <span class="ansi-green-fg">dylan/refactor</span> e4212ad Mark down &#39;README&#39;; no more other.txt
+  master         0b5bcf3 Improve README with new stuff
 </pre>
 </div>
 </div>
@@ -18349,7 +18513,7 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git checkout -m master
@@ -18395,7 +18559,7 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git diff
@@ -18432,7 +18596,7 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git add .
@@ -18466,7 +18630,7 @@ git commit -m <span class="s2">&quot;Add more and more&quot;</span>
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git show-branch
@@ -18486,12 +18650,12 @@ git commit -m <span class="s2">&quot;Add more and more&quot;</span>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-show-branch (1)  - Show branches and their commits
-</span><span class="ansi-red-fg">!</span> [dylan/work] Mark down &#39;README&#39;; no more other.txt
+<pre><span style="background-color: rgb(215,255,255)">git-show-branch  - Show branches and their commits
+</span><span class="ansi-red-fg">!</span> [dylan/refactor] Mark down &#39;README&#39;; no more other.txt
  <span class="ansi-green-fg">*</span> [master] Add more and more
 --
 <span class="ansi-red-fg"> </span><span class="ansi-green-fg">*</span> [master] Add more and more
-<span class="ansi-red-fg">+</span><span class="ansi-green-fg"> </span> [dylan/work] Mark down &#39;README&#39;; no more other.txt
+<span class="ansi-red-fg">+</span><span class="ansi-green-fg"> </span> [dylan/refactor] Mark down &#39;README&#39;; no more other.txt
 <span class="ansi-red-fg">+</span><span class="ansi-green-fg">*</span> [master^] Improve README with new stuff
 </pre>
 </div>
@@ -18503,10 +18667,10 @@ git commit -m <span class="s2">&quot;Add more and more&quot;</span>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>git merge dylan/work
+<div class=" highlight hl-bash"><pre><span></span>git merge dylan/refactor
 </pre></div>
 
 </div>
@@ -18523,7 +18687,7 @@ git commit -m <span class="s2">&quot;Add more and more&quot;</span>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-merge (1)        - Join two or more development histories together
+<pre><span style="background-color: rgb(215,255,255)">git-merge        - Join two or more development histories together
 </span>Removing stuff/other.txt
 Merge made by the &#39;recursive&#39; strategy.
  README =&gt; README.md | 0
@@ -18541,7 +18705,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git log --graph -4
@@ -18561,14 +18725,14 @@ Merge made by the &#39;recursive&#39; strategy.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>*   <span class="ansi-yellow-fg">commit 25327c096d17c527bf1bc30dc3915e2c03f2e7e0</span><span class="ansi-yellow-fg"> (</span><span class="ansi-cyan-intense-fg ansi-bold">HEAD -&gt; </span><span class="ansi-green-intense-fg ansi-bold">master</span><span class="ansi-yellow-fg">)</span>
+<pre>*   <span class="ansi-yellow-fg">commit f449e53c83fd0de9a94c36b271ce4a7c675ea92f</span><span class="ansi-yellow-fg"> (</span><span class="ansi-cyan-intense-fg ansi-bold">HEAD -&gt; </span><span class="ansi-green-intense-fg ansi-bold">master</span><span class="ansi-yellow-fg">)</span>
 <span class="ansi-red-fg">|</span><span class="ansi-green-fg">\</span>  Merge: dc7e13a e4212ad
 <span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
 <span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Date:   Fri Jun 30 14:00:00 2017
 <span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> 
-<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span>     Merge branch &#39;dylan/work&#39;
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span>     Merge branch &#39;dylan/refactor&#39;
 <span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> 
-<span class="ansi-red-fg">|</span> * <span class="ansi-yellow-fg">commit e4212ad336cbaf2c4a5b454af07a484b1b09b83b</span><span class="ansi-yellow-fg"> (</span><span class="ansi-green-intense-fg ansi-bold">dylan/work</span><span class="ansi-yellow-fg">)</span>
+<span class="ansi-red-fg">|</span> * <span class="ansi-yellow-fg">commit e4212ad336cbaf2c4a5b454af07a484b1b09b83b</span><span class="ansi-yellow-fg"> (</span><span class="ansi-green-intense-fg ansi-bold">dylan/refactor</span><span class="ansi-yellow-fg">)</span>
 <span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
 <span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Date:   Fri Jun 30 13:00:00 2017
 <span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> 
@@ -18610,13 +18774,13 @@ Merge made by the &#39;recursive&#39; strategy.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Convenient-commit-construction">Convenient commit construction<a class="anchor-link" href="#Convenient-commit-construction">&#182;</a></h2><h3 id="Add-a-&quot;reversed&quot;-commit:-revert">Add a "reversed" commit: <em>revert</em><a class="anchor-link" href="#Add-a-&quot;reversed&quot;-commit:-revert">&#182;</a></h3>
+<h2 id="Commits-derived-from-other-commits">Commits derived from other commits<a class="anchor-link" href="#Commits-derived-from-other-commits">&#182;</a></h2><h3 id="Add-a-&quot;reversed&quot;-commit:-revert">Add a "reversed" commit: <em>revert</em><a class="anchor-link" href="#Add-a-&quot;reversed&quot;-commit:-revert">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git revert e4212ad
@@ -18636,8 +18800,8 @@ Merge made by the &#39;recursive&#39; strategy.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-revert (1)       - Revert some existing commits
-</span>[master 38bf58c] Revert &#34;Mark down &#39;README&#39;; no more other.txt&#34;
+<pre><span style="background-color: rgb(215,255,255)">git-revert       - Revert some existing commits
+</span>[master 3fd3795] Revert &#34;Mark down &#39;README&#39;; no more other.txt&#34;
  2 files changed, 1 insertion(+)
  rename README.md =&gt; README (100%)
  create mode 100644 stuff/other.txt
@@ -18670,7 +18834,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </aside>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git cherry-pick e4212ad
@@ -18690,8 +18854,8 @@ Merge made by the &#39;recursive&#39; strategy.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-cherry-pick (1)  - Apply the changes introduced by some existing commits
-</span>[master 3c7ffae] Mark down &#39;README&#39;; no more other.txt
+<pre><span style="background-color: rgb(215,255,255)">git-cherry-pick  - Apply the changes introduced by some existing commits
+</span>[master 5482448] Mark down &#39;README&#39;; no more other.txt
  Date: Fri Jun 30 13:00:00 2017 -0400
  2 files changed, 1 deletion(-)
  rename README =&gt; README.md (100%)
@@ -18706,7 +18870,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git log -2
@@ -18726,13 +18890,13 @@ Merge made by the &#39;recursive&#39; strategy.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-yellow-fg">commit 3c7ffae7987409b895bd5893fac57e9e1782c74f</span><span class="ansi-yellow-fg"> (</span><span class="ansi-cyan-intense-fg ansi-bold">HEAD -&gt; </span><span class="ansi-green-intense-fg ansi-bold">master</span><span class="ansi-yellow-fg">)</span>
+<pre><span class="ansi-yellow-fg">commit 5482448f59a5f7ea2e488a9f1f077e5d0d3cfe37</span><span class="ansi-yellow-fg"> (</span><span class="ansi-cyan-intense-fg ansi-bold">HEAD -&gt; </span><span class="ansi-green-intense-fg ansi-bold">master</span><span class="ansi-yellow-fg">)</span>
 Author: Dylan Simon &lt;dylan@dylex.net&gt;
 Date:   Fri Jun 30 13:00:00 2017
 
     Mark down &#39;README&#39;; no more other.txt
 
-<span class="ansi-yellow-fg">commit 38bf58c19e1e741404d8edd357b87f55c771eaeb</span>
+<span class="ansi-yellow-fg">commit 3fd3795a58b28d39b4ae8b0cec8f70e26c6eaaf4</span>
 Author: Dylan Simon &lt;dylan@dylex.net&gt;
 Date:   Fri Jun 30 14:00:00 2017
 
@@ -18751,13 +18915,13 @@ Date:   Fri Jun 30 14:00:00 2017
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Wrapping-things-up:-cleaning-and-stashing">Wrapping things up: <em>clean</em>ing and <em>stash</em>ing<a class="anchor-link" href="#Wrapping-things-up:-cleaning-and-stashing">&#182;</a></h1>
+<h2 id="Wrapping-things-up:-cleaning-and-stashing">Wrapping things up: <em>clean</em>ing and <em>stash</em>ing<a class="anchor-link" href="#Wrapping-things-up:-cleaning-and-stashing">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>touch output.txt
@@ -18795,7 +18959,7 @@ nothing added to commit but untracked files present (use &#34;git add&#34; to tr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git clean -f
@@ -18815,7 +18979,7 @@ nothing added to commit but untracked files present (use &#34;git add&#34; to tr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-clean (1)        - Remove untracked files from the working tree
+<pre><span style="background-color: rgb(215,255,255)">git-clean        - Remove untracked files from the working tree
 </span>Removing output.txt
 </pre>
 </div>
@@ -18827,7 +18991,7 @@ nothing added to commit but untracked files present (use &#34;git add&#34; to tr
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;further reading&quot;</span> &gt;&gt; README.md
@@ -18877,7 +19041,7 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 </aside><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git stash <span class="c1">#push</span>
@@ -18898,9 +19062,9 @@ git stash list
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-stash (1)        - Stash the changes in a dirty working directory away
-</span>Saved working directory and index state WIP on master: 3c7ffae Mark down &#39;README&#39;; no more other.txt
-stash@{0}: WIP on master: 3c7ffae Mark down &#39;README&#39;; no more other.txt
+<pre><span style="background-color: rgb(215,255,255)">git-stash        - Stash the changes in a dirty working directory away
+</span>Saved working directory and index state WIP on master: 5482448 Mark down &#39;README&#39;; no more other.txt
+stash@{0}: WIP on master: 5482448 Mark down &#39;README&#39;; no more other.txt
 </pre>
 </div>
 </div>
@@ -18911,7 +19075,7 @@ stash@{0}: WIP on master: 3c7ffae Mark down &#39;README&#39;; no more other.txt
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git stash pop
@@ -18939,7 +19103,7 @@ Changes not staged for commit:
 	<span class="ansi-red-fg">modified:   README.md</span>
 
 no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
-Dropped refs/stash@{0} (ef7d2622fe9ec10b68d32148e0e53d33a4bef3d1)
+Dropped refs/stash@{0} (2a4c13ea91689e4e2258ca24715088c9c52ef411)
 </pre>
 </div>
 </div>
@@ -18958,7 +19122,7 @@ Dropped refs/stash@{0} (ef7d2622fe9ec10b68d32148e0e53d33a4bef3d1)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>cat README.md
@@ -18982,10 +19146,10 @@ git blame -- README.md
 <pre>New and improved.
 More to read
 further reading
-<span style="background-color: rgb(215,255,255)">git-blame (1)        - Show what revision and author last modified each line of a file
+<span style="background-color: rgb(215,255,255)">git-blame        - Show what revision and author last modified each line of a file
 </span>0b5bcf36 README    (Dylan Simon       2017-06-22 15:00:00 -0400 1) New and improved.
 dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
-00000000 README.md (Not Committed Yet 2017-10-13 11:32:45 -0400 3) further reading
+00000000 README.md (Not Committed Yet 2017-10-16 14:24:08 -0400 3) further reading
 </pre>
 </div>
 </div>
@@ -18993,7 +19157,120 @@ dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
 </div>
 </div>
 
-</div></section></section><section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git checkout -- README.md
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Making-git-ignore-files">Making git ignore files<a class="anchor-link" href="#Making-git-ignore-files">&#182;</a></h2><p>Generated output, temporary files, etc.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;/output.*&#39;</span> &gt; .gitignore
+git add .gitignore
+git commit -m <span class="s1">&#39;Ignore all output files in top dir&#39;</span>
+touch output.txt
+git status
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[master 7dfd4e5] Ignore all output files in top dir
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+On branch master
+nothing to commit, working tree clean
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ignore patterns:</p>
+<ul>
+<li><code>/*.out</code>: only in this directory</li>
+<li><code>*.out</code>: anywhere in this directory or below</li>
+<li><code>*.out/</code>: only directories (not files)</li>
+<li><code>!this.out</code>: cancel ignore</li>
+</ul>
+<p>Ignore file lists:</p>
+<ul>
+<li><code>.gitignore</code>: in repository, for every instance of this repo</li>
+<li><code>~/.config/git/ignore</code>: for you only, in all your git repos</li>
+<li><code>.git/info/include</code>: for you only, in this repo</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git clean -fx
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Removing output.txt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -19027,7 +19304,7 @@ dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git remote add ghdylex git://github.com/dylex/git-structure-tutorial
@@ -19048,7 +19325,7 @@ git remote -v
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-remote (1)       - Manage set of tracked repositories
+<pre><span style="background-color: rgb(215,255,255)">git-remote       - Manage set of tracked repositories
 </span>ghdylex	git://github.com/dylex/git-structure-tutorial (fetch)
 ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 </pre>
@@ -19072,7 +19349,7 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 </aside></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git fetch ghdylex <span class="c1"># or: git remote update</span>
@@ -19092,12 +19369,12 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-fetch (1)        - Download objects and refs from another repository
-</span>remote: Counting objects: 126, done.
-remote: Compressing objects: 100% (59/59), done.
-remote: Total 126 (delta 55), reused 120 (delta 49), pack-reused 0
-Receiving objects: 100% (126/126), 390.16 KiB | 13.45 MiB/s, done.
-Resolving deltas: 100% (55/55), done.
+<pre><span style="background-color: rgb(215,255,255)">git-fetch        - Download objects and refs from another repository
+</span>remote: Counting objects: 132, done.
+remote: Compressing objects: 100% (63/63), done.
+remote: Total 132 (delta 58), reused 124 (delta 50), pack-reused 0
+Receiving objects: 100% (132/132), 825.88 KiB | 5.86 MiB/s, done.
+Resolving deltas: 100% (58/58), done.
 From git://github.com/dylex/git-structure-tutorial
  * [new branch]      example    -&gt; ghdylex/example
  * [new branch]      gh-pages   -&gt; ghdylex/gh-pages
@@ -19121,7 +19398,7 @@ From git://github.com/dylex/git-structure-tutorial
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git branch -va
@@ -19141,11 +19418,11 @@ From git://github.com/dylex/git-structure-tutorial
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  dylan/work               e4212ad Mark down &#39;README&#39;; no more other.txt
-* <span class="ansi-green-fg">master                  </span> 3c7ffae Mark down &#39;README&#39;; no more other.txt
-  <span class="ansi-red-fg">remotes/ghdylex/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> 0ff7cc1 Update generated slides from 0162015
-  <span class="ansi-red-fg">remotes/ghdylex/master  </span> 2a6e7f1 Minor reflow for smaller screen
+<pre>  dylan/refactor           e4212ad Mark down &#39;README&#39;; no more other.txt
+* <span class="ansi-green-fg">master                  </span> 7dfd4e5 Ignore all output files in top dir
+  <span class="ansi-red-fg">remotes/ghdylex/example </span> f79c7b3 Add a period.
+  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> 2f5a17b Update generated slides from 2a6e7f1
+  <span class="ansi-red-fg">remotes/ghdylex/master  </span> aca2903 More notes; include some understanding git slides
 </pre>
 </div>
 </div>
@@ -19156,7 +19433,7 @@ From git://github.com/dylex/git-structure-tutorial
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git merge ghdylex/example
@@ -19176,8 +19453,7 @@ From git://github.com/dylex/git-structure-tutorial
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Auto-merging README.md
-Merge made by the &#39;recursive&#39; strategy.
+<pre>Merge made by the &#39;recursive&#39; strategy.
  README.md | 2 <span class="ansi-green-fg">+</span><span class="ansi-red-fg">-</span>
  1 file changed, 1 insertion(+), 1 deletion(-)
 </pre>
@@ -19190,7 +19466,7 @@ Merge made by the &#39;recursive&#39; strategy.
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git pull ghdylex example
@@ -19210,7 +19486,7 @@ Merge made by the &#39;recursive&#39; strategy.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-pull (1)         - Fetch from and integrate with another repository or a local branch
+<pre><span style="background-color: rgb(215,255,255)">git-pull         - Fetch from and integrate with another repository or a local branch
 </span>From git://github.com/dylex/git-structure-tutorial
  * branch            example    -&gt; FETCH_HEAD
 Already up-to-date.
@@ -19243,7 +19519,7 @@ Already up-to-date.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>! git push ghdylex master
@@ -19263,7 +19539,7 @@ Already up-to-date.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-push (1)         - Update remote refs along with associated objects
+<pre><span style="background-color: rgb(215,255,255)">git-push         - Update remote refs along with associated objects
 </span>fatal: remote error: 
   You can&#39;t push to git://github.com/dylex/git-structure-tutorial.git
   Use https://github.com/dylex/git-structure-tutorial.git
@@ -19298,7 +19574,100 @@ Already up-to-date.
 </div>
 </div>
 </div>
-</aside></section></section><section><section>
+</aside></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git log --graph
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>*   <span class="ansi-yellow-fg">commit 7098d57271ab38aea12fa2381b85e91c29f98789</span><span class="ansi-yellow-fg"> (</span><span class="ansi-cyan-intense-fg ansi-bold">HEAD -&gt; </span><span class="ansi-green-intense-fg ansi-bold">master</span><span class="ansi-yellow-fg">)</span>
+<span class="ansi-red-fg">|</span><span class="ansi-green-fg">\</span>  Merge: 7dfd4e5 f79c7b3
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Date:   Fri Jun 30 14:00:00 2017
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> 
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span>     Merge remote-tracking branch &#39;ghdylex/example&#39;
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> 
+<span class="ansi-red-fg">|</span> * <span class="ansi-yellow-fg">commit f79c7b3fbb14f1664adeec9e5a6a36b023b5c171</span><span class="ansi-yellow-fg"> (</span><span class="ansi-red-intense-fg ansi-bold">ghdylex/example</span><span class="ansi-yellow-fg">)</span>
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> Date:   Mon Oct 16 14:13:31 2017
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> 
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span>     Add a period.
+<span class="ansi-red-fg">|</span> <span class="ansi-green-fg">|</span> 
+* <span class="ansi-green-fg">|</span> <span class="ansi-yellow-fg">commit 7dfd4e5f1c0d4aaf481326f5f3edbb008bcabf12</span>
+<span class="ansi-green-fg">|</span><span class="ansi-green-fg">/</span>  Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-green-fg">|</span>   Date:   Fri Jun 30 14:00:00 2017
+<span class="ansi-green-fg">|</span>   
+<span class="ansi-green-fg">|</span>       Ignore all output files in top dir
+<span class="ansi-green-fg">|</span> 
+* <span class="ansi-yellow-fg">commit 5482448f59a5f7ea2e488a9f1f077e5d0d3cfe37</span>
+<span class="ansi-green-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-green-fg">|</span> Date:   Fri Jun 30 13:00:00 2017
+<span class="ansi-green-fg">|</span> 
+<span class="ansi-green-fg">|</span>     Mark down &#39;README&#39;; no more other.txt
+<span class="ansi-green-fg">|</span> 
+* <span class="ansi-yellow-fg">commit 3fd3795a58b28d39b4ae8b0cec8f70e26c6eaaf4</span>
+<span class="ansi-green-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-green-fg">|</span> Date:   Fri Jun 30 14:00:00 2017
+<span class="ansi-green-fg">|</span> 
+<span class="ansi-green-fg">|</span>     Revert &#34;Mark down &#39;README&#39;; no more other.txt&#34;
+<span class="ansi-green-fg">|</span>     
+<span class="ansi-green-fg">|</span>     This reverts commit e4212ad336cbaf2c4a5b454af07a484b1b09b83b.
+<span class="ansi-green-fg">|</span>   
+*   <span class="ansi-yellow-fg">commit f449e53c83fd0de9a94c36b271ce4a7c675ea92f</span>
+<span class="ansi-yellow-fg">|</span><span class="ansi-blue-fg">\</span>  Merge: dc7e13a e4212ad
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span> Date:   Fri Jun 30 14:00:00 2017
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span> 
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span>     Merge branch &#39;dylan/refactor&#39;
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span> 
+<span class="ansi-yellow-fg">|</span> * <span class="ansi-yellow-fg">commit e4212ad336cbaf2c4a5b454af07a484b1b09b83b</span><span class="ansi-yellow-fg"> (</span><span class="ansi-green-intense-fg ansi-bold">dylan/refactor</span><span class="ansi-yellow-fg">)</span>
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span> Date:   Fri Jun 30 13:00:00 2017
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span> 
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span>     Mark down &#39;README&#39;; no more other.txt
+<span class="ansi-yellow-fg">|</span> <span class="ansi-blue-fg">|</span> 
+* <span class="ansi-blue-fg">|</span> <span class="ansi-yellow-fg">commit dc7e13a6ad09aca550d5179dcce8f82bc44255a9</span>
+<span class="ansi-blue-fg">|</span><span class="ansi-blue-fg">/</span>  Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-blue-fg">|</span>   Date:   Fri Jun 30 14:00:00 2017
+<span class="ansi-blue-fg">|</span>   
+<span class="ansi-blue-fg">|</span>       Add more and more
+<span class="ansi-blue-fg">|</span> 
+* <span class="ansi-yellow-fg">commit 0b5bcf36d47bf5abc4ec35c72e9a2c0294d8d832</span><span class="ansi-yellow-fg"> (</span><span class="ansi-yellow-intense-fg ansi-bold">tag: scicon17</span><span class="ansi-yellow-fg">)</span>
+<span class="ansi-blue-fg">|</span> Author: Dylan Simon &lt;dylan@dylex.net&gt;
+<span class="ansi-blue-fg">|</span> Date:   Thu Jun 22 15:00:00 2017
+<span class="ansi-blue-fg">|</span> 
+<span class="ansi-blue-fg">|</span>     Improve README with new stuff
+<span class="ansi-blue-fg">|</span> 
+* <span class="ansi-yellow-fg">commit 2efdb20ab8b7d2e585ae0cd4209f9c4c525d94e1</span>
+  Author: Dylan Simon &lt;dylan@dylex.net&gt;
+  Date:   Tue Jun 20 18:00:00 2017
+  
+      Add some text files to my tree
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -19309,7 +19678,7 @@ Already up-to-date.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git clone git://github.com/dylex/git-structure-tutorial
@@ -19329,13 +19698,13 @@ Already up-to-date.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span style="background-color: rgb(215,255,255)">git-clone (1)        - Clone a repository into a new directory
+<pre><span style="background-color: rgb(215,255,255)">git-clone        - Clone a repository into a new directory
 </span>Cloning into &#39;git-structure-tutorial&#39;...
-remote: Counting objects: 146, done.
-remote: Compressing objects: 100% (28/28), done.
-Receiving objects: 100% (146/146), 546.23 KiB | 13.66 MiB/s, done.
-remote: Total 146 (delta 25), reused 51 (delta 21), pack-reused 90
-Resolving deltas: 100% (54/54), done.
+remote: Counting objects: 153, done.
+remote: Compressing objects: 100% (37/37), done.
+remote: Total 153 (delta 29), reused 60 (delta 23), pack-reused 85
+Receiving objects: 100% (153/153), 981.59 KiB | 5.81 MiB/s, done.
+Resolving deltas: 100% (57/57), done.
 </pre>
 </div>
 </div>
@@ -19346,7 +19715,7 @@ Resolving deltas: 100% (54/54), done.
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git -C git-structure-tutorial branch -va
@@ -19366,11 +19735,11 @@ Resolving deltas: 100% (54/54), done.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>* <span class="ansi-green-fg">master                 </span> 2a6e7f1 Minor reflow for smaller screen
+<pre>* <span class="ansi-green-fg">master                 </span> aca2903 More notes; include some understanding git slides
   <span class="ansi-red-fg">remotes/origin/HEAD    </span> -&gt; origin/master
-  <span class="ansi-red-fg">remotes/origin/example </span> d0ad6f3 Add a period.
-  <span class="ansi-red-fg">remotes/origin/gh-pages</span> 0ff7cc1 Update generated slides from 0162015
-  <span class="ansi-red-fg">remotes/origin/master  </span> 2a6e7f1 Minor reflow for smaller screen
+  <span class="ansi-red-fg">remotes/origin/example </span> f79c7b3 Add a period.
+  <span class="ansi-red-fg">remotes/origin/gh-pages</span> 2f5a17b Update generated slides from 2a6e7f1
+  <span class="ansi-red-fg">remotes/origin/master  </span> aca2903 More notes; include some understanding git slides
 </pre>
 </div>
 </div>
@@ -19401,7 +19770,9 @@ Resolving deltas: 100% (54/54), done.
 <h2 id="Practical-workflow">Practical workflow<a class="anchor-link" href="#Practical-workflow">&#182;</a></h2><ul>
 <li><code>git pull</code></li>
 <li>edit edit, <code>git status</code>, edit edit</li>
-<li><code>git commit -- FILE...</code>, <code>git push</code></li>
+<li><code>git commit -a</code></li>
+<li><code>git push</code></li>
+<li>repeat</li>
 </ul>
 
 </div>
@@ -19417,6 +19788,7 @@ Resolving deltas: 100% (54/54), done.
 </ul>
 </li>
 <li>github<ul>
+<li><a href="https://github.com/flatironinstitute">github.com/flatironinstitute</a></li>
 <li>issues, pull requests, workflows</li>
 <li>gh-pages (user/repo <code>gh-pages</code> branch published as user.github.io/repo)</li>
 <li>permissions</li>
@@ -19433,7 +19805,1469 @@ Resolving deltas: 100% (54/54), done.
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>git <span class="nb">help</span> core-tutorial
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>GITCORE-TUTORIAL(7)               Git Manual               GITCORE-TUTORIAL(7)
+
+NNAAMMEE
+       gitcore-tutorial - A Git core tutorial for developers
+
+SSYYNNOOPPSSIISS
+       git *
+
+DDEESSCCRRIIPPTTIIOONN
+       This tutorial explains how to use the &#34;core&#34; Git commands to set up and
+       work with a Git repository.
+
+       If you just need to use Git as a revision control system you may prefer
+       to start with &#34;A Tutorial Introduction to Git&#34; (ggiittttuuttoorriiaall(7)) or tthhee
+       GGiitt UUsseerr MMaannuuaall[1].
+
+       However, an understanding of these low-level tools can be helpful if
+       you want to understand Git’s internals.
+
+       The core Git is often called &#34;plumbing&#34;, with the prettier user
+       interfaces on top of it called &#34;porcelain&#34;. You may not want to use the
+       plumbing directly very often, but it can be good to know what the
+       plumbing does when the porcelain isn’t flushing.
+
+       Back when this document was originally written, many porcelain commands
+       were shell scripts. For simplicity, it still uses them as examples to
+       illustrate how plumbing is fit together to form the porcelain commands.
+       The source tree includes some of these scripts in contrib/examples/ for
+       reference. Although these are not implemented as shell scripts anymore,
+       the description of what the plumbing layer commands do is still valid.
+
+           NNoottee
+           Deeper technical details are often marked as Notes, which you can
+           skip on your first reading.
+
+CCRREEAATTIINNGG AA GGIITT RREEPPOOSSIITTOORRYY
+       Creating a new Git repository couldn’t be easier: all Git repositories
+       start out empty, and the only thing you need to do is find yourself a
+       subdirectory that you want to use as a working tree - either an empty
+       one for a totally new project, or an existing working tree that you
+       want to import into Git.
+
+       For our first example, we’re going to start a totally new repository
+       from scratch, with no pre-existing files, and we’ll call it
+       _g_i_t_-_t_u_t_o_r_i_a_l. To start up, create a subdirectory for it, change into
+       that subdirectory, and initialize the Git infrastructure with _g_i_t _i_n_i_t:
+
+           $ mkdir git-tutorial
+           $ cd git-tutorial
+           $ git init
+
+       to which Git will reply
+
+           Initialized empty Git repository in .git/
+
+       which is just Git’s way of saying that you haven’t been doing anything
+       strange, and that it will have created a local ..ggiitt directory setup for
+       your new project. You will now have a ..ggiitt directory, and you can
+       inspect that with _l_s. For your new empty project, it should show you
+       three entries, among other things:
+
+       ·   a file called HHEEAADD, that has rreeff:: rreeffss//hheeaaddss//mmaasstteerr in it. This is
+           similar to a symbolic link and points at rreeffss//hheeaaddss//mmaasstteerr relative
+           to the HHEEAADD file.
+
+           Don’t worry about the fact that the file that the HHEEAADD link points
+           to doesn’t even exist yet — you haven’t created the commit that
+           will start your HHEEAADD development branch yet.
+
+       ·   a subdirectory called oobbjjeeccttss, which will contain all the objects
+           of your project. You should never have any real reason to look at
+           the objects directly, but you might want to know that these objects
+           are what contains all the real _d_a_t_a in your repository.
+
+       ·   a subdirectory called rreeffss, which contains references to objects.
+
+       In particular, the rreeffss subdirectory will contain two other
+       subdirectories, named hheeaaddss and ttaaggss respectively. They do exactly what
+       their names imply: they contain references to any number of different
+       _h_e_a_d_s of development (aka _b_r_a_n_c_h_e_s), and to any _t_a_g_s that you have
+       created to name specific versions in your repository.
+
+       One note: the special mmaasstteerr head is the default branch, which is why
+       the ..ggiitt//HHEEAADD file was created points to it even if it doesn’t yet
+       exist. Basically, the HHEEAADD link is supposed to always point to the
+       branch you are working on right now, and you always start out expecting
+       to work on the mmaasstteerr branch.
+
+       However, this is only a convention, and you can name your branches
+       anything you want, and don’t have to ever even _h_a_v_e a mmaasstteerr branch. A
+       number of the Git tools will assume that ..ggiitt//HHEEAADD is valid, though.
+
+           NNoottee
+           An _o_b_j_e_c_t is identified by its 160-bit SHA-1 hash, aka _o_b_j_e_c_t _n_a_m_e,
+           and a reference to an object is always the 40-byte hex
+           representation of that SHA-1 name. The files in the rreeffss
+           subdirectory are expected to contain these hex references (usually
+           with a final \\nn at the end), and you should thus expect to see a
+           number of 41-byte files containing these references in these rreeffss
+           subdirectories when you actually start populating your tree.
+
+           NNoottee
+           An advanced user may want to take a look at ggiittrreeppoossiittoorryy--llaayyoouutt(5)
+           after finishing this tutorial.
+
+       You have now created your first Git repository. Of course, since it’s
+       empty, that’s not very useful, so let’s start populating it with data.
+
+PPOOPPUULLAATTIINNGG AA GGIITT RREEPPOOSSIITTOORRYY
+       We’ll keep this simple and stupid, so we’ll start off with populating a
+       few trivial files just to get a feel for it.
+
+       Start off with just creating any random files that you want to maintain
+       in your Git repository. We’ll start off with a few bad examples, just
+       to get a feel for how this works:
+
+           $ echo &#34;Hello World&#34; &gt;hello
+           $ echo &#34;Silly example&#34; &gt;example
+
+       you have now created two files in your working tree (aka _w_o_r_k_i_n_g
+       _d_i_r_e_c_t_o_r_y), but to actually check in your hard work, you will have to
+       go through two steps:
+
+       ·   fill in the _i_n_d_e_x file (aka _c_a_c_h_e) with the information about your
+           working tree state.
+
+       ·   commit that index file as an object.
+
+       The first step is trivial: when you want to tell Git about any changes
+       to your working tree, you use the _g_i_t _u_p_d_a_t_e_-_i_n_d_e_x program. That
+       program normally just takes a list of filenames you want to update, but
+       to avoid trivial mistakes, it refuses to add new entries to the index
+       (or remove existing ones) unless you explicitly tell it that you’re
+       adding a new entry with the ----aadddd flag (or removing an entry with the
+       ----rreemmoovvee) flag.
+
+       So to populate the index with the two files you just created, you can
+       do
+
+           $ git update-index --add hello example
+
+       and you have now told Git to track those two files.
+
+       In fact, as you did that, if you now look into your object directory,
+       you’ll notice that Git will have added two new objects to the object
+       database. If you did exactly the steps above, you should now be able to
+       do
+
+           $ ls .git/objects/??/*
+
+       and see two files:
+
+           .git/objects/55/7db03de997c86a4a028e1ebd3a1ceb225be238
+           .git/objects/f2/4c74a2e500f5ee1332c86b94199f52b1d1d962
+
+       which correspond with the objects with names of 555577ddbb...... and ff2244cc77......
+       respectively.
+
+       If you want to, you can use _g_i_t _c_a_t_-_f_i_l_e to look at those objects, but
+       you’ll have to use the object name, not the filename of the object:
+
+           $ git cat-file -t 557db03de997c86a4a028e1ebd3a1ceb225be238
+
+       where the --tt tells _g_i_t _c_a_t_-_f_i_l_e to tell you what the &#34;type&#34; of the
+       object is. Git will tell you that you have a &#34;blob&#34; object (i.e., just
+       a regular file), and you can see the contents with
+
+           $ git cat-file blob 557db03
+
+       which will print out &#34;Hello World&#34;. The object 555577ddbb0033 is nothing more
+       than the contents of your file hheelllloo.
+
+           NNoottee
+           Don’t confuse that object with the file hheelllloo itself. The object is
+           literally just those specific ccoonntteennttss of the file, and however
+           much you later change the contents in file hheelllloo, the object we
+           just looked at will never change. Objects are immutable.
+
+           NNoottee
+           The second example demonstrates that you can abbreviate the object
+           name to only the first several hexadecimal digits in most places.
+
+       Anyway, as we mentioned previously, you normally never actually take a
+       look at the objects themselves, and typing long 40-character hex names
+       is not something you’d normally want to do. The above digression was
+       just to show that _g_i_t _u_p_d_a_t_e_-_i_n_d_e_x did something magical, and actually
+       saved away the contents of your files into the Git object database.
+
+       Updating the index did something else too: it created a ..ggiitt//iinnddeexx
+       file. This is the index that describes your current working tree, and
+       something you should be very aware of. Again, you normally never worry
+       about the index file itself, but you should be aware of the fact that
+       you have not actually really &#34;checked in&#34; your files into Git so far,
+       you’ve only ttoolldd Git about them.
+
+       However, since Git knows about them, you can now start using some of
+       the most basic Git commands to manipulate the files or look at their
+       status.
+
+       In particular, let’s not even check in the two files into Git yet,
+       we’ll start off by adding another line to hheelllloo first:
+
+           $ echo &#34;It&#39;s a new day for git&#34; &gt;&gt;hello
+
+       and you can now, since you told Git about the previous state of hheelllloo,
+       ask Git what has changed in the tree compared to your old index, using
+       the _g_i_t _d_i_f_f_-_f_i_l_e_s command:
+
+           $ git diff-files
+
+       Oops. That wasn’t very readable. It just spit out its own internal
+       version of a _d_i_f_f, but that internal version really just tells you that
+       it has noticed that &#34;hello&#34; has been modified, and that the old object
+       contents it had have been replaced with something else.
+
+       To make it readable, we can tell _g_i_t _d_i_f_f_-_f_i_l_e_s to output the
+       differences as a patch, using the --pp flag:
+
+           $ git diff-files -p
+           diff --git a/hello b/hello
+           index 557db03..263414f 100644
+           --- a/hello
+           +++ b/hello
+           @@ -1 +1,2 @@
+            Hello World
+           +It&#39;s a new day for git
+
+       i.e. the diff of the change we caused by adding another line to hheelllloo.
+
+       In other words, _g_i_t _d_i_f_f_-_f_i_l_e_s always shows us the difference between
+       what is recorded in the index, and what is currently in the working
+       tree. That’s very useful.
+
+       A common shorthand for ggiitt ddiiffff--ffiilleess --pp is to just write ggiitt ddiiffff,
+       which will do the same thing.
+
+           $ git diff
+           diff --git a/hello b/hello
+           index 557db03..263414f 100644
+           --- a/hello
+           +++ b/hello
+           @@ -1 +1,2 @@
+            Hello World
+           +It&#39;s a new day for git
+
+CCOOMMMMIITTTTIINNGG GGIITT SSTTAATTEE
+       Now, we want to go to the next stage in Git, which is to take the files
+       that Git knows about in the index, and commit them as a real tree. We
+       do that in two phases: creating a _t_r_e_e object, and committing that _t_r_e_e
+       object as a _c_o_m_m_i_t object together with an explanation of what the tree
+       was all about, along with information of how we came to that state.
+
+       Creating a tree object is trivial, and is done with _g_i_t _w_r_i_t_e_-_t_r_e_e.
+       There are no options or other input: ggiitt wwrriittee--ttrreeee will take the
+       current index state, and write an object that describes that whole
+       index. In other words, we’re now tying together all the different
+       filenames with their contents (and their permissions), and we’re
+       creating the equivalent of a Git &#34;directory&#34; object:
+
+           $ git write-tree
+
+       and this will just output the name of the resulting tree, in this case
+       (if you have done exactly as I’ve described) it should be
+
+           8988da15d077d4829fc51d8544c097def6644dbb
+
+       which is another incomprehensible object name. Again, if you want to,
+       you can use ggiitt ccaatt--ffiillee --tt 88998888dd...... to see that this time the object
+       is not a &#34;blob&#34; object, but a &#34;tree&#34; object (you can also use ggiitt
+       ccaatt--ffiillee to actually output the raw object contents, but you’ll see
+       mainly a binary mess, so that’s less interesting).
+
+       However — normally you’d never use _g_i_t _w_r_i_t_e_-_t_r_e_e on its own, because
+       normally you always commit a tree into a commit object using the _g_i_t
+       _c_o_m_m_i_t_-_t_r_e_e command. In fact, it’s easier to not actually use _g_i_t
+       _w_r_i_t_e_-_t_r_e_e on its own at all, but to just pass its result in as an
+       argument to _g_i_t _c_o_m_m_i_t_-_t_r_e_e.
+
+       _g_i_t _c_o_m_m_i_t_-_t_r_e_e normally takes several arguments — it wants to know
+       what the _p_a_r_e_n_t of a commit was, but since this is the first commit
+       ever in this new repository, and it has no parents, we only need to
+       pass in the object name of the tree. However, _g_i_t _c_o_m_m_i_t_-_t_r_e_e also
+       wants to get a commit message on its standard input, and it will write
+       out the resulting object name for the commit to its standard output.
+
+       And this is where we create the ..ggiitt//rreeffss//hheeaaddss//mmaasstteerr file which is
+       pointed at by HHEEAADD. This file is supposed to contain the reference to
+       the top-of-tree of the master branch, and since that’s exactly what _g_i_t
+       _c_o_m_m_i_t_-_t_r_e_e spits out, we can do this all with a sequence of simple
+       shell commands:
+
+           $ tree=$(git write-tree)
+           $ commit=$(echo &#39;Initial commit&#39; | git commit-tree $tree)
+           $ git update-ref HEAD $commit
+
+       In this case this creates a totally new commit that is not related to
+       anything else. Normally you do this only oonnccee for a project ever, and
+       all later commits will be parented on top of an earlier commit.
+
+       Again, normally you’d never actually do this by hand. There is a
+       helpful script called ggiitt ccoommmmiitt that will do all of this for you. So
+       you could have just written ggiitt ccoommmmiitt instead, and it would have done
+       the above magic scripting for you.
+
+MMAAKKIINNGG AA CCHHAANNGGEE
+       Remember how we did the _g_i_t _u_p_d_a_t_e_-_i_n_d_e_x on file hheelllloo and then we
+       changed hheelllloo afterward, and could compare the new state of hheelllloo with
+       the state we saved in the index file?
+
+       Further, remember how I said that _g_i_t _w_r_i_t_e_-_t_r_e_e writes the contents of
+       the iinnddeexx file to the tree, and thus what we just committed was in fact
+       the oorriiggiinnaall contents of the file hheelllloo, not the new ones. We did that
+       on purpose, to show the difference between the index state, and the
+       state in the working tree, and how they don’t have to match, even when
+       we commit things.
+
+       As before, if we do ggiitt ddiiffff--ffiilleess --pp in our git-tutorial project,
+       we’ll still see the same difference we saw last time: the index file
+       hasn’t changed by the act of committing anything. However, now that we
+       have committed something, we can also learn to use a new command: _g_i_t
+       _d_i_f_f_-_i_n_d_e_x.
+
+       Unlike _g_i_t _d_i_f_f_-_f_i_l_e_s, which showed the difference between the index
+       file and the working tree, _g_i_t _d_i_f_f_-_i_n_d_e_x shows the differences between
+       a committed ttrreeee and either the index file or the working tree. In
+       other words, _g_i_t _d_i_f_f_-_i_n_d_e_x wants a tree to be diffed against, and
+       before we did the commit, we couldn’t do that, because we didn’t have
+       anything to diff against.
+
+       But now we can do
+
+           $ git diff-index -p HEAD
+
+       (where --pp has the same meaning as it did in _g_i_t _d_i_f_f_-_f_i_l_e_s), and it
+       will show us the same difference, but for a totally different reason.
+       Now we’re comparing the working tree not against the index file, but
+       against the tree we just wrote. It just so happens that those two are
+       obviously the same, so we get the same result.
+
+       Again, because this is a common operation, you can also just shorthand
+       it with
+
+           $ git diff HEAD
+
+       which ends up doing the above for you.
+
+       In other words, _g_i_t _d_i_f_f_-_i_n_d_e_x normally compares a tree against the
+       working tree, but when given the ----ccaacchheedd flag, it is told to instead
+       compare against just the index cache contents, and ignore the current
+       working tree state entirely. Since we just wrote the index file to
+       HEAD, doing ggiitt ddiiffff--iinnddeexx ----ccaacchheedd --pp HHEEAADD should thus return an empty
+       set of differences, and that’s exactly what it does.
+
+           NNoottee
+           _g_i_t _d_i_f_f_-_i_n_d_e_x really always uses the index for its comparisons,
+           and saying that it compares a tree against the working tree is thus
+           not strictly accurate. In particular, the list of files to compare
+           (the &#34;meta-data&#34;) aallwwaayyss comes from the index file, regardless of
+           whether the ----ccaacchheedd flag is used or not. The ----ccaacchheedd flag really
+           only determines whether the file ccoonntteennttss to be compared come from
+           the working tree or not.
+
+           This is not hard to understand, as soon as you realize that Git
+           simply never knows (or cares) about files that it is not told about
+           explicitly. Git will never go llooookkiinngg for files to compare, it
+           expects you to tell it what the files are, and that’s what the
+           index is there for.
+
+       However, our next step is to commit the cchhaannggee we did, and again, to
+       understand what’s going on, keep in mind the difference between
+       &#34;working tree contents&#34;, &#34;index file&#34; and &#34;committed tree&#34;. We have
+       changes in the working tree that we want to commit, and we always have
+       to work through the index file, so the first thing we need to do is to
+       update the index cache:
+
+           $ git update-index hello
+
+       (note how we didn’t need the ----aadddd flag this time, since Git knew about
+       the file already).
+
+       Note what happens to the different _g_i_t _d_i_f_f_-_* versions here. After
+       we’ve updated hheelllloo in the index, ggiitt ddiiffff--ffiilleess --pp now shows no
+       differences, but ggiitt ddiiffff--iinnddeexx --pp HHEEAADD still ddooeess show that the
+       current state is different from the state we committed. In fact, now
+       _g_i_t _d_i_f_f_-_i_n_d_e_x shows the same difference whether we use the ----ccaacchheedd
+       flag or not, since now the index is coherent with the working tree.
+
+       Now, since we’ve updated hheelllloo in the index, we can commit the new
+       version. We could do it by writing the tree by hand again, and
+       committing the tree (this time we’d have to use the --pp HHEEAADD flag to
+       tell commit that the HEAD was the ppaarreenntt of the new commit, and that
+       this wasn’t an initial commit any more), but you’ve done that once
+       already, so let’s just use the helpful script this time:
+
+           $ git commit
+
+       which starts an editor for you to write the commit message and tells
+       you a bit about what you have done.
+
+       Write whatever message you want, and all the lines that start with _#
+       will be pruned out, and the rest will be used as the commit message for
+       the change. If you decide you don’t want to commit anything after all
+       at this point (you can continue to edit things and update the index),
+       you can just leave an empty message. Otherwise ggiitt ccoommmmiitt will commit
+       the change for you.
+
+       You’ve now made your first real Git commit. And if you’re interested in
+       looking at what ggiitt ccoommmmiitt really does, feel free to investigate: it’s
+       a few very simple shell scripts to generate the helpful (?) commit
+       message headers, and a few one-liners that actually do the commit
+       itself (_g_i_t _c_o_m_m_i_t).
+
+IINNSSPPEECCTTIINNGG CCHHAANNGGEESS
+       While creating changes is useful, it’s even more useful if you can tell
+       later what changed. The most useful command for this is another of the
+       _d_i_f_f family, namely _g_i_t _d_i_f_f_-_t_r_e_e.
+
+       _g_i_t _d_i_f_f_-_t_r_e_e can be given two arbitrary trees, and it will tell you
+       the differences between them. Perhaps even more commonly, though, you
+       can give it just a single commit object, and it will figure out the
+       parent of that commit itself, and show the difference directly. Thus,
+       to get the same diff that we’ve already seen several times, we can now
+       do
+
+           $ git diff-tree -p HEAD
+
+       (again, --pp means to show the difference as a human-readable patch), and
+       it will show what the last commit (in HHEEAADD) actually changed.
+
+           NNoottee
+           Here is an ASCII art by Jon Loeliger that illustrates how various
+           _d_i_f_f_-_* commands compare things.
+
+                           diff-tree
+                            +----+
+                            |    |
+                            |    |
+                            V    V
+                         +-----------+
+                         | Object DB |
+                         |  Backing  |
+                         |   Store   |
+                         +-----------+
+                           ^    ^
+                           |    |
+                           |    |  diff-index --cached
+                           |    |
+               diff-index  |    V
+                           |  +-----------+
+                           |  |   Index   |
+                           |  |  &#34;cache&#34;  |
+                           |  +-----------+
+                           |    ^
+                           |    |
+                           |    |  diff-files
+                           |    |
+                           V    V
+                         +-----------+
+                         |  Working  |
+                         | Directory |
+                         +-----------+
+
+       More interestingly, you can also give _g_i_t _d_i_f_f_-_t_r_e_e the ----pprreettttyy flag,
+       which tells it to also show the commit message and author and date of
+       the commit, and you can tell it to show a whole series of diffs.
+       Alternatively, you can tell it to be &#34;silent&#34;, and not show the diffs
+       at all, but just show the actual commit message.
+
+       In fact, together with the _g_i_t _r_e_v_-_l_i_s_t program (which generates a list
+       of revisions), _g_i_t _d_i_f_f_-_t_r_e_e ends up being a veritable fount of
+       changes. You can emulate ggiitt lloogg, ggiitt lloogg --pp, etc. with a trivial
+       script that pipes the output of ggiitt rreevv--lliisstt to ggiitt ddiiffff--ttrreeee ----ssttddiinn,
+       which was exactly how early versions of ggiitt lloogg were implemented.
+
+TTAAGGGGIINNGG AA VVEERRSSIIOONN
+       In Git, there are two kinds of tags, a &#34;light&#34; one, and an &#34;annotated
+       tag&#34;.
+
+       A &#34;light&#34; tag is technically nothing more than a branch, except we put
+       it in the ..ggiitt//rreeffss//ttaaggss// subdirectory instead of calling it a hheeaadd. So
+       the simplest form of tag involves nothing more than
+
+           $ git tag my-first-tag
+
+       which just writes the current HHEEAADD into the ..ggiitt//rreeffss//ttaaggss//mmyy--ffiirrsstt--ttaagg
+       file, after which point you can then use this symbolic name for that
+       particular state. You can, for example, do
+
+           $ git diff my-first-tag
+
+       to diff your current state against that tag which at this point will
+       obviously be an empty diff, but if you continue to develop and commit
+       stuff, you can use your tag as an &#34;anchor-point&#34; to see what has
+       changed since you tagged it.
+
+       An &#34;annotated tag&#34; is actually a real Git object, and contains not only
+       a pointer to the state you want to tag, but also a small tag name and
+       message, along with optionally a PGP signature that says that yes, you
+       really did that tag. You create these annotated tags with either the --aa
+       or --ss flag to _g_i_t _t_a_g:
+
+           $ git tag -s &lt;tagname&gt;
+
+       which will sign the current HHEEAADD (but you can also give it another
+       argument that specifies the thing to tag, e.g., you could have tagged
+       the current mmyybbrraanncchh point by using ggiitt ttaagg &lt;&lt;ttaaggnnaammee&gt;&gt; mmyybbrraanncchh).
+
+       You normally only do signed tags for major releases or things like
+       that, while the light-weight tags are useful for any marking you want
+       to do — any time you decide that you want to remember a certain point,
+       just create a private tag for it, and you have a nice symbolic name for
+       the state at that point.
+
+CCOOPPYYIINNGG RREEPPOOSSIITTOORRIIEESS
+       Git repositories are normally totally self-sufficient and relocatable.
+       Unlike CVS, for example, there is no separate notion of &#34;repository&#34;
+       and &#34;working tree&#34;. A Git repository normally iiss the working tree, with
+       the local Git information hidden in the ..ggiitt subdirectory. There is
+       nothing else. What you see is what you got.
+
+           NNoottee
+           You can tell Git to split the Git internal information from the
+           directory that it tracks, but we’ll ignore that for now: it’s not
+           how normal projects work, and it’s really only meant for special
+           uses. So the mental model of &#34;the Git information is always tied
+           directly to the working tree that it describes&#34; may not be
+           technically 100% accurate, but it’s a good model for all normal
+           use.
+
+       This has two implications:
+
+       ·   if you grow bored with the tutorial repository you created (or
+           you’ve made a mistake and want to start all over), you can just do
+           simple
+
+               $ rm -rf git-tutorial
+
+           and it will be gone. There’s no external repository, and there’s no
+           history outside the project you created.
+
+       ·   if you want to move or duplicate a Git repository, you can do so.
+           There is _g_i_t _c_l_o_n_e command, but if all you want to do is just to
+           create a copy of your repository (with all the full history that
+           went along with it), you can do so with a regular ccpp --aa
+           ggiitt--ttuuttoorriiaall nneeww--ggiitt--ttuuttoorriiaall.
+
+           Note that when you’ve moved or copied a Git repository, your Git
+           index file (which caches various information, notably some of the
+           &#34;stat&#34; information for the files involved) will likely need to be
+           refreshed. So after you do a ccpp --aa to create a new copy, you’ll
+           want to do
+
+               $ git update-index --refresh
+
+           in the new repository to make sure that the index file is
+           up-to-date.
+
+       Note that the second point is true even across machines. You can
+       duplicate a remote Git repository with aannyy regular copy mechanism, be
+       it _s_c_p, _r_s_y_n_c or _w_g_e_t.
+
+       When copying a remote repository, you’ll want to at a minimum update
+       the index cache when you do this, and especially with other peoples&#39;
+       repositories you often want to make sure that the index cache is in
+       some known state (you don’t know wwhhaatt they’ve done and not yet checked
+       in), so usually you’ll precede the _g_i_t _u_p_d_a_t_e_-_i_n_d_e_x with a
+
+           $ git read-tree --reset HEAD
+           $ git update-index --refresh
+
+       which will force a total index re-build from the tree pointed to by
+       HHEEAADD. It resets the index contents to HHEEAADD, and then the _g_i_t
+       _u_p_d_a_t_e_-_i_n_d_e_x makes sure to match up all index entries with the
+       checked-out files. If the original repository had uncommitted changes
+       in its working tree, ggiitt uuppddaattee--iinnddeexx ----rreeffrreesshh notices them and tells
+       you they need to be updated.
+
+       The above can also be written as simply
+
+           $ git reset
+
+       and in fact a lot of the common Git command combinations can be
+       scripted with the ggiitt xxyyzz interfaces. You can learn things by just
+       looking at what the various git scripts do. For example, ggiitt rreesseett used
+       to be the above two lines implemented in _g_i_t _r_e_s_e_t, but some things
+       like _g_i_t _s_t_a_t_u_s and _g_i_t _c_o_m_m_i_t are slightly more complex scripts around
+       the basic Git commands.
+
+       Many (most?) public remote repositories will not contain any of the
+       checked out files or even an index file, and will oonnllyy contain the
+       actual core Git files. Such a repository usually doesn’t even have the
+       ..ggiitt subdirectory, but has all the Git files directly in the
+       repository.
+
+       To create your own local live copy of such a &#34;raw&#34; Git repository,
+       you’d first create your own subdirectory for the project, and then copy
+       the raw repository contents into the ..ggiitt directory. For example, to
+       create your own copy of the Git repository, you’d do the following
+
+           $ mkdir my-git
+           $ cd my-git
+           $ rsync -rL rsync://rsync.kernel.org/pub/scm/git/git.git/ .git
+
+       followed by
+
+           $ git read-tree HEAD
+
+       to populate the index. However, now you have populated the index, and
+       you have all the Git internal files, but you will notice that you don’t
+       actually have any of the working tree files to work on. To get those,
+       you’d check them out with
+
+           $ git checkout-index -u -a
+
+       where the --uu flag means that you want the checkout to keep the index
+       up-to-date (so that you don’t have to refresh it afterward), and the --aa
+       flag means &#34;check out all files&#34; (if you have a stale copy or an older
+       version of a checked out tree you may also need to add the --ff flag
+       first, to tell _g_i_t _c_h_e_c_k_o_u_t_-_i_n_d_e_x to ffoorrccee overwriting of any old
+       files).
+
+       Again, this can all be simplified with
+
+           $ git clone git://git.kernel.org/pub/scm/git/git.git/ my-git
+           $ cd my-git
+           $ git checkout
+
+       which will end up doing all of the above for you.
+
+       You have now successfully copied somebody else’s (mine) remote
+       repository, and checked it out.
+
+CCRREEAATTIINNGG AA NNEEWW BBRRAANNCCHH
+       Branches in Git are really nothing more than pointers into the Git
+       object database from within the ..ggiitt//rreeffss// subdirectory, and as we
+       already discussed, the HHEEAADD branch is nothing but a symlink to one of
+       these object pointers.
+
+       You can at any time create a new branch by just picking an arbitrary
+       point in the project history, and just writing the SHA-1 name of that
+       object into a file under ..ggiitt//rreeffss//hheeaaddss//. You can use any filename you
+       want (and indeed, subdirectories), but the convention is that the
+       &#34;normal&#34; branch is called mmaasstteerr. That’s just a convention, though, and
+       nothing enforces it.
+
+       To show that as an example, let’s go back to the git-tutorial
+       repository we used earlier, and create a branch in it. You do that by
+       simply just saying that you want to check out a new branch:
+
+           $ git checkout -b mybranch
+
+       will create a new branch based at the current HHEEAADD position, and switch
+       to it.
+
+           NNoottee
+           If you make the decision to start your new branch at some other
+           point in the history than the current HHEEAADD, you can do so by just
+           telling _g_i_t _c_h_e_c_k_o_u_t what the base of the checkout would be. In
+           other words, if you have an earlier tag or branch, you’d just do
+
+               $ git checkout -b mybranch earlier-commit
+
+           and it would create the new branch mmyybbrraanncchh at the earlier commit,
+           and check out the state at that time.
+
+       You can always just jump back to your original mmaasstteerr branch by doing
+
+           $ git checkout master
+
+       (or any other branch-name, for that matter) and if you forget which
+       branch you happen to be on, a simple
+
+           $ cat .git/HEAD
+
+       will tell you where it’s pointing. To get the list of branches you
+       have, you can say
+
+           $ git branch
+
+       which used to be nothing more than a simple script around llss
+       ..ggiitt//rreeffss//hheeaaddss. There will be an asterisk in front of the branch you
+       are currently on.
+
+       Sometimes you may wish to create a new branch _w_i_t_h_o_u_t actually checking
+       it out and switching to it. If so, just use the command
+
+           $ git branch &lt;branchname&gt; [startingpoint]
+
+       which will simply _c_r_e_a_t_e the branch, but will not do anything further.
+       You can then later — once you decide that you want to actually develop
+       on that branch — switch to that branch with a regular _g_i_t _c_h_e_c_k_o_u_t with
+       the branchname as the argument.
+
+MMEERRGGIINNGG TTWWOO BBRRAANNCCHHEESS
+       One of the ideas of having a branch is that you do some (possibly
+       experimental) work in it, and eventually merge it back to the main
+       branch. So assuming you created the above mmyybbrraanncchh that started out
+       being the same as the original mmaasstteerr branch, let’s make sure we’re in
+       that branch, and do some work there.
+
+           $ git checkout mybranch
+           $ echo &#34;Work, work, work&#34; &gt;&gt;hello
+           $ git commit -m &#34;Some work.&#34; -i hello
+
+       Here, we just added another line to hheelllloo, and we used a shorthand for
+       doing both ggiitt uuppddaattee--iinnddeexx hheelllloo and ggiitt ccoommmmiitt by just giving the
+       filename directly to ggiitt ccoommmmiitt, with an --ii flag (it tells Git to
+       _i_n_c_l_u_d_e that file in addition to what you have done to the index file
+       so far when making the commit). The --mm flag is to give the commit log
+       message from the command line.
+
+       Now, to make it a bit more interesting, let’s assume that somebody else
+       does some work in the original branch, and simulate that by going back
+       to the master branch, and editing the same file differently there:
+
+           $ git checkout master
+
+       Here, take a moment to look at the contents of hheelllloo, and notice how
+       they don’t contain the work we just did in mmyybbrraanncchh — because that work
+       hasn’t happened in the mmaasstteerr branch at all. Then do
+
+           $ echo &#34;Play, play, play&#34; &gt;&gt;hello
+           $ echo &#34;Lots of fun&#34; &gt;&gt;example
+           $ git commit -m &#34;Some fun.&#34; -i hello example
+
+       since the master branch is obviously in a much better mood.
+
+       Now, you’ve got two branches, and you decide that you want to merge the
+       work done. Before we do that, let’s introduce a cool graphical tool
+       that helps you view what’s going on:
+
+           $ gitk --all
+
+       will show you graphically both of your branches (that’s what the ----aallll
+       means: normally it will just show you your current HHEEAADD) and their
+       histories. You can also see exactly how they came to be from a common
+       source.
+
+       Anyway, let’s exit _g_i_t_k (^^QQ or the File menu), and decide that we want
+       to merge the work we did on the mmyybbrraanncchh branch into the mmaasstteerr branch
+       (which is currently our HHEEAADD too). To do that, there’s a nice script
+       called _g_i_t _m_e_r_g_e, which wants to know which branches you want to
+       resolve and what the merge is all about:
+
+           $ git merge -m &#34;Merge work in mybranch&#34; mybranch
+
+       where the first argument is going to be used as the commit message if
+       the merge can be resolved automatically.
+
+       Now, in this case we’ve intentionally created a situation where the
+       merge will need to be fixed up by hand, though, so Git will do as much
+       of it as it can automatically (which in this case is just merge the
+       eexxaammppllee file, which had no differences in the mmyybbrraanncchh branch), and
+       say:
+
+                   Auto-merging hello
+                   CONFLICT (content): Merge conflict in hello
+                   Automatic merge failed; fix conflicts and then commit the result.
+
+       It tells you that it did an &#34;Automatic merge&#34;, which failed due to
+       conflicts in hheelllloo.
+
+       Not to worry. It left the (trivial) conflict in hheelllloo in the same form
+       you should already be well used to if you’ve ever used CVS, so let’s
+       just open hheelllloo in our editor (whatever that may be), and fix it up
+       somehow. I’d suggest just making it so that hheelllloo contains all four
+       lines:
+
+           Hello World
+           It&#39;s a new day for git
+           Play, play, play
+           Work, work, work
+
+       and once you’re happy with your manual merge, just do a
+
+           $ git commit -i hello
+
+       which will very loudly warn you that you’re now committing a merge
+       (which is correct, so never mind), and you can write a small merge
+       message about your adventures in _g_i_t _m_e_r_g_e-land.
+
+       After you’re done, start up ggiittkk ----aallll to see graphically what the
+       history looks like. Notice that mmyybbrraanncchh still exists, and you can
+       switch to it, and continue to work with it if you want to. The mmyybbrraanncchh
+       branch will not contain the merge, but next time you merge it from the
+       mmaasstteerr branch, Git will know how you merged it, so you’ll not have to
+       do _t_h_a_t merge again.
+
+       Another useful tool, especially if you do not always work in X-Window
+       environment, is ggiitt sshhooww--bbrraanncchh.
+
+           $ git show-branch --topo-order --more=1 master mybranch
+           * [master] Merge work in mybranch
+            ! [mybranch] Some work.
+           --
+           -  [master] Merge work in mybranch
+           *+ [mybranch] Some work.
+           *  [master^] Some fun.
+
+       The first two lines indicate that it is showing the two branches with
+       the titles of their top-of-the-tree commits, you are currently on
+       mmaasstteerr branch (notice the asterisk ** character), and the first column
+       for the later output lines is used to show commits contained in the
+       mmaasstteerr branch, and the second column for the mmyybbrraanncchh branch. Three
+       commits are shown along with their titles. All of them have non blank
+       characters in the first column (** shows an ordinary commit on the
+       current branch, -- is a merge commit), which means they are now part of
+       the mmaasstteerr branch. Only the &#34;Some work&#34; commit has the plus ++ character
+       in the second column, because mmyybbrraanncchh has not been merged to
+       incorporate these commits from the master branch. The string inside
+       brackets before the commit log message is a short name you can use to
+       name the commit. In the above example, _m_a_s_t_e_r and _m_y_b_r_a_n_c_h are branch
+       heads. _m_a_s_t_e_r_^ is the first parent of _m_a_s_t_e_r branch head. Please see
+       ggiittrreevviissiioonnss(7) if you want to see more complex cases.
+
+           NNoottee
+           Without the _-_-_m_o_r_e_=_1 option, _g_i_t _s_h_o_w_-_b_r_a_n_c_h would not output the
+           _[_m_a_s_t_e_r_^_] commit, as _[_m_y_b_r_a_n_c_h_] commit is a common ancestor of both
+           _m_a_s_t_e_r and _m_y_b_r_a_n_c_h tips. Please see ggiitt--sshhooww--bbrraanncchh(1) for
+           details.
+
+           NNoottee
+           If there were more commits on the _m_a_s_t_e_r branch after the merge,
+           the merge commit itself would not be shown by _g_i_t _s_h_o_w_-_b_r_a_n_c_h by
+           default. You would need to provide ----ssppaarrssee option to make the
+           merge commit visible in this case.
+
+       Now, let’s pretend you are the one who did all the work in mmyybbrraanncchh,
+       and the fruit of your hard work has finally been merged to the mmaasstteerr
+       branch. Let’s go back to mmyybbrraanncchh, and run _g_i_t _m_e_r_g_e to get the
+       &#34;upstream changes&#34; back to your branch.
+
+           $ git checkout mybranch
+           $ git merge -m &#34;Merge upstream changes.&#34; master
+
+       This outputs something like this (the actual commit object names would
+       be different)
+
+           Updating from ae3a2da... to a80b4aa....
+           Fast-forward (no commit created; -m option ignored)
+            example | 1 +
+            hello   | 1 +
+            2 files changed, 2 insertions(+)
+
+       Because your branch did not contain anything more than what had already
+       been merged into the mmaasstteerr branch, the merge operation did not
+       actually do a merge. Instead, it just updated the top of the tree of
+       your branch to that of the mmaasstteerr branch. This is often called
+       _f_a_s_t_-_f_o_r_w_a_r_d merge.
+
+       You can run ggiittkk ----aallll again to see how the commit ancestry looks like,
+       or run _s_h_o_w_-_b_r_a_n_c_h, which tells you this.
+
+           $ git show-branch master mybranch
+           ! [master] Merge work in mybranch
+            * [mybranch] Merge work in mybranch
+           --
+           -- [master] Merge work in mybranch
+
+MMEERRGGIINNGG EEXXTTEERRNNAALL WWOORRKK
+       It’s usually much more common that you merge with somebody else than
+       merging with your own branches, so it’s worth pointing out that Git
+       makes that very easy too, and in fact, it’s not that different from
+       doing a _g_i_t _m_e_r_g_e. In fact, a remote merge ends up being nothing more
+       than &#34;fetch the work from a remote repository into a temporary tag&#34;
+       followed by a _g_i_t _m_e_r_g_e.
+
+       Fetching from a remote repository is done by, unsurprisingly, _g_i_t
+       _f_e_t_c_h:
+
+           $ git fetch &lt;remote-repository&gt;
+
+       One of the following transports can be used to name the repository to
+       download from:
+
+       SSH
+           rreemmoottee..mmaacchhiinnee:://ppaatthh//ttoo//rreeppoo..ggiitt// or
+
+           sssshh::////rreemmoottee..mmaacchhiinnee//ppaatthh//ttoo//rreeppoo..ggiitt//
+
+           This transport can be used for both uploading and downloading, and
+           requires you to have a log-in privilege over sssshh to the remote
+           machine. It finds out the set of objects the other side lacks by
+           exchanging the head commits both ends have and transfers (close to)
+           minimum set of objects. It is by far the most efficient way to
+           exchange Git objects between repositories.
+
+       Local directory
+           //ppaatthh//ttoo//rreeppoo..ggiitt//
+
+           This transport is the same as SSH transport but uses _s_h to run both
+           ends on the local machine instead of running other end on the
+           remote machine via _s_s_h.
+
+       Git Native
+           ggiitt::////rreemmoottee..mmaacchhiinnee//ppaatthh//ttoo//rreeppoo..ggiitt//
+
+           This transport was designed for anonymous downloading. Like SSH
+           transport, it finds out the set of objects the downstream side
+           lacks and transfers (close to) minimum set of objects.
+
+       HTTP(S)
+           hhttttpp::////rreemmoottee..mmaacchhiinnee//ppaatthh//ttoo//rreeppoo..ggiitt//
+
+           Downloader from http and https URL first obtains the topmost commit
+           object name from the remote site by looking at the specified
+           refname under rreeppoo..ggiitt//rreeffss// directory, and then tries to obtain
+           the commit object by downloading from rreeppoo..ggiitt//oobbjjeeccttss//xxxx//xxxxxx......
+           using the object name of that commit object. Then it reads the
+           commit object to find out its parent commits and the associate tree
+           object; it repeats this process until it gets all the necessary
+           objects. Because of this behavior, they are sometimes also called
+           _c_o_m_m_i_t _w_a_l_k_e_r_s.
+
+           The _c_o_m_m_i_t _w_a_l_k_e_r_s are sometimes also called _d_u_m_b _t_r_a_n_s_p_o_r_t_s,
+           because they do not require any Git aware smart server like Git
+           Native transport does. Any stock HTTP server that does not even
+           support directory index would suffice. But you must prepare your
+           repository with _g_i_t _u_p_d_a_t_e_-_s_e_r_v_e_r_-_i_n_f_o to help dumb transport
+           downloaders.
+
+       Once you fetch from the remote repository, you mmeerrggee that with your
+       current branch.
+
+       However — it’s such a common thing to ffeettcchh and then immediately mmeerrggee,
+       that it’s called ggiitt ppuullll, and you can simply do
+
+           $ git pull &lt;remote-repository&gt;
+
+       and optionally give a branch-name for the remote end as a second
+       argument.
+
+           NNoottee
+           You could do without using any branches at all, by keeping as many
+           local repositories as you would like to have branches, and merging
+           between them with _g_i_t _p_u_l_l, just like you merge between branches.
+           The advantage of this approach is that it lets you keep a set of
+           files for each bbrraanncchh checked out and you may find it easier to
+           switch back and forth if you juggle multiple lines of development
+           simultaneously. Of course, you will pay the price of more disk
+           usage to hold multiple working trees, but disk space is cheap these
+           days.
+
+       It is likely that you will be pulling from the same remote repository
+       from time to time. As a short hand, you can store the remote repository
+       URL in the local repository’s config file like this:
+
+           $ git config remote.linus.url http://www.kernel.org/pub/scm/git/git.git/
+
+       and use the &#34;linus&#34; keyword with _g_i_t _p_u_l_l instead of the full URL.
+
+       Examples.
+
+        1. ggiitt ppuullll lliinnuuss
+
+        2. ggiitt ppuullll lliinnuuss ttaagg vv00..9999..11
+
+       the above are equivalent to:
+
+        1. ggiitt ppuullll hhttttpp::////wwwwww..kkeerrnneell..oorrgg//ppuubb//ssccmm//ggiitt//ggiitt..ggiitt// HHEEAADD
+
+        2. ggiitt ppuullll hhttttpp::////wwwwww..kkeerrnneell..oorrgg//ppuubb//ssccmm//ggiitt//ggiitt..ggiitt// ttaagg vv00..9999..11
+
+HHOOWW DDOOEESS TTHHEE MMEERRGGEE WWOORRKK??
+       We said this tutorial shows what plumbing does to help you cope with
+       the porcelain that isn’t flushing, but we so far did not talk about how
+       the merge really works. If you are following this tutorial the first
+       time, I’d suggest to skip to &#34;Publishing your work&#34; section and come
+       back here later.
+
+       OK, still with me? To give us an example to look at, let’s go back to
+       the earlier repository with &#34;hello&#34; and &#34;example&#34; file, and bring
+       ourselves back to the pre-merge state:
+
+           $ git show-branch --more=2 master mybranch
+           ! [master] Merge work in mybranch
+            * [mybranch] Merge work in mybranch
+           --
+           -- [master] Merge work in mybranch
+           +* [master^2] Some work.
+           +* [master^] Some fun.
+
+       Remember, before running _g_i_t _m_e_r_g_e, our mmaasstteerr head was at &#34;Some fun.&#34;
+       commit, while our mmyybbrraanncchh head was at &#34;Some work.&#34; commit.
+
+           $ git checkout mybranch
+           $ git reset --hard master^2
+           $ git checkout master
+           $ git reset --hard master^
+
+       After rewinding, the commit structure should look like this:
+
+           $ git show-branch
+           * [master] Some fun.
+            ! [mybranch] Some work.
+           --
+           *  [master] Some fun.
+            + [mybranch] Some work.
+           *+ [master^] Initial commit
+
+       Now we are ready to experiment with the merge by hand.
+
+       ggiitt mmeerrggee command, when merging two branches, uses 3-way merge
+       algorithm. First, it finds the common ancestor between them. The
+       command it uses is _g_i_t _m_e_r_g_e_-_b_a_s_e:
+
+           $ mb=$(git merge-base HEAD mybranch)
+
+       The command writes the commit object name of the common ancestor to the
+       standard output, so we captured its output to a variable, because we
+       will be using it in the next step. By the way, the common ancestor
+       commit is the &#34;Initial commit&#34; commit in this case. You can tell it by:
+
+           $ git name-rev --name-only --tags $mb
+           my-first-tag
+
+       After finding out a common ancestor commit, the second step is this:
+
+           $ git read-tree -m -u $mb HEAD mybranch
+
+       This is the same _g_i_t _r_e_a_d_-_t_r_e_e command we have already seen, but it
+       takes three trees, unlike previous examples. This reads the contents of
+       each tree into different _s_t_a_g_e in the index file (the first tree goes
+       to stage 1, the second to stage 2, etc.). After reading three trees
+       into three stages, the paths that are the same in all three stages are
+       _c_o_l_l_a_p_s_e_d into stage 0. Also paths that are the same in two of three
+       stages are collapsed into stage 0, taking the SHA-1 from either stage 2
+       or stage 3, whichever is different from stage 1 (i.e. only one side
+       changed from the common ancestor).
+
+       After _c_o_l_l_a_p_s_i_n_g operation, paths that are different in three trees are
+       left in non-zero stages. At this point, you can inspect the index file
+       with this command:
+
+           $ git ls-files --stage
+           100644 7f8b141b65fdcee47321e399a2598a235a032422 0       example
+           100644 557db03de997c86a4a028e1ebd3a1ceb225be238 1       hello
+           100644 ba42a2a96e3027f3333e13ede4ccf4498c3ae942 2       hello
+           100644 cc44c73eb783565da5831b4d820c962954019b69 3       hello
+
+       In our example of only two files, we did not have unchanged files so
+       only _e_x_a_m_p_l_e resulted in collapsing. But in real-life large projects,
+       when only a small number of files change in one commit, this _c_o_l_l_a_p_s_i_n_g
+       tends to trivially merge most of the paths fairly quickly, leaving only
+       a handful of real changes in non-zero stages.
+
+       To look at only non-zero stages, use ----uunnmmeerrggeedd flag:
+
+           $ git ls-files --unmerged
+           100644 557db03de997c86a4a028e1ebd3a1ceb225be238 1       hello
+           100644 ba42a2a96e3027f3333e13ede4ccf4498c3ae942 2       hello
+           100644 cc44c73eb783565da5831b4d820c962954019b69 3       hello
+
+       The next step of merging is to merge these three versions of the file,
+       using 3-way merge. This is done by giving _g_i_t _m_e_r_g_e_-_o_n_e_-_f_i_l_e command as
+       one of the arguments to _g_i_t _m_e_r_g_e_-_i_n_d_e_x command:
+
+           $ git merge-index git-merge-one-file hello
+           Auto-merging hello
+           ERROR: Merge conflict in hello
+           fatal: merge program failed
+
+       _g_i_t _m_e_r_g_e_-_o_n_e_-_f_i_l_e script is called with parameters to describe those
+       three versions, and is responsible to leave the merge results in the
+       working tree. It is a fairly straightforward shell script, and
+       eventually calls _m_e_r_g_e program from RCS suite to perform a file-level
+       3-way merge. In this case, _m_e_r_g_e detects conflicts, and the merge
+       result with conflict marks is left in the working tree.. This can be
+       seen if you run llss--ffiilleess ----ssttaaggee again at this point:
+
+           $ git ls-files --stage
+           100644 7f8b141b65fdcee47321e399a2598a235a032422 0       example
+           100644 557db03de997c86a4a028e1ebd3a1ceb225be238 1       hello
+           100644 ba42a2a96e3027f3333e13ede4ccf4498c3ae942 2       hello
+           100644 cc44c73eb783565da5831b4d820c962954019b69 3       hello
+
+       This is the state of the index file and the working file after _g_i_t
+       _m_e_r_g_e returns control back to you, leaving the conflicting merge for
+       you to resolve. Notice that the path hheelllloo is still unmerged, and what
+       you see with _g_i_t _d_i_f_f at this point is differences since stage 2 (i.e.
+       your version).
+
+PPUUBBLLIISSHHIINNGG YYOOUURR WWOORRKK
+       So, we can use somebody else’s work from a remote repository, but how
+       can yyoouu prepare a repository to let other people pull from it?
+
+       You do your real work in your working tree that has your primary
+       repository hanging under it as its ..ggiitt subdirectory. You ccoouulldd make
+       that repository accessible remotely and ask people to pull from it, but
+       in practice that is not the way things are usually done. A recommended
+       way is to have a public repository, make it reachable by other people,
+       and when the changes you made in your primary working tree are in good
+       shape, update the public repository from it. This is often called
+       _p_u_s_h_i_n_g.
+
+           NNoottee
+           This public repository could further be mirrored, and that is how
+           Git repositories at kkeerrnneell..oorrgg are managed.
+
+       Publishing the changes from your local (private) repository to your
+       remote (public) repository requires a write privilege on the remote
+       machine. You need to have an SSH account there to run a single command,
+       _g_i_t_-_r_e_c_e_i_v_e_-_p_a_c_k.
+
+       First, you need to create an empty repository on the remote machine
+       that will house your public repository. This empty repository will be
+       populated and be kept up-to-date by pushing into it later. Obviously,
+       this repository creation needs to be done only once.
+
+           NNoottee
+           _g_i_t _p_u_s_h uses a pair of commands, _g_i_t _s_e_n_d_-_p_a_c_k on your local
+           machine, and _g_i_t_-_r_e_c_e_i_v_e_-_p_a_c_k on the remote machine. The
+           communication between the two over the network internally uses an
+           SSH connection.
+
+       Your private repository’s Git directory is usually ..ggiitt, but your
+       public repository is often named after the project name, i.e.
+       &lt;&lt;pprroojjeecctt&gt;&gt;..ggiitt. Let’s create such a public repository for project
+       mmyy--ggiitt. After logging into the remote machine, create an empty
+       directory:
+
+           $ mkdir my-git.git
+
+       Then, make that directory into a Git repository by running _g_i_t _i_n_i_t,
+       but this time, since its name is not the usual ..ggiitt, we do things
+       slightly differently:
+
+           $ GIT_DIR=my-git.git git init
+
+       Make sure this directory is available for others you want your changes
+       to be pulled via the transport of your choice. Also you need to make
+       sure that you have the _g_i_t_-_r_e_c_e_i_v_e_-_p_a_c_k program on the $$PPAATTHH.
+
+           NNoottee
+           Many installations of sshd do not invoke your shell as the login
+           shell when you directly run programs; what this means is that if
+           your login shell is _b_a_s_h, only ..bbaasshhrrcc is read and not
+           ..bbaasshh__pprrooffiillee. As a workaround, make sure ..bbaasshhrrcc sets up $$PPAATTHH so
+           that you can run _g_i_t_-_r_e_c_e_i_v_e_-_p_a_c_k program.
+
+           NNoottee
+           If you plan to publish this repository to be accessed over http,
+           you should do mmvv mmyy--ggiitt..ggiitt//hhooookkss//ppoosstt--uuppddaattee..ssaammppllee
+           mmyy--ggiitt..ggiitt//hhooookkss//ppoosstt--uuppddaattee at this point. This makes sure that
+           every time you push into this repository, ggiitt uuppddaattee--sseerrvveerr--iinnffoo is
+           run.
+
+       Your &#34;public repository&#34; is now ready to accept your changes. Come back
+       to the machine you have your private repository. From there, run this
+       command:
+
+           $ git push &lt;public-host&gt;:/path/to/my-git.git master
+
+       This synchronizes your public repository to match the named branch head
+       (i.e. mmaasstteerr in this case) and objects reachable from them in your
+       current repository.
+
+       As a real example, this is how I update my public Git repository.
+       Kernel.org mirror network takes care of the propagation to other
+       publicly visible machines:
+
+           $ git push master.kernel.org:/pub/scm/git/git.git/
+
+PPAACCKKIINNGG YYOOUURR RREEPPOOSSIITTOORRYY
+       Earlier, we saw that one file under ..ggiitt//oobbjjeeccttss//????// directory is
+       stored for each Git object you create. This representation is efficient
+       to create atomically and safely, but not so convenient to transport
+       over the network. Since Git objects are immutable once they are
+       created, there is a way to optimize the storage by &#34;packing them
+       together&#34;. The command
+
+           $ git repack
+
+       will do it for you. If you followed the tutorial examples, you would
+       have accumulated about 17 objects in ..ggiitt//oobbjjeeccttss//????// directories by
+       now. _g_i_t _r_e_p_a_c_k tells you how many objects it packed, and stores the
+       packed file in the ..ggiitt//oobbjjeeccttss//ppaacckk directory.
+
+           NNoottee
+           You will see two files, ppaacckk--**..ppaacckk and ppaacckk--**..iiddxx, in
+           ..ggiitt//oobbjjeeccttss//ppaacckk directory. They are closely related to each
+           other, and if you ever copy them by hand to a different repository
+           for whatever reason, you should make sure you copy them together.
+           The former holds all the data from the objects in the pack, and the
+           latter holds the index for random access.
+
+       If you are paranoid, running _g_i_t _v_e_r_i_f_y_-_p_a_c_k command would detect if
+       you have a corrupt pack, but do not worry too much. Our programs are
+       always perfect ;-).
+
+       Once you have packed objects, you do not need to leave the unpacked
+       objects that are contained in the pack file anymore.
+
+           $ git prune-packed
+
+       would remove them for you.
+
+       You can try running ffiinndd ..ggiitt//oobbjjeeccttss --ttyyppee ff before and after you run
+       ggiitt pprruunnee--ppaacckkeedd if you are curious. Also ggiitt ccoouunntt--oobbjjeeccttss would tell
+       you how many unpacked objects are in your repository and how much space
+       they are consuming.
+
+           NNoottee
+           ggiitt ppuullll is slightly cumbersome for HTTP transport, as a packed
+           repository may contain relatively few objects in a relatively large
+           pack. If you expect many HTTP pulls from your public repository you
+           might want to repack &amp; prune often, or never.
+
+       If you run ggiitt rreeppaacckk again at this point, it will say &#34;Nothing new to
+       pack.&#34;. Once you continue your development and accumulate the changes,
+       running ggiitt rreeppaacckk again will create a new pack, that contains objects
+       created since you packed your repository the last time. We recommend
+       that you pack your project soon after the initial import (unless you
+       are starting your project from scratch), and then run ggiitt rreeppaacckk every
+       once in a while, depending on how active your project is.
+
+       When a repository is synchronized via ggiitt ppuusshh and ggiitt ppuullll objects
+       packed in the source repository are usually stored unpacked in the
+       destination. While this allows you to use different packing strategies
+       on both ends, it also means you may need to repack both repositories
+       every once in a while.
+
+WWOORRKKIINNGG WWIITTHH OOTTHHEERRSS
+       Although Git is a truly distributed system, it is often convenient to
+       organize your project with an informal hierarchy of developers. Linux
+       kernel development is run this way. There is a nice illustration (page
+       17, &#34;Merges to Mainline&#34;) in RRaannddyy DDuunnllaapp’’ss pprreesseennttaattiioonn[2].
+
+       It should be stressed that this hierarchy is purely iinnffoorrmmaall. There is
+       nothing fundamental in Git that enforces the &#34;chain of patch flow&#34; this
+       hierarchy implies. You do not have to pull from only one remote
+       repository.
+
+       A recommended workflow for a &#34;project lead&#34; goes like this:
+
+        1. Prepare your primary repository on your local machine. Your work is
+           done there.
+
+        2. Prepare a public repository accessible to others.
+
+           If other people are pulling from your repository over dumb
+           transport protocols (HTTP), you need to keep this repository _d_u_m_b
+           _t_r_a_n_s_p_o_r_t _f_r_i_e_n_d_l_y. After ggiitt iinniitt,
+           $$GGIITT__DDIIRR//hhooookkss//ppoosstt--uuppddaattee..ssaammppllee copied from the standard
+           templates would contain a call to _g_i_t _u_p_d_a_t_e_-_s_e_r_v_e_r_-_i_n_f_o but you
+           need to manually enable the hook with mmvv ppoosstt--uuppddaattee..ssaammppllee
+           ppoosstt--uuppddaattee. This makes sure _g_i_t _u_p_d_a_t_e_-_s_e_r_v_e_r_-_i_n_f_o keeps the
+           necessary files up-to-date.
+
+        3. Push into the public repository from your primary repository.
+
+        4. _g_i_t _r_e_p_a_c_k the public repository. This establishes a big pack that
+           contains the initial set of objects as the baseline, and possibly
+           _g_i_t _p_r_u_n_e if the transport used for pulling from your repository
+           supports packed repositories.
+
+        5. Keep working in your primary repository. Your changes include
+           modifications of your own, patches you receive via e-mails, and
+           merges resulting from pulling the &#34;public&#34; repositories of your
+           &#34;subsystem maintainers&#34;.
+
+           You can repack this private repository whenever you feel like.
+
+        6. Push your changes to the public repository, and announce it to the
+           public.
+
+        7. Every once in a while, _g_i_t _r_e_p_a_c_k the public repository. Go back to
+           step 5. and continue working.
+
+       A recommended work cycle for a &#34;subsystem maintainer&#34; who works on that
+       project and has an own &#34;public repository&#34; goes like this:
+
+        1. Prepare your work repository, by running _g_i_t _c_l_o_n_e on the public
+           repository of the &#34;project lead&#34;. The URL used for the initial
+           cloning is stored in the remote.origin.url configuration variable.
+
+        2. Prepare a public repository accessible to others, just like the
+           &#34;project lead&#34; person does.
+
+        3. Copy over the packed files from &#34;project lead&#34; public repository to
+           your public repository, unless the &#34;project lead&#34; repository lives
+           on the same machine as yours. In the latter case, you can use
+           oobbjjeeccttss//iinnffoo//aalltteerrnnaatteess file to point at the repository you are
+           borrowing from.
+
+        4. Push into the public repository from your primary repository. Run
+           _g_i_t _r_e_p_a_c_k, and possibly _g_i_t _p_r_u_n_e if the transport used for
+           pulling from your repository supports packed repositories.
+
+        5. Keep working in your primary repository. Your changes include
+           modifications of your own, patches you receive via e-mails, and
+           merges resulting from pulling the &#34;public&#34; repositories of your
+           &#34;project lead&#34; and possibly your &#34;sub-subsystem maintainers&#34;.
+
+           You can repack this private repository whenever you feel like.
+
+        6. Push your changes to your public repository, and ask your &#34;project
+           lead&#34; and possibly your &#34;sub-subsystem maintainers&#34; to pull from
+           it.
+
+        7. Every once in a while, _g_i_t _r_e_p_a_c_k the public repository. Go back to
+           step 5. and continue working.
+
+       A recommended work cycle for an &#34;individual developer&#34; who does not
+       have a &#34;public&#34; repository is somewhat different. It goes like this:
+
+        1. Prepare your work repository, by _g_i_t _c_l_o_n_e the public repository of
+           the &#34;project lead&#34; (or a &#34;subsystem maintainer&#34;, if you work on a
+           subsystem). The URL used for the initial cloning is stored in the
+           remote.origin.url configuration variable.
+
+        2. Do your work in your repository on _m_a_s_t_e_r branch.
+
+        3. Run ggiitt ffeettcchh oorriiggiinn from the public repository of your upstream
+           every once in a while. This does only the first half of ggiitt ppuullll
+           but does not merge. The head of the public repository is stored in
+           ..ggiitt//rreeffss//rreemmootteess//oorriiggiinn//mmaasstteerr.
+
+        4. Use ggiitt cchheerrrryy oorriiggiinn to see which ones of your patches were
+           accepted, and/or use ggiitt rreebbaassee oorriiggiinn to port your unmerged
+           changes forward to the updated upstream.
+
+        5. Use ggiitt ffoorrmmaatt--ppaattcchh oorriiggiinn to prepare patches for e-mail
+           submission to your upstream and send it out. Go back to step 2. and
+           continue.
+
+WWOORRKKIINNGG WWIITTHH OOTTHHEERRSS,, SSHHAARREEDD RREEPPOOSSIITTOORRYY SSTTYYLLEE
+       If you are coming from a CVS background, the style of cooperation
+       suggested in the previous section may be new to you. You do not have to
+       worry. Git supports the &#34;shared public repository&#34; style of cooperation
+       you are probably more familiar with as well.
+
+       See ggiittccvvss--mmiiggrraattiioonn(7) for the details.
+
+BBUUNNDDLLIINNGG YYOOUURR WWOORRKK TTOOGGEETTHHEERR
+       It is likely that you will be working on more than one thing at a time.
+       It is easy to manage those more-or-less independent tasks using
+       branches with Git.
+
+       We have already seen how branches work previously, with &#34;fun and work&#34;
+       example using two branches. The idea is the same if there are more than
+       two branches. Let’s say you started out from &#34;master&#34; head, and have
+       some new code in the &#34;master&#34; branch, and two independent fixes in the
+       &#34;commit-fix&#34; and &#34;diff-fix&#34; branches:
+
+           $ git show-branch
+           ! [commit-fix] Fix commit message normalization.
+            ! [diff-fix] Fix rename detection.
+             * [master] Release candidate #1
+           ---
+            +  [diff-fix] Fix rename detection.
+            +  [diff-fix~1] Better common substring algorithm.
+           +   [commit-fix] Fix commit message normalization.
+             * [master] Release candidate #1
+           ++* [diff-fix~2] Pretty-print messages.
+
+       Both fixes are tested well, and at this point, you want to merge in
+       both of them. You could merge in _d_i_f_f_-_f_i_x first and then _c_o_m_m_i_t_-_f_i_x
+       next, like this:
+
+           $ git merge -m &#34;Merge fix in diff-fix&#34; diff-fix
+           $ git merge -m &#34;Merge fix in commit-fix&#34; commit-fix
+
+       Which would result in:
+
+           $ git show-branch
+           ! [commit-fix] Fix commit message normalization.
+            ! [diff-fix] Fix rename detection.
+             * [master] Merge fix in commit-fix
+           ---
+             - [master] Merge fix in commit-fix
+           + * [commit-fix] Fix commit message normalization.
+             - [master~1] Merge fix in diff-fix
+            +* [diff-fix] Fix rename detection.
+            +* [diff-fix~1] Better common substring algorithm.
+             * [master~2] Release candidate #1
+           ++* [master~3] Pretty-print messages.
+
+       However, there is no particular reason to merge in one branch first and
+       the other next, when what you have are a set of truly independent
+       changes (if the order mattered, then they are not independent by
+       definition). You could instead merge those two branches into the
+       current branch at once. First let’s undo what we just did and start
+       over. We would want to get the master branch before these two merges by
+       resetting it to _m_a_s_t_e_r_~_2:
+
+           $ git reset --hard master~2
+
+       You can make sure ggiitt sshhooww--bbrraanncchh matches the state before those two
+       _g_i_t _m_e_r_g_e you just did. Then, instead of running two _g_i_t _m_e_r_g_e commands
+       in a row, you would merge these two branch heads (this is known as
+       _m_a_k_i_n_g _a_n _O_c_t_o_p_u_s):
+
+           $ git merge commit-fix diff-fix
+           $ git show-branch
+           ! [commit-fix] Fix commit message normalization.
+            ! [diff-fix] Fix rename detection.
+             * [master] Octopus merge of branches &#39;diff-fix&#39; and &#39;commit-fix&#39;
+           ---
+             - [master] Octopus merge of branches &#39;diff-fix&#39; and &#39;commit-fix&#39;
+           + * [commit-fix] Fix commit message normalization.
+            +* [diff-fix] Fix rename detection.
+            +* [diff-fix~1] Better common substring algorithm.
+             * [master~1] Release candidate #1
+           ++* [master~2] Pretty-print messages.
+
+       Note that you should not do Octopus just because you can. An octopus is
+       a valid thing to do and often makes it easier to view the commit
+       history if you are merging more than two independent changes at the
+       same time. However, if you have merge conflicts with any of the
+       branches you are merging in and need to hand resolve, that is an
+       indication that the development happened in those branches were not
+       independent after all, and you should merge two at a time, documenting
+       how you resolved the conflicts, and the reason why you preferred
+       changes made in one side over the other. Otherwise it would make the
+       project history harder to follow, not easier.
+
+SSEEEE AALLSSOO
+       ggiittttuuttoorriiaall(7), ggiittttuuttoorriiaall--22(7), ggiittccvvss--mmiiggrraattiioonn(7), ggiitt--hheellpp(1),
+       ggiitteevveerryyddaayy(7), TThhee GGiitt UUsseerr’’ss MMaannuuaall[1]
+
+GGIITT
+       Part of the ggiitt(1) suite
+
+NNOOTTEESS
+        1. the Git User Manual
+           git-htmldocs/user-manual.html
+
+        2. Randy Dunlap’s presentation
+           https://web.archive.org/web/20120915203609/http://www.xenotime.net/linux/mentor/linux-mentoring-2006.pdf
+
+Git 2.13.6                        09/24/2017               GITCORE-TUTORIAL(7)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git <span class="nb">help</span> glossary

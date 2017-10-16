@@ -1,2 +1,2 @@
 New and improved.
-More to read
+More to read.

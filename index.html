@@ -11924,6 +11924,8 @@ a.anchor-link {
 <h1>The Structure of Git</h1>
 <h2>A git tutorial for (computer) scientists</h2>
 <h3>Dylan Simon, Flatiron Institute</h3>
+<br>
+[github.com/dylex/git-structure-tutorial](https://github.com/dylex/git-structure-tutorial)
 </div>
 </div>
 </div>
@@ -11933,7 +11935,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a workshop: follow along, try things yourself, ask questions.</p>
+<p>First, try to forget anything you know about other revision control systems, and even git itself.  In fact, for the moment, let's forget about revision control.</p>
+<p>Second, this is a workshop: follow along, try things yourself, ask questions.</p>
 
 </div>
 </div>
@@ -12050,7 +12053,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>All this does is create a .git directory with some stuff in it.  Normally you won't touch any of this stuff directly, but we'll see what some of it does.</p>
+<p>All this does is create a .git directory with some stuff in it.  Normally you won't touch any of this stuff directly, but we'll see what some of it does.  You can also have a .git directory by itself, which is called a "bare" repository and is like a backend or server only: only usable "remotely".</p>
 
 </div>
 </div>
@@ -16558,7 +16561,7 @@ git cat-file -p <span class="nv">$tree0</span>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is again just a hash of the tree contents, so every unique directory gets a unique hash, and since these contents include the unique identifiers of the files as well, this extents to the file contents.</p>
+<p>This is again just a hash of the tree contents, so every unique directory gets a unique hash, and since these contents include the unique identifiers of the files as well, this extends to the file contents.</p>
 
 </div>
 </div>
@@ -16715,8 +16718,8 @@ git cat-file -p <span class="nv">$tree1</span>
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">file3</span><span class="o">=</span><span class="k">$(</span> <span class="nb">echo</span> <span class="s1">&#39;New and improved.&#39;</span> <span class="se">\</span>
          <span class="p">|</span> git hash-object -t blob -w --stdin <span class="k">)</span>
 <span class="nv">tree2</span><span class="o">=</span><span class="k">$(</span> <span class="o">(</span> <span class="nb">echo</span> -e <span class="m">100644</span> blob <span class="nv">$file3</span><span class="se">\\</span>t<span class="s2">&quot;README&quot;</span> <span class="se">\</span>
-          <span class="p">;</span> <span class="nb">echo</span> -e <span class="m">040000</span> tree <span class="nv">$tree0</span><span class="se">\\</span>t<span class="s2">&quot;stuff&quot;</span> <span class="se">\</span>
-          <span class="k">)</span> <span class="p">|</span> git mktree <span class="o">)</span>
+         <span class="p">;</span> <span class="nb">echo</span> -e <span class="m">040000</span> tree <span class="nv">$tree0</span><span class="se">\\</span>t<span class="s2">&quot;stuff&quot;</span> <span class="se">\</span>
+         <span class="k">)</span> <span class="p">|</span> git mktree <span class="o">)</span>
 <span class="nb">echo</span> <span class="nv">$tree2</span>
 git ls-tree -tr <span class="nv">$tree2</span>
 </pre></div>
@@ -16849,10 +16852,10 @@ git ls-tree -tr <span class="nv">$tree2</span>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span style="background-color: rgb(215,255,255)">git-archive      - Create an archive of files from a named tree
-</span>-rw-rw-r-- root/root        18 2017-10-16 15:44 README
-drwxrwxr-x root/root         0 2017-10-16 15:44 stuff/
--rw-rw-r-- root/root        13 2017-10-16 15:44 stuff/hello.txt
--rw-rw-r-- root/root        32 2017-10-16 15:44 stuff/other.txt
+</span>-rw-rw-r-- root/root        18 2017-10-17 11:02 README
+drwxrwxr-x root/root         0 2017-10-17 11:02 stuff/
+-rw-rw-r-- root/root        13 2017-10-17 11:02 stuff/hello.txt
+-rw-rw-r-- root/root        32 2017-10-17 11:02 stuff/other.txt
 </pre>
 </div>
 </div>
@@ -17277,7 +17280,7 @@ gitk (or github)</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <dl><dt>`git diff COMMIT1 COMMIT2 [-- PATH ...]`</dt><dd>show changes between two commits, restricted to changes under `PATH`</dd>
-    <dt>`git diff --stat`</dt><dd>summarize changes, one line per file</dd>
+    <dt>`git diff --stat`</dt><dd>summarize changes, one line per file (useful with `log`)</dd>
     <dt>`git diff --word-diff`</dt><dd>show edits to individual words instead of lines</dd></dl><p>Many other standard <code>diff</code> options (<code>-a</code>, <code>-b</code>, <code>-U5</code>, ...)</p>
 
 </div>
@@ -17614,8 +17617,8 @@ Compressing objects: 100% (5/5), done.
 9c5a911abad74b62a7fefb630c71f6b30859a9dc
 Writing objects: 100% (8/8), done.
 Total 8 (delta 0), reused 0 (delta 0)
--r--r--r-- 1 dylan dylan 1296 Oct 16 15:44 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
--r--r--r-- 1 dylan dylan  661 Oct 16 15:44 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
+-r--r--r-- 1 dylan dylan 1296 Oct 17 11:02 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.idx
+-r--r--r-- 1 dylan dylan  661 Oct 17 11:02 pack-9c5a911abad74b62a7fefb630c71f6b30859a9dc.pack
 </pre>
 </div>
 </div>
@@ -17623,7 +17626,18 @@ Total 8 (delta 0), reused 0 (delta 0)
 </div>
 </div>
 
-</div></div></section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These packs are compressed, and yes this uses delta compression, meaning it is storing things like diffs.  However, it's important to remember that these diffs don't necessarily have anything to do with your commits, but are just based on efficient compression and file similarity.</p>
+
+</div>
+</div>
+</div>
+</aside></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17677,7 +17691,7 @@ Total 8 (delta 0), reused 0 (delta 0)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>While you now know pretty much everything about how git actually works, these commands can be rather impractical, so the rest is just higher-level ways of interacting with git more efficiently.</p>
+<p>You now know pretty much everything about how git actually works -- enough to be dangerous but not particularly useful. These commands can be rather impractical, so the rest is just higher-level ways of interacting with git more efficiently.</p>
 
 </div>
 </div>
@@ -17794,7 +17808,7 @@ README  <span class="ansi-blue-intense-fg ansi-bold">stuff</span>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Working with the index is one of the most important parts of day-to-day git</p>
+<p>Working with the index is one of the most important parts of day-to-day git.</p>
 
 </div>
 </div>
@@ -17877,7 +17891,18 @@ git diff
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>add</code> just updates the index to match whatever's on disk, for the files you give it.</p>
+
+</div>
+</div>
+</div>
+</aside></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
@@ -18346,7 +18371,7 @@ Date:   Thu Jun 22 15:00:00 2017
     <dt>`git commit -a`</dt><dd>do `git add -u` and then commit (also `-p`)</dd>
     <dt><code>git commit -m MSG1 <font color='green'>[-m MSG2 ...]</font></code></dt><dd><font color='green'>(multi-paragraph)</font> commit message (instead of invoking editor)</dd>
     <dt>`git commit -v`</dt><dd>invoke editor and show full diff to write commit message</dd>
-    <dt>`git commit -- PATH...`</dt><dd>commit all changes to files on disk (bypass index)</dd></dl>
+    <dt>`git commit -- PATH...`</dt><dd>commit all changes to files on disk <font color='red'>(bypass index)</font></dd></dl>
 </div>
 </div>
 </div></section><section>
@@ -18416,13 +18441,25 @@ Changes not staged for commit:
 </div>
 </div>
 
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="One-last-diff-quick-reference">One last diff quick reference<a class="anchor-link" href="#One-last-diff-quick-reference">&#182;</a></h3><dl><dt>`git diff   REV1..[REV2] [-- PATH ...]`</dt><dd>REV1 vs. REV2 (HEAD)</dd>
+    <dt>`git diff                [-- PATH ...]`</dt><dd>disk vs. index</dd>
+    <dt>`git diff           REV  [-- PATH ...]`</dt><dd>disk vs. REV</dd>
+    <dt>`git diff --cached [REV] [-- PATH ...]`</dt><dd>index vs. REV (HEAD)</dd>
+    </dl>
+</div>
+</div>
 </div><aside class="notes">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>git status</code> is one of the most useful commands you can just run all the time, but it's rather self-explainatory, so I won't say much more about it.</p>
+<p><code>git status</code> is one of the most useful commands you can just run all the time. The top part is the difference between your current HEAD and index (things you can commit); the bottom is the difference beetween your index and the disk (things you can add).</p>
 
 </div>
 </div>
@@ -18478,6 +18515,19 @@ M	README.md
 </div>
 
 </div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Index-manipulation-summary">Index manipulation summary<a class="anchor-link" href="#Index-manipulation-summary">&#182;</a></h3><table style='font-size:100%'>
+    <tr><th align='right'>↙</th><th>disk</th><th>index</th><th>repo</th></tr>
+    <tr><th align='right'>disk</th><td bgcolor='black'></td><td colspan='2' align='left'>`checkout`</td></tr>
+    <tr><th align='right'>index</th><td>`add`</td><td bgcolor='black'></td><td>`reset`</tr>
+    <tr><th align='right'>repo</th><td colspan='2' align='center'>`commit`</td><td bgcolor='black'></td></tr>
+</table>
+</div>
+</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -19247,7 +19297,7 @@ further reading
 <span style="background-color: rgb(215,255,255)">git-blame        - Show what revision and author last modified each line of a file
 </span>0b5bcf36 README    (Dylan Simon       2017-06-22 15:00:00 -0400 1) New and improved.
 dc7e13a6 README    (Dylan Simon       2017-06-30 14:00:00 -0400 2) More to read
-00000000 README.md (Not Committed Yet 2017-10-16 15:44:12 -0400 3) further reading
+00000000 README.md (Not Committed Yet 2017-10-17 11:02:20 -0400 3) further reading
 </pre>
 </div>
 </div>
@@ -19468,11 +19518,11 @@ ghdylex	git://github.com/dylex/git-structure-tutorial (push)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span style="background-color: rgb(215,255,255)">git-fetch        - Download objects and refs from another repository
-</span>remote: Counting objects: 144, done.
-remote: Compressing objects: 100% (69/69), done.
-remote: Total 144 (delta 65), reused 134 (delta 55), pack-reused 0
-Receiving objects: 100% (144/144), 1007.93 KiB | 16.00 MiB/s, done.
-Resolving deltas: 100% (65/65), done.
+</span>remote: Counting objects: 150, done.
+remote: Compressing objects: 100% (71/71), done.
+remote: Total 150 (delta 68), reused 140 (delta 58), pack-reused 0
+Receiving objects: 100% (150/150), 1.01 MiB | 14.30 MiB/s, done.
+Resolving deltas: 100% (68/68), done.
 From git://github.com/dylex/git-structure-tutorial
  * [new branch]      example    -&gt; ghdylex/example
  * [new branch]      gh-pages   -&gt; ghdylex/gh-pages
@@ -19519,8 +19569,8 @@ From git://github.com/dylex/git-structure-tutorial
 <pre>  dylan/refactor           e4212ad Mark down &#39;README&#39;; no more other.txt
 * <span class="ansi-green-fg">master                  </span> 7dfd4e5 Ignore all output files in top dir
   <span class="ansi-red-fg">remotes/ghdylex/example </span> f79c7b3 Add a period.
-  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> a15a209 Update generated slides from df89fd3
-  <span class="ansi-red-fg">remotes/ghdylex/master  </span> 9246bb9 Resplit overflowing commit slide
+  <span class="ansi-red-fg">remotes/ghdylex/gh-pages</span> 2baf8b1 Update generated slides from 22e48c0
+  <span class="ansi-red-fg">remotes/ghdylex/master  </span> 22e48c0 Add section on rebase
 </pre>
 </div>
 </div>
@@ -19798,11 +19848,11 @@ Already up-to-date.
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span style="background-color: rgb(215,255,255)">git-clone        - Clone a repository into a new directory
 </span>Cloning into &#39;git-structure-tutorial&#39;...
-remote: Counting objects: 165, done.
-remote: Compressing objects: 100% (43/43), done.
-remote: Total 165 (delta 36), reused 70 (delta 28), pack-reused 85
-Receiving objects: 100% (165/165), 1.14 MiB | 17.11 MiB/s, done.
-Resolving deltas: 100% (64/64), done.
+remote: Counting objects: 171, done.
+remote: Compressing objects: 100% (45/45), done.
+remote: Total 171 (delta 39), reused 76 (delta 31), pack-reused 85
+Receiving objects: 100% (171/171), 1.16 MiB | 16.93 MiB/s, done.
+Resolving deltas: 100% (67/67), done.
 </pre>
 </div>
 </div>
@@ -19833,11 +19883,11 @@ Resolving deltas: 100% (64/64), done.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>* <span class="ansi-green-fg">master                 </span> 9246bb9 Resplit overflowing commit slide
+<pre>* <span class="ansi-green-fg">master                 </span> 22e48c0 Add section on rebase
   <span class="ansi-red-fg">remotes/origin/HEAD    </span> -&gt; origin/master
   <span class="ansi-red-fg">remotes/origin/example </span> f79c7b3 Add a period.
-  <span class="ansi-red-fg">remotes/origin/gh-pages</span> a15a209 Update generated slides from df89fd3
-  <span class="ansi-red-fg">remotes/origin/master  </span> 9246bb9 Resplit overflowing commit slide
+  <span class="ansi-red-fg">remotes/origin/gh-pages</span> 2baf8b1 Update generated slides from 22e48c0
+  <span class="ansi-red-fg">remotes/origin/master  </span> 22e48c0 Add section on rebase
 </pre>
 </div>
 </div>
@@ -19881,18 +19931,15 @@ Resolving deltas: 100% (64/64), done.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Future-topics">Future topics<a class="anchor-link" href="#Future-topics">&#182;</a></h1><ul>
-<li>branching strategies<ul>
-<li>advanced rebasing</li>
-</ul>
-</li>
 <li>github<ul>
-<li><a href="https://github.com/flatironinstitute">github.com/flatironinstitute</a></li>
-<li>issues, pull requests, workflows</li>
+<li><a href="https://github.com/flatironinstitute">github.com/flatironinstitute</a> (contact SCC to join)</li>
 <li>gh-pages (user/repo <code>gh-pages</code> branch published as user.github.io/repo)</li>
+<li>issues, pull requests, workflows</li>
 <li>permissions</li>
 <li>web hooks</li>
 </ul>
 </li>
+<li>branching/tagging strategies</li>
 <li>code structure</li>
 <li>documentation</li>
 <li>continuous integration</li>
